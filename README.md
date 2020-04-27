@@ -1,2 +1,1 @@
-# CentOS# CentOS
 User Envinronment
