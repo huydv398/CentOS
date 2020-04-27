@@ -8,3 +8,6 @@ Linux là một hệ điều hành người dùng, nơi có nhiều hơn một n
 ``huy1     tty1         2020-04-27 15:31``
 
 ``root     pts/0        2020-04-27 15:31 (192.168.65.1)``
+```[root@server ~]# who
+huy1     tty1         2020-04-27 15:31
+root     pts/0        2020-04-27 15:31 (192.168.65.1)```
