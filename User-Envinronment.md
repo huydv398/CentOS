@@ -99,4 +99,4 @@ Tất cả các tệp này cập nhật khi cần thiết tại thư mục `/etc
 [root@server ~]# groups huy1
 huy1 : basic grouponlyread
 ```
-##Người dùng root
+## Người dùng root
