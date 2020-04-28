@@ -137,6 +137,7 @@ Theo mặc định, các biến được tạo trong một tệp lệnh chỉ c�
 |hiển thị giá trị của một biến cụ thể|`echo $SHELL`
 |Xuất một biến mới|export VAR=value|
 |Thêm một biến vĩnh viễn|Add the line export VAR=value to ~/.bashrc|
+
 **HOME** là một biến môi trường đại diện cho HOME hoặc đăng nhập thư mục của người dùng.Các lệnh `cd` có đối số sẽ thay đổi thư mục làm việc hiện tại với giá trị của HOME. Lưu ý ký tự dấu ngã(~) Thường được sử dụng làm chữ viết tắt cho $HOME.
 
 Biến môi trường**PATH**, là một danh sách có thứ tự thư mục sẽ được quế khi một lệnh được đưa ra để tìm các chương trình hay kịch bản thích hợp để chạy. Mỗi thư mục trong đường dẫn được phân tách bằng dấu hai chấm(:). Tên thư mục trống cho biết thư mục hiện tại tại bất kỳ thời điểm nào.
