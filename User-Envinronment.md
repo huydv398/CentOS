@@ -5,6 +5,7 @@
 3. [Biến môi trường](#environment-var)
 5. [Command HISTORY ](#history)
 6. [Alias](#alias)
+
 Linux là một hệ điều hành người dùng, nơi có nhiều hơn một người dùng có thể đăng nhập cùng một lúc. Các danh sách lệnh ``who`` hiện đang đăng nhập. Để xác định người dùng hiện tại, sử dụng lệnh ``whoami``.
 
 ``` 
@@ -111,7 +112,7 @@ Các tài khoản **gốc** có quyền truy cập đầy đủ vào hệ thốn
 
 Khi gán đặc quyền nâng cao, bạn có thể sử dụng lệnh `su`(chuyển đổi người dùng) để khởi chạy shell mới chạy với tư cách người dùng khác(Bạn phải nhập mật khẩu của người mà bạn muốn trở thành). Thông thường người dùng khác này là root hoặc shell mới cho phép sử dụng các đặc quyền nâng cao cho đến khi thoát.Nó hầu như luôn luôn là một thực hành xấu(nguy hiểm cho cả bảo mật và ổn định) để sử dụng `su` thành root. Lỗi kết quả có thể bao gồm xóa các tệp tin quan trọng khỏi hệ thống và vi phạm bảo mật.
 <a name="Startupfile"></a>
-## Khởi động tập tin
+## Tập tin khởi động
 Trong Linux, chương trình shell lệnh, nói chung bash sử dụng một hoặc nhiều tệp khởi động để cấu hình môi trường. Các tệp trong `/etc` thư mục xác định cài đặt chung cho tất cả người dùng trong khi các tệp khởi tạo trong thư mục chính của người dùng có thể bao gồm và ghi đè chung. Các tệp khởi động có thể làm bất cứ điều gì mà người dùng muốn làm trong mọi lệnh shell, chẳng hạn như:
 * Tùy chỉnh lời nhắc của người dùng
 * Xác định các phím tắt và bí danh của dòng lệnh
@@ -148,8 +149,9 @@ Các biến môi trường **PS** được sử đụng để tùy chỉnh chu�
 |\h|Tên máy chủ|
 |\W|Thư mục làm việc hiện tại|
 |\ !| Số lịch sử dòng lệnh|
-|\d|Ngày  
-Chúng phải được bao quyanh trong dấu ngoặc đơn khi chúng được sử dụng
+|\d|Ngày  |
+
+Chúng phải được bao quanh trong dấu ngoặc đơn khi chúng được sử dụng
 ```
 [root@server ~]# man export
 [root@server ~]# echo $PS1
@@ -206,6 +208,7 @@ Bảng dưới đây cho thấy cú pháp được sử dụng để thực hi�
 |!$|Tham khảo đối số của cùng của một dòng|
 |!n|Tham khảo dòng lệnh thế n|
 |!string|Tham khảo lệnh gần đây nhất bắt đầu bằng string|
+
 <a name="alias"></a>
 ## Aliases
 Các lệnh tùy chỉnh có thể được tạo ra để sửa đổi hành vi của những cái dã có bằng cách tạo Alias.Thông thường các bí danh này được đặt trong tệp `~/.bashrc`của bạn để chúng có sẵn cho bất kỳ shell lệnh nào bạn tạo. Các lệnh `Aliases` với không có đối số sẽ liệt kê cac sbis danh quy định hiện hành
