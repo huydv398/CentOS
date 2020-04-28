@@ -1,10 +1,7 @@
 # User Envinronment (Về người dùng)
 1. [User Envinronment](#UserEnvinronment)
-2. [Người dùng root](##ngườidùngroot)
-1. [Example](#example)
-2. [Example2](#E1)
-## User Envinronment
-## Example
+2. [Người dùng Root](##nguoidungroot)
+
 Linux là một hệ điều hành người dùng, nơi có nhiều hơn một người dùng có thể đăng nhập cùng một lúc. Các danh sách lệnh ``who`` hiện đang đăng nhập. Để xác định người dùng hiện tại, sử dụng lệnh ``whoami``.
 
 ``` 
@@ -102,5 +99,5 @@ Tất cả các tệp này cập nhật khi cần thiết tại thư mục `/etc
 [root@server ~]# groups huy1
 huy1 : basic grouponlyread
 ```
+<a name="nguoidungroot"></a>
 ## Người dùng root
-## E1
