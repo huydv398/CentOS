@@ -1,6 +1,6 @@
 # User Envinronment (Về người dùng)
 1. [User Envinronment](#UserEnvinronment)
-2. [Người dùng Root](##nguoidungroot)
+2. [Người dùng Root](#nguoidungroot)
 
 Linux là một hệ điều hành người dùng, nơi có nhiều hơn một người dùng có thể đăng nhập cùng một lúc. Các danh sách lệnh ``who`` hiện đang đăng nhập. Để xác định người dùng hiện tại, sử dụng lệnh ``whoami``.
 
