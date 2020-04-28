@@ -140,7 +140,7 @@ Theo mặc định, các biến được tạo trong một tệp lệnh chỉ c�
 
 **HOME** là một biến môi trường đại diện cho HOME hoặc đăng nhập thư mục của người dùng.Các lệnh `cd` có đối số sẽ thay đổi thư mục làm việc hiện tại với giá trị của HOME. Lưu ý ký tự dấu ngã(~) Thường được sử dụng làm chữ viết tắt cho $HOME.
 
-Biến môi trường**PATH**, là một danh sách có thứ tự thư mục sẽ được quế khi một lệnh được đưa ra để tìm các chương trình hay kịch bản thích hợp để chạy. Mỗi thư mục trong đường dẫn được phân tách bằng dấu hai chấm(:). Tên thư mục trống cho biết thư mục hiện tại tại bất kỳ thời điểm nào.
+Biến môi trường **PATH**, là một danh sách có thứ tự thư mục sẽ được quế khi một lệnh được đưa ra để tìm các chương trình hay kịch bản thích hợp để chạy. Mỗi thư mục trong đường dẫn được phân tách bằng dấu hai chấm(:). Tên thư mục trống cho biết thư mục hiện tại tại bất kỳ thời điểm nào.
 
 Các biến môi trường **PS** được sử đụng để tùy chỉnh chuỗi dấu nhác của bạn trong cửa sổ terminal của bạn đẻ hiển thị các thông tin mà bạn muốn.**PS1** là biến dấu nhắc chính điều khiển dấu nhắc dòng lệnh của bạn trông như thế nào. Các ký tự đặc biệt sau đây có thể được bao gồm trong **PS1**:
 
