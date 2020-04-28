@@ -232,4 +232,5 @@ alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-ti
 
 `[root@server ~]# alias c='clear'
 `
+
 Bây giờ chỉ cần gõ` c` thay vì gõ `clear`
