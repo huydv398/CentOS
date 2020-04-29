@@ -100,6 +100,7 @@ mot hai ba bon
 nam sau bay
 ```
 `tr -d` dùng để xóa các ký tự
+
 6. ## wc
 `wc` sử dụng để đếm từ, dòng và ký tự dễ dàng.
 ```
@@ -107,16 +108,21 @@ nam sau bay
  3  7 38 num.txt
 ```
 Trong đó là: 3 dòng, 7 từ và 38 ký tự(38 byte) 
+
 7. ## sort
 Bộ lọc `sort` sẽ sắp xếp mặc định theo thứ tự alphabetical
+
 8. ## uniq
 Với `uniq` bạn có thể xóa các bản sao trùng lặp khỏi danh sách đã sắp xếp
 
 Với tùy chọn `uniq -c`, uniq có thể đếm số lần xuất hiện với tùy chọn
+
 9. ## comm
 So sánh các luồng hoặc tệp có thể được thực hiện với comm. Theo mặc định, comm sẽ xuất hiện 3 cột
+
 10. ## od
 `od` để hiện thị nội dung của tệp theo byte hệ **hexa**
+
 10. ## sed 
 `sed` sử dụng để chỉnh sửa luồng có thể thực hiện các chức năng chỉnh sửa trong luồng, sử dụng thường xuyên các biểu thức.
 ```
