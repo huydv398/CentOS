@@ -17,15 +17,15 @@ Hiện có 2 hãng công nghệ lớn chuyên sản xuất CPU cho máy tính đ
   * Thread( luồng): Nếu ta tưởng tượng các core là của CPU dùng để chia nhỏ công việc của một trương trình thì thread là dạng chia nhỏ công việc lần thứ 2.
   * Cache( Bộ nhớ đệm): dùng để lưu trữ các lệnh chuẩn bị xử lú của CPU, Ở đây các lệnh sẽ đucợ xếp thành 1 hàng và tất nhiên bộ nhớ đệm càng cao thì hiệu xuất CPU càng cao.
 * Socket
- * Socket CPU là đế của các CPU trên mainboard, Tương thích với từng loại Mainboard là các đế cắm khác nhau, từ đó sẽ phù hợp với các loại CPU khác nhau
- * Socket có nhiệm vụ làm điểm tiếp xúc và cũng là giá đỡ CPU khi gắn vào Mainboard
- * Sử dụng socket giảm thiểu được rất nhiều rủi ro trong việc làm vỡ hoặc cong các chân của CPU khi lắp đặt hoặc gỡ bỏ nó.
+  * Socket CPU là đế của các CPU trên mainboard, Tương thích với từng loại Mainboard là các đế cắm khác nhau, từ đó sẽ phù hợp với các loại CPU khác nhau
+  * Socket có nhiệm vụ làm điểm tiếp xúc và cũng là giá đỡ CPU khi gắn vào Mainboard
+  * Sử dụng socket giảm thiểu được rất nhiều rủi ro trong việc làm vỡ hoặc cong các chân của CPU khi lắp đặt hoặc gỡ bỏ nó.
 * Process
- * Tiến trình (Process) chỉ là sự thể hiện của một hoặc nhiều tác vụ liên quan đến thực thi trên máy tính của bạn. Nó không giống như một chương trình hoặc một cửa sổ dòng lệnh. Một lệnh duy nhất thực sự bắt đầu một tiến trình cùng một lúc. Một số tiến trình độc lập với nhau và những tiến trình có liên quan. Lỗi của một tiến trình có thể ảnh hưởng đến các tiến trình khác đang chạy trên hệ thống
- * Cá tiến trình sử dụng nhiều tài nguyên hệ thống: bộ nhớ, CPU và các thiết bị ngoại vi
- * Hệ điều hành chịu trách nhiệm phân bổ phần tích hợp các tài nguyên nay cho từng quy trình và đảm bảo việc sử dụng hệ thống được tối ưu hóa tổng thể.
+  * Tiến trình (Process) chỉ là sự thể hiện của một hoặc nhiều tác vụ liên quan đến thực thi trên máy tính của bạn. Nó không giống như một chương trình hoặc một cửa sổ dòng lệnh. Một lệnh duy nhất thực sự bắt đầu một tiến trình cùng một lúc. Một số tiến trình độc lập với nhau và những tiến trình có liên quan. Lỗi của một tiến trình có thể ảnh hưởng đến các tiến trình khác đang chạy trên hệ thống
+  * Cá tiến trình sử dụng nhiều tài nguyên hệ thống: bộ nhớ, CPU và các thiết bị ngoại vi
+  * Hệ điều hành chịu trách nhiệm phân bổ phần tích hợp các tài nguyên nay cho từng quy trình và đảm bảo việc sử dụng hệ thống được tối ưu hóa tổng thể.
 * Thread 
-* Thread là một đơn vị cơ bản trong CPU. Một Luồng sẽ chia sẻ với các luồng khác trong cùng process về thông tin dât, các dữ liệu của mình. Việc tạo ta Thread giúp cho các chương trình có thể chạy được nhiều công việc cùng một lúc
+  * Thread là một đơn vị cơ bản trong CPU. Một Luồng sẽ chia sẻ với các luồng khác trong cùng process về thông tin dât, các dữ liệu của mình. Việc tạo ta Thread giúp cho các chương trình có thể chạy được nhiều công việc cùng một lúc
 
 ### Các trạng thái của một tiến trình Process
 Các bước chuyển quá trình của một process:
@@ -49,7 +49,7 @@ Nhiều người dùng có thẻ truy cập vào hệ thống cùng một lúc v
 Tại một thời điểm, Nhiều tiến trình đang chạy trong một hệ thống. Tuy nhiên, CPU thực sự chỉ có thể chứa một nhiệm vụ tại một thời điểm.Các tiến trình ưu tiên cao hơn được cấp nhiều thời gian hơn trên CPU. Mức độ ưu tiên cho một tiến trình có thể đặt bằng cách chỉ định một giá trị cho tiến trình. Giá trị càng thấp, mức độ ưu tiên càng cao
 ||Process 1|Process 2|Process 3|Process n|
 |-|-|-|-|-|
-|Nice Value|-20|-19|19|
+|Nice Value|-20|-19|-18|19|
 |Elapsed Time|0|1|2|n|
 
 ## Running Processes
