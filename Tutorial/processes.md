@@ -4,7 +4,7 @@ Một **Processes** (tiến trình) chỉ đơn giản là thể hiện một ho
 Tại bất cứ thời điểm nào, luôn có nhiều quá trình được thực thi. Hệ điều hành theo dõi chúng bằng cách cho mỗi quy trình là 1 **PID -Process ID** duy  nhất. **PID** được sử dụng để theo dõi trạng thái quá trình, chính xác là nơi tài nguyên được đặt trong bộ nhớ và các điểm đặt khác. Các bộ vi sử lý mới thường được chỉ định theo thứ tự tăng dần khi các quy trình được sinh ra.Do đó **PID** biểu thị một quá trình khởi tạo và các quá trình thành công dần dần được gắn con số lớn hơn.
 
 Linux cho phép bạn thiết lập và các thao tác ưu tiên quy trình. Các quy trình ưu tiên cao hơn được cấp nhiều thời gian hơn trên
-## Tìm hiểu định nghĩa và thông tin:CPU, Socket, Program, Processes, Thread
+## Tìm hiểu định nghĩa và thông tin:CPU, Socket, Processes, Thread
 ### CPU 
 * CPU (Central Processing Unit) là bộ xử lý trung tâm, là các mạch điện tử trong maysm nhiệm vụ của CPU là xử lý thông tinm tính toán các dữ liệu, nhận biết các thao tác của người dùng để điều khiển các hoạt động máy tính,
 
@@ -27,8 +27,7 @@ Hiện có 2 hãng công nghệ lớn chuyên sản xuất CPU cho máy tính đ
 * Thread 
   * Thread là một đơn vị cơ bản trong CPU. Một Luồng sẽ chia sẻ với các luồng khác trong cùng process về thông tin dât, các dữ liệu của mình. Việc tạo ta Thread giúp cho các chương trình có thể chạy được nhiều công việc cùng một lúc
 
-### Các trạng thái của một tiến trình Process
-Các bước chuyển quá trình của một process:
+### Các bước chuyển quá trình của một process:
 * Những Process được chương trình tạo ra, được sắp vào "hàng đợi"(hay còn được gọi là Stack)
 * Process được CPU thấy và thực thi
 * Khi Process quá tải, CPU phải nhả để thực hiện Process khác.
