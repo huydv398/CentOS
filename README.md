@@ -3,3 +3,4 @@
 
 # Linux fundameltals
 1. [Filter](https://github.com/huydv398/CentOS/blob/master/filters-command.md)
+2. [Basic Unix Tool](CentOS\Basic-tool.md)
