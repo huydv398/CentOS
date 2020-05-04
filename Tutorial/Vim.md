@@ -30,15 +30,18 @@ Khi cần bôi đen( highlight) một đoạn hoặc một dòng, ta dùng phím
 * `n` : tiếp tục tìm kiếm với nội dung hiện tại
 
 5. Chỉnh sửa nội dung
+
+|PHÍM|Nội dung|
 |-|-|
 |`i`|Insert mode|bật chế độ chèn text|
 |`R`|Replace mode|bật chế độ thay thế|
 |`x`|xóa một ký tự ở vị trí con trỏ|
 6. Các lệnh lưu và thoát
+
 |Câu lệnh|Chức năng |
 |-|-|
-|:q|Thoát khỏi VIM|
-|:q!|Bắt buộc thoát không lưu|
-|:w|Lưu file|
-|:w!|Bắt buộc ghi file (ghi đè)|
-|:wq!|Lưu file rồi thoát ra|
+|`:q`|Thoát khỏi VIM|
+|`:q!`|Bắt buộc thoát không lưu|
+|`:w`|Lưu file|
+|`:w!`|Bắt buộc ghi file (ghi đè)|
+|`:wq!`|Lưu file rồi thoát ra|
