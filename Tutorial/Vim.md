@@ -33,7 +33,7 @@ Khi cần bôi đen( highlight) một đoạn hoặc một dòng, ta dùng phím
 |-|-|
 |`i`|Insert mode|bật chế độ chèn text|
 |`R`|Replace mode|bật chế độ thay thế|
-|`x`||xóa một ký tự ở vị trí con trỏ|
+|`x`|xóa một ký tự ở vị trí con trỏ|
 6. Các lệnh lưu và thoát
 |Câu lệnh|Chức năng |
 |-|-|
