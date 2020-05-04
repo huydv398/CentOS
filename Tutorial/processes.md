@@ -13,9 +13,9 @@ Hiện có 2 hãng công nghệ lớn chuyên sản xuất CPU cho máy tính đ
   * CPU được cấu thành từ hàng triệu transistor ( bóng bán dẫn) được sắp xếp với nhau tạo thành mạch điện tử.
   * CPU chia làm 3 phần: Control Unit( Khối điều khiển-CU) và Arithmethic Logic Unit(Khối tính toán -ALU )
 * Các thông số có trên CPU
- * Cỏe( Nhân): các nhân của CPU sẽ đảm nhiệm những quá trình xử lý khác nhau, thông thường những CPU có càng nhiều nhân càng tốt vì ddieuf đó sẽ giúp CPU xử lý các chương trình đa tác vụ. Tuy nhiên, chúng ta cũng nên quan tâm đến xung nhịp của mỗi nhân(GHZ) vì nó thể hiện tốc độ xử lý từng nhân riêng lẻ trên CPU, tất nhiên là xung càng cao CPU càng mạnh. Một điểm lưu ý rằng: tùy vào chương trình chúng ta sử dụng trên máy tính cho phép dùng số lượng nhân nhất định. Với những chương trình chạy ít nhân thì các CPU ít nhân nhưng xung nhịp cao sẽ được ưu tiên hơn CPU nhiều nhân nhưng xung nhịp thấp và ngược lại
- * Thread( luồng): Nếu ta tưởng tượng các core là của CPU dùng để chia nhỏ công việc của một trương trình thì thread là dạng chia nhỏ công việc lần thứ 2.
- * Cache( Bộ nhớ đệm): dùng để lưu trữ các lệnh chuẩn bị xử lú của CPU, Ở đây các lệnh sẽ đucợ xếp thành 1 hàng và tất nhiên bộ nhớ đệm càng cao thì hiệu xuất CPU càng cao.
+  * Core( Nhân): các nhân của CPU sẽ đảm nhiệm những quá trình xử lý khác nhau, thông thường những CPU có càng nhiều nhân càng tốt vì ddieuf đó sẽ giúp CPU xử lý các chương trình đa tác vụ. Tuy nhiên, chúng ta cũng nên quan tâm đến xung nhịp của mỗi nhân(GHZ) vì nó thể hiện tốc độ xử lý từng nhân riêng lẻ trên CPU, tất nhiên là xung càng cao CPU càng mạnh. Một điểm lưu ý rằng: tùy vào chương trình chúng ta sử dụng trên máy tính cho phép dùng số lượng nhân nhất định. Với những chương trình chạy ít nhân thì các CPU ít nhân nhưng xung nhịp cao sẽ được ưu tiên hơn CPU nhiều nhân nhưng xung nhịp thấp và ngược lại
+  * Thread( luồng): Nếu ta tưởng tượng các core là của CPU dùng để chia nhỏ công việc của một trương trình thì thread là dạng chia nhỏ công việc lần thứ 2.
+  * Cache( Bộ nhớ đệm): dùng để lưu trữ các lệnh chuẩn bị xử lú của CPU, Ở đây các lệnh sẽ đucợ xếp thành 1 hàng và tất nhiên bộ nhớ đệm càng cao thì hiệu xuất CPU càng cao.
 * Socket
  * Socket CPU là đế của các CPU trên mainboard, Tương thích với từng loại Mainboard là các đế cắm khác nhau, từ đó sẽ phù hợp với các loại CPU khác nhau
  * Socket có nhiệm vụ làm điểm tiếp xúc và cũng là giá đỡ CPU khi gắn vào Mainboard
