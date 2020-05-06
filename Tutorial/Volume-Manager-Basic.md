@@ -15,7 +15,7 @@
 * Vai trò của **LVM**: **LVM** là kỹ thuật quản lý việc thay đổi kích thước lưu trữ của ổ cứng:
     * Không để hệ thống bị gián đoạn hoạt động
     * Không làm hỏng dịch vụ
-    * Có thể kết hợp cơ chế ** hot Swapping(Phương pháp thay thế nóng các thành phần bên trong máy tính)
+    * Có thể kết hợp cơ chế **hot Swapping**(Phương pháp thay thế nóng các thành phần bên trong máy tính)
 * Mục đích:
     * Tạo 1 hoặc nhiều phân vùng logic hoặc phân vùng với toàn bộ đĩa cứng, Cho phép thay đổi kích thước khối
     * Quản lý trang đĩa cứng lớn( Large hard disk Farms ) bằng cách cho phép thêm và thay thế đĩa mà không bị ngừng hoạt động hoặc gián đoạn dịch vụ, kết hợp với trao đổi nóng(hot swap)
