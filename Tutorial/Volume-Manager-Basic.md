@@ -1,13 +1,13 @@
 # Logical Volume Manager - LVM
-[Thông tin cơ bản về quản lý khối](#infolvm)
-[Các khối cơ bản của Logical Volume Manager ](#volbasic)
-[Các thành phần trong LVM](#thanhphan)
-[Ưu điểm và nhược điểm của LVM](#uunhuoc)
-[Các lệnh trong LVM](#command)
-[Tạo mới Partition ](#linear)
-[Các thao tác trên LVM](#thaotac)
-[Thay đổi dung lượng](#change)
-[Xóa logical volume,volume group,physical volume](#del)
+1. [Thông tin cơ bản về quản lý khối](#infolvm)
+2. [Các khối cơ bản của Logical Volume Manager ](#volbasic)
+3. [Các thành phần trong LVM](#thanhphan)
+4. [Ưu điểm và nhược điểm của LVM](#uunhuoc)
+5. [Các lệnh trong LVM](#command)
+6. [Tạo mới Partition ](#linear)
+7. [Các thao tác trên LVM](#thaotac)
+8. [Thay đổi dung lượng](#change)
+9. [Xóa logical volume,volume group,physical volume](#del)
 <a name="infolvm"></a>
 ## Thông tin cơ bản về quản lý khối
 * **Logic Volume Manger (LVM)** là phương pháp cho phép ấn định không gian đĩa cứng thành những **Logiccal Volume** khiến cho việc thay đổi kích thước trở nên dễ dàng hơn so với **partition**.
