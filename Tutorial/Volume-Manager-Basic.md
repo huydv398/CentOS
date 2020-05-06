@@ -7,10 +7,10 @@
 6. [Tạo mới Partition ](#linear)
 7. [Các thao tác trên LVM](#thaotac)
 8. [Thay đổi dung lượng](#change)
-9. [Xóa logical volume,volume group,physical volume](#del)
+9. [Xóa Logical Volume, Volume group,physical Volume](#del)
 <a name="infolvm"></a>
 ## Thông tin cơ bản về quản lý khối
-* **Logic Volume Manger (LVM)** là phương pháp cho phép ấn định không gian đĩa cứng thành những **Logiccal Volume** khiến cho việc thay đổi kích thước trở nên dễ dàng hơn so với **partition**.
+* **Logical Volume Manger (LVM)** là phương pháp cho phép ấn định không gian đĩa cứng thành những **Logiccal Volume** khiến cho việc thay đổi kích thước trở nên dễ dàng hơn so với **partition**.
 * Với ký thuật **LVM**, có thể thay đổi kích thước phân vùng mà không cần phải sửa lại table của OS. Điều này rất hữu ích với trường hợp đã sử dụng hết bộ nhớ trống của partition và muốn mở rộng dung lượng của nó.
 * Vai trò của **LVM**: **LVM** là kỹ thuật quản lý việc thay đổi kích thước lưu trữ của ổ cứng:
     * Không để hệ thống bị gián đoạn hoạt động
