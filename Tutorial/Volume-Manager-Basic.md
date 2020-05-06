@@ -1,4 +1,14 @@
 # Logical Volume Manager - LVM
+[Thông tin cơ bản về quản lý khối](#infolvm)
+[Các khối cơ bản của Logical Volume Manager ](#volbasic)
+[Các thành phần trong LVM](#thanhphan)
+[Ưu điểm và nhược điểm của LVM](#uunhuoc)
+[Các lệnh trong LVM](#command)
+[Tạo mới Partition ](#linear)
+[Các thao tác trên LVM](#thaotac)
+[Thay đổi dung lượng](#change)
+[Xóa logical volume,volume group,physical volume](#del)
+<a name="infolvm"></a>
 ## Thông tin cơ bản về quản lý khối
 * **Logic Volume Manger (LVM)** là phương pháp cho phép ấn định không gian đĩa cứng thành những **Logiccal Volume** khiến cho việc thay đổi kích thước trở nên dễ dàng hơn so với **partition**.
 * Với ký thuật **LVM**, có thể thay đổi kích thước phân vùng mà không cần phải sửa lại table của OS. Điều này rất hữu ích với trường hợp đã sử dụng hết bộ nhớ trống của partition và muốn mở rộng dung lượng của nó.
@@ -12,11 +22,12 @@
     * Trên hệ thống nhỏ (như laptop,pc), thay vì phải ước tính thời gian cài đặt, phân vùng có thể cần lớn đến mức nào, LVM cho phép hệ thống tệp dễ dàng thay đổi kích thước khi cần .
     * Thực hiện sao lưu nhất quán bằng cách tạo ra snapshot nhanh các khối cách hợp lý.
     * Mã hóa nhiều phân vùng vật lý bằng một mật khẩu
-
+<a name="volbasic"></a>
 ## Các khối cơ bản của **LVM**(Logical Vulome Manager ) bao gồm:
 * Physical Volumes: là những đĩa cứng vật lý hoặc phân vùng trên nó
 * Volume groups: là một nhóm bao gồm các *Physical Volumes*.Có thể xem Volume group như một " ổ đĩa ảo".
 * Logical volumes: có thể xem như là các "phân vùng ảo" bạn có thể thêm vào gỡ bỏ và thay đổi kích thước một cách nhanh chóng.*(/dev/sda1, /dev/sdb1, /dev/sdc1)*
+<a name="thanhphan"></a>
 ## Các thành phần trong LVM
 ### 1. Hard drives
 * Là các thiết bị lưu trữ dữ liệu có dạng: `/dev/sda`,`/dev/sdc2`,...
@@ -39,6 +50,7 @@
 * Khi dung lượng của **Physical Volume** được sử dụng hết ta có thể thêm ổ đĩa mới bổ sung cho **Volume Group** và do đó tăng được dung lượng của **Logical Volume**
 
 VD: Có thể tạo ra 4 ổ đĩa mỗi ổ `5GB`, kết hợp thành 1 **Volume Group** `20GB`, có thể tạo ra 2 **Logical Volume** mỗi cái `10GB`
+<a name="uunhuoc"></a>
 ## Ưu nhược điểm của LVM
 ### Ưu điểm
 * Có thể gom nhiều đĩa cứng vật lý thành 1 đỉa ảo dung lượng lớn
@@ -49,6 +61,7 @@ VD: Có thể tạo ra 4 ổ đĩa mỗi ổ `5GB`, kết hợp thành 1 **Volum
 * Càng gắn nhiều đĩa cứng và thiết lập càng nhiều **LVM** thì hệ thống thì hệ thống khởi động càng lâu
 * Khả năng mất dữ liệu khi 1 trong các đĩa cứng vật lý bị hỏng
 * Tiêu hao nhiều năng lượng không cần thiết
+<a name="command"></a>
 ## Các lệnh trong LVM
 * **Physical Volume**:
     * `pvcreate`:tạo **Physical Volume**
@@ -66,6 +79,8 @@ VD: Có thể tạo ra 4 ổ đĩa mỗi ổ `5GB`, kết hợp thành 1 **Volum
     * `lvremove`: xóa **Logical Volume**
     * `lvextend`: tăng dung lượng **Logical Volume**
     * `lvreduce`: giảm dung lượng **Logical Volume**
+
+<a name="linear"></a>
 ## Các bước tạo Linear Volume
 * Bổ sung thêm 2 Ổ cứng dung `lượng 20Gb`
 * Kiểm tra các **Hard Drives** có trên hệ thống:
@@ -141,6 +156,7 @@ sdc               8:32   0   20G  0 disk
 └─sdc1            8:33   0   10G  0 part
 sr0              11:0    1  4.4G  0 rom
 ```
+<a name="thaotac"></a>
 ## Thao tác trên LVM 
 Liệt kê các phân vùng ổ cứng trong hệ thống:`cat /proc/partition `, `fdisk -l` hoặc ` ls -la /dev/sd*`
 ### Mục tiêu
@@ -230,7 +246,8 @@ Ta cần Mount Logical Volume để kiểm tra việc tạo ra thành công:
 [root@sv ~]# mkdir /Backups
 [root@sv ~]# mount /dev/VG1/Backups /Backups/
 ```
-## Thay đổi kích thươc Logical Volume
+<a name="change"></a>
+## Thay đổi kích thước Logical Volume
 ### Giảm kích thước LV
 Trước khi bắt đầu, Cần sao lưu dữ liệu vì vậy sẽ được trách sự cố sảy ra. Cần thực hiện cẩn thận 5 bước dưới đây:
 * Ngắt kết nối FileSystem.
@@ -336,6 +353,7 @@ Muont lại LV `Data` và kiểm tra kích thước:
 ```
 [root@localhost ~]# mount /dev/VG0/Data /Data/
 ```
+<a name="del"></a>
 ## Xóa 1 logical Volume và 1 Group Volume
 ### Xóa 1 Logical Volume
 ```
