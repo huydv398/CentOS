@@ -67,6 +67,7 @@ VD: Có thể tạo ra 4 ổ đĩa mỗi ổ `5GB`, kết hợp thành 1 **Volum
     * `pvcreate`:tạo **Physical Volume**
     * `pvdisplay`, `pvs`: xem **Physical Volume** đã tạo
     * `pvremove`: xóa **Phyysical Volume**
+    * `pvchange`: Thay đổi thuộc tính của Physical volume
 * **Volume Group**:
     * `vgcreate`: Tạo **Volume Group**
     * `vsdisplay`,`vgs`: xem **Volume Group** đã tạo
