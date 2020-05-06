@@ -17,6 +17,130 @@
 * Physical Volumes: là những đĩa cứng vật lý hoặc phân vùng trên nó
 * Volume groups: là một nhóm bao gồm các *Physical Volumes*.Có thể xem Volume group như một " ổ đĩa ảo".
 * Logical volumes: có thể xem như là các "phân vùng ảo" bạn có thể thêm vào gỡ bỏ và thay đổi kích thước một cách nhanh chóng.*(/dev/sda1, /dev/sdb1, /dev/sdc1)*
+## Các thành phần trong LVM
+### 1. Hard drives
+* Là các thiết bị lưu trữ dữ liệu có dạng: `/dev/sda`,`/dev/sdc2`,...
+### 2. Partition 
+* Là các phân vùng của **Hard Drives**, mỗi **Hard** có 4 **Partition** trong đó **Partition** gồm 2 loại là **primary partition** và **extended partition** :
+* **Primary Partition** :
+    * Là phân vùng chính, có thể `Boot`
+    * Mỗi đĩa cứng có thể có tối đa 4 phân vùng này
+* **Extended Partition** :
+    * Là phân vùng mổ rộng chứa dữ liệu, trong nó có thể tạo các **logical partition** 
+### 3. Physical Volume(PV)
+* Là 1 tên gọi khác của **partition** trong kỹ thuật **LVM**, nó là những thành phần cơ bản được sử dụng bởi **LVM** 
+* Một **Physical Volume** không thể mở rộng ra ngoài phạm vi 1 ổ đĩa
+* có thể kết hợp nhiều **physical Volume** thành một **Volume Group**.
+### 4. Volume group
+* Nhiều **Physical Volume** trên những ở đĩa khác nhau kết hợp lại thành 1 **Volume Group**
+* **Volume Group** được dùng để tạo ra các **Logical Volume**, trong đó người dùng có thể tạo, thay đổi kích thước, Gỡ bỏ và sử dụng chúng
+### 5.Logical Volume 
+* **Volume Group** được chia nhỏ thành các **Logical Volume**,Mỗi **Logical Volume** có ý nghĩa tương tự 1 Partition. Nó được dùng cho các mount point và được format với những định dạng khác nhau như `ext2`, `ext3`, `ext4`, `xfs`, ...
+* Khi dung lượng của **Physical Volume** được sử dụng hết ta có thể thêm ổ đĩa mới bổ sung cho **Volume Group** và do đó tăng được dung lượng của **Logical Volume**
+
+VD: Có thể tạo ra 4 ổ đĩa mỗi ổ `5GB`, kết hợp thành 1 **Volume Group** `20GB`, có thể tạo ra 2 **Logical Volume** mỗi cái `10GB`
+## Ưu nhược điểm của LVM
+### Ưu điểm
+* Có thể gom nhiều đĩa cứng vật lý thành 1 đỉa ảo dung lượng lớn
+* Có thể tạo ra các vùng dung lượng lớn tùy ý 
+* Có thể thay đổi các vùng dung lượng đó dễ dàng, linh hoạt
+### Nhược điểm
+* Các bước thiết lập phức tạp, khó khăn hơn
+* Càng gắn nhiều đĩa cứng và thiết lập càng nhiều **LVM** thì hệ thống thì hệ thống khởi động càng lâu
+* Khả năng mất dữ liệu khi 1 trong các đĩa cứng vật lý bị hỏng
+* Tiêu hao nhiều năng lượng không cần thiết
+## Các lệnh trong LVM
+* **Physical Volume**:
+    * `pvcreate`:tạo **Physical Volume**
+    * `pvdisplay`, `pvs`: xem **Physical Volume** đã tạo
+    * `pvremove`: xóa **Phyysical Volume**
+* **Volume Group**:
+    * `vgcreate`: Tạo **Volume Group**
+    * `vsdisplay`,`vgs`: xem **Volume Group** đã tạo
+    * `vgremove` : xóa **Volume Group**
+    * `vgextend` : tăng dung lượng của **Volume Group**
+    * `vgreduce`: giảm dung lượng của **Volume Group**
+* **Logical Volume**:
+    * `lvcreate`: Tạo **Logical Volume**
+    * `lvdisplay`, `lvs`: xem **Logical Volume** đã tạo
+    * `lvremove`: xóa **Logical Volume**
+    * `lvextend`: tăng dung lượng **Logical Volume**
+    * `lvreduce`: giảm dung lượng **Logical Volume**
+## Các bước tạo Linear Volume
+* Bổ sung thêm 2 Ổ cứng dung `lượng 20Gb`
+* Kiểm tra các **Hard Drives** có trên hệ thống:
+`# lsblk`
+Hoặc
+
+`#fdisk -l` 
+```
+NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda               8:0    0   20G  0 disk
+├─sda1            8:1    0    1G  0 part /boot
+└─sda2            8:2    0   19G  0 part
+  ├─centos-root 253:0    0   17G  0 lvm  /
+  └─centos-swap 253:1    0    2G  0 lvm  [SWAP]
+sdb               8:16   0   20G  0 disk
+sdc               8:32   0   20G  0 disk
+sr0              11:0    1  4.4G  0 rom
+```
+* Tạo **Partition**"
+    * Từ các Hard Disk trên hệ thống, tạo ra các Partition.
+    * Dùng lệnh `fdisk`(có thể dùng `parted`)
+    ```
+    [root@sv ~]# fdisk /dev/sdc
+    Welcome to fdisk (util-linux 2.23.2).
+
+    Changes will remain in memory only, until you decide to write them.
+    Be careful before using the write command.
+
+    Device does not contain a recognized partition table
+    Building a new DOS disklabel with disk identifier 0xd13bfd56.
+
+    Command (m for help): m
+    ```
+    * `n`: tạo Partition mới
+    ```
+    Command (m for help): n
+    Partition type:
+    p   primary (0 primary, 0 extended, 4 free)
+    e   extended
+    Select (default p): p
+    ```
+    * `p`: tạo Partition `Primary`
+    ```
+    Command (m for help): n
+    Partition type:
+    p   primary (0 primary, 0 extended, 4 free)
+    e   extended
+    Select (default p): p
+    ```
+    * `1` Tạo Partition thứ nhất
+    ```
+    Partition number (1-4, default 1): 1
+    ```
+    * `First sector (2048-41943039, default 2048):    `
+    để **default**
+    * `Last sector, +sectors or +size{K,M,G} (2048-41943039, default 41943039):+10G `
+    +10G để tạo phân vùng có size là 10GB
+    * `t` : tùy chọn thay đổi định dạng Partition 
+    * `8e` : thay đổi về định dạng **LVM**
+    * `w` : Lưu lại và thoát
+* Kiểm tra lại:
+```
+NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda               8:0    0   20G  0 disk
+├─sda1            8:1    0    1G  0 part /boot
+└─sda2            8:2    0   19G  0 part
+  ├─centos-root 253:0    0   17G  0 lvm  /
+  └─centos-swap 253:1    0    2G  0 lvm  [SWAP]
+sdb               8:16   0   20G  0 disk
+├─sdb1            8:17   0   10G  0 part
+└─sdb2            8:18   0   10G  0 part
+sdc               8:32   0   20G  0 disk
+└─sdc1            8:33   0   10G  0 part
+sr0              11:0    1  4.4G  0 rom
+```
 ## Thao tác trên LVM 
 Liệt kê các phân vùng ổ cứng trong hệ thống:`cat /proc/partition `, `fdisk -l` hoặc ` ls -la /dev/sd*`
 ### Mục tiêu
