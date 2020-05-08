@@ -1,9 +1,18 @@
 # Linux Process - Các quy trình trong Linux
+1. [Giới thiệu về Process](#intro)
+2. [Định nghĩa thông tin phần CPU, Socket,Process, Thread](#info)
+3. [Running Process](#running)
+  3.1 [Lệnh ps](#ps)
+  3.2 [Lệnh top](#top)
+4. [So sánh `ps` và `top`](#ss)
+<a name="intro"></a>
+## Process là gì?
 Một **Processes** (tiến trình) chỉ đơn giản là thể hiện một hoặc nhiều tác vụ liên quan thực thi trên cùng một máy. Nó không giống như một chương trình hoặc một lệnh; Một chương trình duy nhất thực sự có thể bắt đầu một quy trình cùng một lúc. Một số quy trình độc lập với nhau và những quy trình khác có liên quan. Lỗi của một quá trình có thể hoặc hoặc không thể ảnh hưởng đến quá trình khác đang chạy trên hệ thống. Các quy trình sử dụng nhiều tài nguyên hệ thống, như bộ nhớ, chu kỳ CPU và các thiết bị ngoại vi như máy in và màn hình. Hệ điều hành ( đặc biệt là kernel ) chịu trắc nhiệm phân bổ một phần thích hợp các tài nguyên này cho từng quy trình và đảm bảo sử dụng tối ưu tổng thể.
 
 Tại bất cứ thời điểm nào, luôn có nhiều quá trình được thực thi. Hệ điều hành theo dõi chúng bằng cách cho mỗi quy trình là 1 **PID -Process ID** duy  nhất. **PID** được sử dụng để theo dõi trạng thái quá trình, chính xác là nơi tài nguyên được đặt trong bộ nhớ và các điểm đặt khác. Các bộ vi sử lý mới thường được chỉ định theo thứ tự tăng dần khi các quy trình được sinh ra.Do đó **PID** biểu thị một quá trình khởi tạo và các quá trình thành công dần dần được gắn con số lớn hơn.
 
 Linux cho phép bạn thiết lập và các thao tác ưu tiên quy trình. Các quy trình ưu tiên cao hơn được cấp nhiều thời gian hơn trên
+<a name="info"></a>
 ## Tìm hiểu định nghĩa và thông tin:CPU, Socket, Processes, Thread
 ### CPU 
 * CPU (Central Processing Unit) là bộ xử lý trung tâm, là các mạch điện tử trong maysm nhiệm vụ của CPU là xử lý thông tinm tính toán các dữ liệu, nhận biết các thao tác của người dùng để điều khiển các hoạt động máy tính,
@@ -50,8 +59,9 @@ Tại một thời điểm, Nhiều tiến trình đang chạy trong một hệ 
 |-|-|-|-|-|
 |Nice Value|-20|-19|-18|19|
 |Elapsed Time|0|1|2|n|
-
+<a name="running"></a>
 ## Running Processes
+<a name="ps"></a>
 ### Các lệnh `ps` 
 cung cấp thông tin về tiến trình đang chạy,
 * command: `ps [option]`
@@ -78,6 +88,7 @@ root          4      2  0 09:31 ?        00:00:00 [kworker/0:0H]
 |TTY|Kiểu teminal liên kết với Process|
 |TIME|Thời gian CPU bị sử dụng bởi Process|
 |CMD|Lệnh bắt đầu Process|
+<a name="top"></a>
 ### Các lệnh `top`
 Ý nghĩa tương tự `ps`, nhưng `top` có thể được cập nhật theo thời gian liên tục( cứ sau 2 giây theo măc định)
 - phím q - để thoát khỏi `top`
@@ -139,6 +150,7 @@ Là lệnh tắt Process đang chạy. Khi sử dụng lệnh `kill` với một
 * Command : `kill [option] [pid]`
     * `-9` : kill toàn bộ các process liên quan
 
+<a name="ss"></a>
 ## so sánh `ps` và `top`
 
 * `ps` chỉ hiện thị thông tin từ dòng thứ của lệnh `top`
