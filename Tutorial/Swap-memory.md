@@ -29,7 +29,7 @@ count: tốc độ
 ```
 * Phân quyền cho file vừa tạo. Set mod = 600 cho chỉ có root user mới có quyền truy cập:
     * ` chmod 600 /swapfile `
-    * `chown root:root /var/swapfile`
+    * `chown root:root swapfile`
 
 * Sử dụng `mkswap` để thiết lập file trở thành file Swap:
     * `mkswap /swapfile`
@@ -56,17 +56,17 @@ Giá trị Swappiness từ 0 - 100, giá trị mặc định ở `30`, chỉ s�
 
 ## Thay đổi dung lượng Swapfile 
 * tắt swapfile:
-    * `swapoff /var/swapfile `
+    * `swapoff /swapfile `
 * Xóa file Swap :
-    * `rm -f /var/swapfile`
+    * `rm -f /swapfile`
 * Tạo file swap với dung lượng mong muốn:
-    * `# dd if=/dev/zero of=/var/swapfile bs=1M count=4096`
+    * `# dd if=/dev/zero of=/swapfile bs=1M count=4096`
 * Tạo phân vùng swap mới:
-    * ` mkswap /var/swapfile`
+    * ` mkswap /swapfile`
 * Kích hoạt Swap :
-    * `swapon /var/swapfile`
+    * `swapon /swapfile`
 * Bảo mật file swap:
-    * `chown root:root /var/swapfile`
-    * `chmod 0600 /var/swapfile`
+    * `chown root:root /swapfile`
+    * `chmod 0600 /swapfile`
 * Kiểm tra lại swap :`Swapon -s`
 >***lưu ý** Khi thay đổi dung lượng, **swapiness** vẫn được giữ nguyên.*
