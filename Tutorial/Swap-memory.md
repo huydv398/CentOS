@@ -68,5 +68,5 @@ Giá trị Swappiness từ 0 - 100, giá trị mặc định ở `30`, chỉ s�
 * Bảo mật file swap:
     * `chown root:root /swapfile`
     * `chmod 0600 /swapfile`
-* Kiểm tra lại swap :`Swapon -s`
+* Kiểm tra lại swap :`swapon -s`
 >***lưu ý** Khi thay đổi dung lượng, **swapiness** vẫn được giữ nguyên.*
