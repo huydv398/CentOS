@@ -207,7 +207,7 @@ GRUB_CMDLINE_LINUX="crashkernel=auto rd.lvm.lv=centos/root rd.lvm.lv=centos/swap
 GRUB_DISABLE_RECOVERY="true"
 ```
 * **B3** Biên dịch lại file `grub` để ghi lại cấu hình mới: <br> `[root@huydv ~]# grub2-mkconfig -o /boot/grub2/grub.cfg`
-## Chỉnh sửa file cấu hình mạng
+### Chỉnh sửa file cấu hình mạng
 Chỉnh sửa file cấu hình mạng ban đầu là `ens33` thành `eth0`
 * **B1**: đổi tên file cấu hình card mạng:
 ```
