@@ -58,6 +58,7 @@ ONBOOT=yes
 # ifdown [tên card mạng]
 ```
 3. Khởi động lại `network.service`
+
 `# service network restart`  
 
 or 
@@ -147,7 +148,7 @@ Sau đó restart lại network: `service restart network`
 <img src=https://i.imgur.com/y4eMSIq.png>
 
 * Chọn Card mạng cần chỉnh sửa:
-<img src=https://imgur.com/uOVjyeJ>
+<img src=https://imgur.com/uOVjyeJ.png>
 
 * Chọn IPV4 CONFIGURATION => Manual => <show>
 
@@ -196,7 +197,7 @@ Sau đó restart lại network: `service restart network`
 ## Thay đổi về dạng `eth*`
 ### Chỉnh sửa tham số kernel boot
 * **B1** : Kiểm tra thông tin interface hiện tại:<br>`#ifconfig `
-* **B2**: Chỉnh sửa file `/etc/default/grub` <br>`#vi /etc/sysconfig/grub` <br>Thêm câu lệnh `net.ifnames=0 biosdevname=0` vào dòng `GRUB_CMDLINE_LINUX`
+* **B2**: Chỉnh sửa file `/etc/default/grub` <br>`#vi /etc/default/grub` <br>Thêm câu lệnh `net.ifnames=0 biosdevname=0` vào dòng `GRUB_CMDLINE_LINUX`
 
 ```
 GRUB_TIMEOUT=5
@@ -208,7 +209,7 @@ GRUB_CMDLINE_LINUX="crashkernel=auto rd.lvm.lv=centos/root rd.lvm.lv=centos/swap
 GRUB_DISABLE_RECOVERY="true"
 ```
 * **B3** Biên dịch lại file `grub` để ghi lại cấu hình mới: <br> `[root@huydv ~]# grub2-mkconfig -o /boot/grub2/grub.cfg`
-## chỉnh sửa file cấu hình mạng
+## Chỉnh sửa file cấu hình mạng
 Chỉnh sửa file cấu hình mạng ban đầu là `ens33` thành `eth0`
 * **B1**: đổi tên file cấu hình card mạng:
 ```
