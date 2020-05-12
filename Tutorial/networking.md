@@ -152,11 +152,9 @@ Sau đó restart lại network: `service restart network`
 
 * Chọn IPV4 CONFIGURATION => Manual => <show>
 
-<img src=https://imgur.com/uOVjyeJ>
+<img src=https://imgur.com/cw4pwsj.png>
 
 * Đặt các thông số rồi **OK** :
-<img src=https://imgur.com/cw4pwsj>
-<img src=https://imgur.com/undefined>
 
 4. Cấu hình bằng `nmcli`
 * Đây là công cụ giúp điều khiển trình quản lý mạng trong Linux bằng dòng lệnh.
