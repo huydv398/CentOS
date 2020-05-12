@@ -85,6 +85,7 @@ tmpfs            98M     0   98M   0% /run/user/0
 ` echo /dev/sr0 /mnt/cd [TYPE] auto 0 0 >> /etc/fstab`
 >## Chú ý:
 cấu trúc câu lệnh thêm vào tệp phải đúng nếu không có thể gây ra lỗi boot
+
 * Mở thư mục kiểm tra:
 ```
 [root@localhost ~]# ls /mnt/cd
