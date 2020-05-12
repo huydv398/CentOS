@@ -82,8 +82,10 @@ tmpfs            98M     0   98M   0% /run/user/0
 ```
 * Nếu là tạm thời thì đã có thể sử dụng nhưng nếu cần dùng vĩnh viễn thì cần thêm `/dev/sr0 /mnt/cd auto 0 0` vào file `/etc/fstab` :
 
-` echo /dev/sr0 /mnt/cd auto [type] 0 0 >> /etc/fstab`
-* mở thư mục kiểm tra:
+` echo /dev/sr0 /mnt/cd [TYPE] auto 0 0 >> /etc/fstab`
+>## Chú ý:
+cấu trúc câu lệnh thêm vào tệp phải đúng nếu không có thể gây ra lỗi boot
+* Mở thư mục kiểm tra:
 ```
 [root@localhost ~]# ls /mnt/cd
 autorun.inf  boot  bootmgr  bootmgr.efi  efi  setup.exe  sources  support
