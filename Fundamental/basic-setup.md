@@ -4,11 +4,10 @@
 ## Đặt ip tĩnh cho CentOS7
 Yêu cầu 2 Máy được cài hệ điều hành linux.
 ### 1. Mô hình dựng LAB
-![](https://drive.google.com/open?id=1MnRFENB9HDL4an2NH3cLE6uzFL07dgVQ)
-![Foo](https://drive.google.com/file/d/1MnRFENB9HDL4an2NH3cLE6uzFL07dgVQ/view)
-[](http://google.com.au/)
+![Imgur](https://i.imgur.com/8t1u22k.png)
 * Có dải IP cho các Interface như sau:<br>
-<img src=https://imgur.com/5C3nHwQ.png>
+<img src=https://imgur.com/5C3nHwQ.png><br>
+![Imgur](https://i.imgur.com/wfRWm0y.png)
 
 ### Các bước cài đặt
 * Server `hsv1`:
