@@ -50,12 +50,13 @@ ONBOOT=yes
 # ifconfig         (Ethernet + Loopback)
 # iwconfig         (Wifi)
 # ifconfig -a      (Đầy đủ thông tin)
-# ip a s
+# ip a s (ip address show)
 ```
 2. Bật / tắt card mạng
 ```
 # ifup [tên card mạng]
 # ifdown [tên card mạng]
+# ip link set dev [DEVICE] [up|down]
 ```
 3. Khởi động lại `network.service`
 
@@ -69,7 +70,7 @@ or
 
 `# /etc/init.d/network restart   `
 4. Xem thông tin gateway
-* Có 2 cách để xem thông tin là : `route -n` và `ip route`
+* Có 2 cách để xem thông tin là : `route -n` và `ip route`(`ip r`)
 ```
 [root@huydv ~]# route
 Kernel IP routing table
@@ -161,7 +162,7 @@ Sau đó restart lại network: `service restart network`
 * Xem các trạng thái kết nối cơ bản:<br>`# nmcli [option] [command] [argument]`
 
     * `option`:
-        * `-a`: Hiển thị thông tin về phần cứn card mạng gốm MAC, MTU, IP, ...
+        * `-a`: Hiển thị thông tin về phần cứng card mạng gốm MAC, MTU, IP, ...
         * `-v`: hiển thị version của `nmcli`
     * `Command` + `Arguments`:
         * `general`: Sử dụng lệnh để hiển thị trạng thái và quyền của trình quản lý mạng
@@ -191,6 +192,13 @@ Sau đó restart lại network: `service restart network`
                 * `--auto`
                 * `--rescan `:
             * `Wifi connect`:kết nối tới mạng wifi đã biết
+## Gán & Gỡ IP cho một interface:
+* Câu lệnh gắn IP cho một interface:<br>`# ip addr add [IP/sm] dev [tên_card_mạng]`
+* Câu lệnh gỡ IP cho một card mạng:<br> `# ip addr del [IP/sm] dev [tên_card_mạng]`
+### Thêm 1 định tuyến
+* command: ` #route add -net [Địa chị mạng] netmask [Địa chỉ subnet mask] dev [tên interface]`
+### Xóa 1 định tuyến
+* command :`# route del -net [địa chỉ mạng] netmask [địa chỉ sm] dev [IFace] `
 
 ## Thay đổi về dạng `eth*`
 ### Chỉnh sửa tham số kernel boot
