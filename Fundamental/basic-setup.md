@@ -5,7 +5,8 @@
 Yêu cầu 2 Máy được cài hệ điều hành linux.
 ### 1. Mô hình dựng LAB
 ![](https://drive.google.com/open?id=1MnRFENB9HDL4an2NH3cLE6uzFL07dgVQ)
-
+![Foo](https://drive.google.com/file/d/1MnRFENB9HDL4an2NH3cLE6uzFL07dgVQ/view)
+[](http://google.com.au/)
 * Có dải IP cho các Interface như sau:<br>
 <img src=https://imgur.com/5C3nHwQ.png>
 
