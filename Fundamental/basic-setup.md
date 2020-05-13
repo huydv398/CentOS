@@ -26,3 +26,6 @@ Yêu cầu 2 Máy được cài hệ điều hành linux.
     * Đặt IP cho Interface:<br>![](https://imgur.com/7YsJduI)
     * `# nmcli conn m ipv4.method manual`: thêm câu lệnh này để khi khởi động sẽ giữ lại địa chỉ IP. Nếu không server sẽ dhcp địa chỉ như ban đầu.
     * reset lại network :`# service network restart`
+
+## Kết luận
+Trên là phần đặt ip tĩnh cho server CentOS-7. Cám ơn các b đã xem.
