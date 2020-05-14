@@ -33,12 +33,6 @@ PROXY_METHOD=none
 BROWSER_ONLY=no
 BOOTPROTO=dhcp
 DEFROUTE=yes
-IPV4_FAILURE_FATAL=no
-IPV6INIT=yes
-IPV6_AUTOCONF=yes
-IPV6_DEFROUTE=yes
-IPV6_FAILURE_FATAL=no
-IPV6_ADDR_GEN_MODE=stable-privacy
 NAME=ens33
 UUID=7b3f832a-f4a4-47c3-b1de-2088c7c2eafb
 DEVICE=ens33
@@ -68,7 +62,8 @@ or
 
 or
 
-`# /etc/init.d/network restart   `
+`# /etc/init.d/network restart`
+
 4. Xem thông tin gateway
 * Có 2 cách để xem thông tin là : `route -n` và `ip route`(`ip r`)
 ```
@@ -83,9 +78,6 @@ default via 192.168.141.2 dev ens33 proto dhcp metric 100
 ```
 ## Cấu hình IP
 1. Cấu hình bằng lệnh (tạm thời)
-
-## Routing table
-Câu lệnh `route` sử dụng để xem và thay đổi địa chỉ IP  của bảng định tuyến. Bạn muốn thay đổi bảng định tuyến IP để thêm, xóa hoặc sửa đổi các định tuyến tĩnh thành các máy chủ hoặc mạng cụ thể.
 
 `# ifconfig [tên_card_mạng] [IP] netmask [subnet_mask] up`
 > **Chú ý**:IP sẽ mất mỗi khi tắt mở card mạng hay restart `network.service `. Đây còn là cách đặt IP tạm thời, thường dùng để test.
@@ -195,6 +187,9 @@ Sau đó restart lại network: `service restart network`
 ## Gán & Gỡ IP cho một interface:
 * Câu lệnh gắn IP cho một interface:<br>`# ip addr add [IP/sm] dev [tên_card_mạng]`
 * Câu lệnh gỡ IP cho một card mạng:<br> `# ip addr del [IP/sm] dev [tên_card_mạng]`
+## Routing table
+Câu lệnh `route` sử dụng để xem và thay đổi địa chỉ IP  của bảng định tuyến. Bạn muốn thay đổi bảng định tuyến IP để thêm, xóa hoặc sửa đổi các định tuyến tĩnh thành các máy chủ hoặc mạng cụ thể.
+
 ### Thêm 1 định tuyến
 * command: ` #route add -net [Địa chị mạng] netmask [Địa chỉ subnet mask] dev [tên interface]`
 ### Xóa 1 định tuyến
