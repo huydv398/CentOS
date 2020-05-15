@@ -30,7 +30,7 @@ NFS cung cấp một số tính năng hữu ích:
 |Client: cli1|ens37|192.168.20.2/24|192.168.20.254|
 ### Cài đặt Server của NFS
 Chúng tôi cần cài đặt các gói NFS trên máy Server NFS cũng như trên máy Client.<br>
-`# yum install nfs-utils nfs-utils-lib`
+`# yum install nfs-utils nfs-utils-lib` <br>
 Bắt đầu các dịch vụ trên cả hai máy.<br>`service nfs start`
 ### Thiết lập NFS_Server 
 Tạo ra 1 thư mục chứa tài nguyên chia sẻ:<br>`# mkdir /shared`<br>
