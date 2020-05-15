@@ -29,14 +29,11 @@ NFS cung cấp một số tính năng hữu ích:
 |Server: hsv1|ens37|192.168.20.1/24|192.168.20.254|
 |Client: cli1|ens37|192.168.20.2/24|192.168.20.254|
 ### Cài đặt Server của NFS
-Chúng tôi cần cài đặt các gói NFS trên máy Server NFS cũng như trên máy Client.
-```
-[root@hsv1 ~]# yum install nfs-utils nfs-utils-lib
-[root@cli1 ~]# yum install nfs-utils nfs-utils-lib
-```
+Chúng tôi cần cài đặt các gói NFS trên máy Server NFS cũng như trên máy Client.<br>
+`# yum install nfs-utils nfs-utils-lib`
 Bắt đầu các dịch vụ trên cả hai máy.<br>`service nfs start`
 ### Thiết lập NFS_Server 
-Tạo ra 1 thư mục chứa tài nguyên chia sẻ:<br>`# mkdir /var/shared/`<br>
+Tạo ra 1 thư mục chứa tài nguyên chia sẻ:<br>`# mkdir /shared`<br>
 Cấu hình trong thư mục chia sẻ `/etc/exports`. Thêm dòng lệnh<br> `/share 192.168.20.0/24(no_root_squash,no_all_squash,rw,sync)` <br>Trong đó:
 * `/share`: là đường dẫn thư mục được chia sẻ
 * `192.168.20.0/24`: là dải IP hoặc IP của Client
@@ -53,7 +50,7 @@ Khởi động dịch vụ `nfs` và `rpcbind`:
 # systemctl enable rpcbind
 # systemctl enable nfs-server
 ```
-Để kiểm tra trạng thái của `nfs` và `rpcbind`:
+Để kiểm tra trạng thái của `nfs` và `rpcbind`:<br>
 `systemctl status rpcbind` <br> `systemctl status nfs-server` 
 
 Mở port cho phép truy cập :
@@ -91,7 +88,7 @@ huydv398@gmail.com
 ```
 ## Cấu hình Client tự động thư mục được chia sẻ
 Các bước trên đã hoàn thành việc share giữa Server và Client, tuy nhiên sau khi hệ thống tắt thư mục shared được mount ở phía Client sẽ bị mất, để tự động mount mỗi khi khởi động ta cần thêm vào file cấu hình `/etc/fstab `như sau:
-`echo 192.168.20.1:/share /demo nfs defaults 0 0>> /etc/fstab`
+`echo 192.168.20.1:/share /demo nfs defaults 0 0 >> /etc/fstab`
 ## Kết luận
 * Trên cách bạn có thể thiết lập máy chủ NFS , tạo thư mục dùng chung và xuất nó sang máy khách từ xa;
 * Cách cài đặt máy khách NFS và cách liên kết nó với máy chủ NFS của bạn;
