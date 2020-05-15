@@ -10,6 +10,7 @@ NFS cung cấp một số tính năng hữu ích:
 - NFSv2(3/1989): Cho phép đọc 2GB đầu tiên của tệp tin(Do giới hạn 32Bit)
 - NFSv3(1995):Xử lý tệp tin lớn hơn 2GB.
 - NFSv4(2000)
+
 ## Lợi ích của NFS 
 * NFS cho phép truy cập local từ các tệp từ xa.
 * Sử dụng kiến trúc Server/Client tiêu chuẩn để chia sẻ tệp.
@@ -21,6 +22,7 @@ NFS cung cấp một số tính năng hữu ích:
 * **/etc/export**: đây là tệp cấu hình chính của **NFS**, tất cả các tệp và thư mục đã Export được xác định trong tệp này ở cuối **máy chủ NFS**.
 * **/etc/fstab**: để gắn thư mục NFS trên hệ thống của bạn trên các lần **reboot**, chúng ta cần tạo một mục trong **/etc/fstab**.
 * **/etc/config/nfs**: Tệp cấu hình của **NFS** để kiểm soát cổng **RPC** và các dịch vụ đang nghe khác.
+
 ## Thiết lập va cấu hình NFS Muonts trên Linux Server 
 Để thiết lập các muont NFS, chúng ta sẽ cần ít nhất hai máy Linux/Unix.
 Ở đây, tôi sẽ sử dụng 2 máy chủ CentOS,1 máy sử dụng làm server và một máy sử dụng là client.
@@ -93,3 +95,7 @@ Các bước trên đã hoàn thành việc share giữa Server và Client, tuy 
 * Trên cách bạn có thể thiết lập máy chủ NFS , tạo thư mục dùng chung và xuất nó sang máy khách từ xa;
 * Cách cài đặt máy khách NFS và cách liên kết nó với máy chủ NFS của bạn;
 * Cám ơn các bạn đã xem
+
+Các link tài liệu tham khảo:
+* https://devconnected.com/network-file-system-nfs-administration-on-linux/
+* https://www.tecmint.com/how-to-setup-nfs-server-in-linux/
