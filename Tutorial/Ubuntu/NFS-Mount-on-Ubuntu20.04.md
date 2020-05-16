@@ -1,6 +1,14 @@
 # Cách cài đặt Mount NFS trên Ubuntu 20.04
- 1. [Giới thiệu Network Lile System](#intro)
- 2. [Tải xuống và cài đặt các thành phần](#down) 
+[Giới thiệu Network Lile System](#intro)
+1. [Tải xuống và cài đặt các thành phần](#down) 
+2. [Tạo thư mục trên máy chủ](#cre)
+3. [Cài đặt cấu hình Export NFS trên máy chủ lưu trữ](#conf)
+4. [Điều chỉnh tường lửa trên máy chủ](#ufw)
+5. [Tạo Mount và thư mục gắn kết trên máy Client](#5)
+6. [Kiểm tra truy cập NFS](#6)
+7. [Gắn thư mục Mount khi khởi động](#7)
+8. [Ngắt kết nối chia sẻ Mount (Umount)](#8)
+[Kết luận](#end)
     
 ## Giới thiệu 
  <a name="intro"></a>
@@ -21,6 +29,7 @@ Bây giờ cả hai máy đều có các gói cần thiết, Tôi có thể bắ
 
 <a name="b2="></a>
 ## 2) Tạo thư mục chia sẻ trên máy chủ
+<a name="cre"></a>
 Tôi sẽ chia sẻ hai thư mục riêng biệt, với các cài đặt cấu hình khác nhau, để minh họa hai cách chính mà các Mount NFS có thể được cấu hình lien quan đến truy cập của người dùng.
 
 Người dùng có thể làm bất cứ điều gì trên hệ thống của họ. Tuy nhiên, các thư mục gắn trên NFS không phải là một phần của hệ thống mà chúng được gắn kết,do đó, theo mặc định máy chủ NFS từ chối thực hiện các hoạt động yêu cầu đặc quyền người dùng. Hạn chế mặc định này có nghĩa là các người dùng trên máy khách không thể ghi các tệp dưới dạng root, gán lại quyền sở hữu  hoặc thực hiện bất kỳ tác vụ người dùng nào khác trên NFS.
@@ -42,6 +51,7 @@ Trong ví dụ này, mục tiêu là làm cho các thư mục `home` của ngư�
 Để làm điều này, ta sẽ Export thư mục `/home`. Vì nó đã tồn tại, ta không cần phải tạo ra nó. Ta cũng sẽ không thay đổi quyền. Nếu ta làm như vậy, nó có thể dẫn đến một loại các vấn đề cho bất kỳ ai có thư mục /home trên máy **Server**.
 
 ## 3)Cài đặt cấu hình Export NFS trên máy chủ lưu trữ(**SERVER**) 
+<a name="conf"></a>
 Tiếp theo sẽ đi sâu vào tệp cấu hình NFS để thiết lập việc chia sẻ các tài nguyên này.
 
 Trên máy **SERVER**, Mở tệp `/etc/export ` trong trình soạn thảo văn bản của bạn với quyền `root`:<br>`huydv@hsv:~$ vi /etc/exports`
@@ -80,6 +90,7 @@ Khi bạn hoàn thành việc thay đổi, hãy lưu và đóng tệp. Sau đó,
 Tuy nhiên, trước khi bạn thực sự có thể sử dụng các chia sẻ mới, bạn sẽ cần chắc chăn lưu lượng truy cập vào các shared được cho phép theo tuy tắc tường lửa.
 
 ## 4) Điều chỉnh tường lửa trên máy chủ
+<a name="ufw"></a>
 Trước tiên, hãy kiểm tra trạng thái tường lửa để xem nó có được bật không và nếu có, để xem những gì hiện được phép:<br>`sudo ufw status`
 ![Imgur](https://i.imgur.com/Fov9dxh.png)
 
@@ -96,6 +107,7 @@ Bạn sẽ thấy lưu lượng được phép từ cổng `2049`:
 Điều này xác nhận rằng `ufw` sẽ chỉ cho phép lưu lượng NFS trên cổng `2049` từ máy Client đến.
 
 ## 5) Tạo Mount và thư mục gắn kết trên máy Client
+<a name="5">
 Bây giờ máy chủ **Server** được định cấu hình và phục vụ cổ phần của nó, tôi sẽ chuẩn bị máy **Client**.
 
 Để cung cấp các chia sẻ từ xa trên máy **Client**, tôi cần gắn các thư mục trên máy **Server** mà tôi muốn chia sẻ vào các thư mục trống trên máy **Client**.
@@ -125,6 +137,7 @@ Ví dụ: `du -sh /nfs/home`
 ![Imgur](https://i.imgur.com/rW2Ek4V.png)
 
 ## 6) Kiểm tra truy cập NFS
+<a name="6"></a>
 Tiếp theo, hãy kiểm tra quyền truy cập vào các chia sẻ bằng cách viết một cái gì đó cho mỗi người trong số họ
 ### Ví dụ 1: Chia sẻ mục General 
 Đầu tiên viết một tệp thử nghiệm để chia sẻ `/var/nfs/general` :
@@ -148,6 +161,7 @@ Sau đó nhìn vào quyền sở hữu của tập tin:
 Tôi đã tạo ra `home.txt` với tư cách `root`, Chính xác như cách tôi dùng để tạo ra `NUM.txt` trong thư mục `/nfs/general`. Tuy nhiên trong trường hợp nayfm nó thuộc sở hữu của `root` vì tôi đã vượt qua hành vi mặc định khi tôi chỉ định tùy chọn `no_root_squash` trên mount này. Điều này cho phép người dùng `root` của tôi trên máy **Client** hoạt động như Root và việc giúp quản trị tài khoản người dùng thuận tiện hơn nhiều. Đồng thời,tôi không phải cấp cho những những người này quyền truy cập root trên máy **Server**
 
 ## Bước 7) Gắn thư mục Mount khi khởi động
+<a name="7"></a>
 Tôi có thể tự động `mount` các chia sẻ NFS khi khởi động bằng cách thêm chúng vào tệp `/etc/fstab` trên máy **Client**.
 
 Mở tệp này với trình soạn thảo văn bản:
@@ -163,6 +177,7 @@ host_ip:/home               /nfs/home      nfs auto,nofail,noatime,nolock,intr,t
 > **Lưu ý**: Bạn có thể tìm thêm thông tin về các tùy chọn tôi đang chỉ định ở trên trong trang `man NFS`. Bạn có thể truy cập bằng cách chạy lệnh sau:<br> `man nfs`
 
 ## Bước 8) Ngắt kết nối chia sẻ Mount (Umount)
+<a name="8"></a>
 Nếu bện không còn muốn thư mục chia sẻ từ xa được gắn trên hệ thống của mình, bạn có thể ngắt kết nối nó bằng cách Umount ra khỏi cấu trúc thư mục của shared và ngắt kết nối như thế này, Tại máy client:
 ```
 sudo umount /nfs/home
@@ -180,6 +195,7 @@ Umount:
 Nếu bạn cũng muốn ngăn không cho chúng được nhắc lại trong lần khởi động tiếp theo, hãy chỉnh sửa file `/etc/fstab` và xóa dòng hoặc để ghi chú nó bằng cách đặt một ký tự `#` ở đầu dòng. Bạn cũng có thể ngăn việc tự động xóa tùy chọn auto, điều này sẽ cho phép bạn mount và umount thủ công.
 
 ## Kết luận
+<a name="end"></a>
 Trong hướng dẫn này, Tôi đã tạo ra một máy chủ NFS và minh họa một số trường hợp cụ thể NFS chính bằng cách tạo ra hai mount NFS khác nhau, tôi đã chia sẻ với máy Client NFS.
 
 Nếu bạn đang tìm cách triển khai trong sản xuất, điều quan trọng cần lưu ý là bản thân giao thức không được mã hóa. Trong trường hợp bạn chia sẻ qua network private, điều này có thể không thành vấn đề. Trong các trường hợp khác, VPN hoặc một số loại được mã hóa khác sẽ là cần thiết để bảo vệ dữ liệu của bạn.
