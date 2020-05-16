@@ -8,7 +8,7 @@
 6. [Kiểm tra truy cập NFS](#6)
 7. [Gắn thư mục Mount khi khởi động](#7)
 8. [Ngắt kết nối chia sẻ Mount (Umount)](#8)
-[Kết luận](#end)
+9. [Kết luận](#end)
     
 ## Giới thiệu 
  <a name="intro"></a>
