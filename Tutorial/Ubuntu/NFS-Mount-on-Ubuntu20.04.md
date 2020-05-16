@@ -1,6 +1,6 @@
 # Cách cài đặt Mount NFS trên Ubuntu 20.04
-<h1> 1. [Giới thiệu Network Lile System](#intro)
-<h1> 2. [Tải xuống và cài đặt các thành phần](#down) 
+ 1. [Giới thiệu Network Lile System](#intro)
+ 2. [Tải xuống và cài đặt các thành phần](#down) 
     
 ## Giới thiệu 
  <a name="intro"></a>
