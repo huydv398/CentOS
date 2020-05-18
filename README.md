@@ -8,6 +8,12 @@
 7. [Basic-network](Fundamental/basic-network.md)
 8. [Netwoking](Tutorial/Networking.md)
 9. [Network-advanced](Tutorial/Network-advanced.md)
+
+## CentOS-7
+1. [Mount & fstab](Tutorial/CentOS-7/Mount-Fstab.md)
+## Ubuntu 20.04
+1. [Mount](Tutorial/Ubuntu/NFS-Mount-on-Ubuntu20.04.md)
+
 # Linux fundameltals
 1. [Filter](Fundamental/filters-command.md)
 2. [Basic Unix Tool](Fundamental/Basic-tool.md)
