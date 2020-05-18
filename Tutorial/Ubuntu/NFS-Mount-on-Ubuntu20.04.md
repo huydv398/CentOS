@@ -1,7 +1,7 @@
 # Cách cài đặt Mount NFS trên Ubuntu 20.04
 [Giới thiệu Network Lile System](#intro)
 1. [Tải xuống và cài đặt các thành phần](#down) 
-2. [Tạo thư mục trên máy chủ](#cre)
+2. [Tạo thư mục trên máy chủ](#2)
 3. [Cài đặt cấu hình Export NFS trên máy chủ lưu trữ](#conf)
 4. [Điều chỉnh tường lửa trên máy chủ](#ufw)
 5. [Tạo Mount và thư mục gắn kết trên máy Client](#5)
@@ -16,7 +16,6 @@ NFS là giao thức hệ thống tệp phân tán cho phép bạn gắn các th�
 
 Trong hướng dẫn này, tôi sẽ giới thiệu các cài đặt các phần mềm cần thiết cho chức năng NFS trên Ubuntu 20.04, Dịnh cấu hình hai giá trị NFS trên máy Server và máy Client, Muont và Umuont các thiết bị từ xa.
 
-<a name="b1"></a>
 ## 1) Tải xuống và cài đặt các thành phần
 <a name="down"></a>
 Ta sẽ cần hai máy chủ Ubuntu 20.04.
@@ -27,9 +26,9 @@ Cài đặt Gói `nfs-kernel-server`, cho phép bạn chia sẻ các thư mục 
 Trên server Client, Tôi cần phải cài đặt gói phần mềm được gọi là `nfs-common`, cung cấp chức năng NS mà không bao gồm bất kỳ thành phần máy chủ.Và Update lại gói:<br> `sudo apt update` <br> `sudo apt install nfs-common` <br> 
 Bây giờ cả hai máy đều có các gói cần thiết, Tôi có thể bắt đầu cấu hình chúng.
 
-<a name="b2="></a>
 ## 2) Tạo thư mục chia sẻ trên máy chủ
-<a name="cre"></a>
+<a name="2="></a>
+
 Tôi sẽ chia sẻ hai thư mục riêng biệt, với các cài đặt cấu hình khác nhau, để minh họa hai cách chính mà các Mount NFS có thể được cấu hình lien quan đến truy cập của người dùng.
 
 Người dùng có thể làm bất cứ điều gì trên hệ thống của họ. Tuy nhiên, các thư mục gắn trên NFS không phải là một phần của hệ thống mà chúng được gắn kết,do đó, theo mặc định máy chủ NFS từ chối thực hiện các hoạt động yêu cầu đặc quyền người dùng. Hạn chế mặc định này có nghĩa là các người dùng trên máy khách không thể ghi các tệp dưới dạng root, gán lại quyền sở hữu  hoặc thực hiện bất kỳ tác vụ người dùng nào khác trên NFS.
