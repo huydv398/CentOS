@@ -106,7 +106,8 @@ Bạn sẽ thấy lưu lượng được phép từ cổng `2049`:
 Điều này xác nhận rằng `ufw` sẽ chỉ cho phép lưu lượng NFS trên cổng `2049` từ máy Client đến.
 
 ## 5) Tạo Mount và thư mục gắn kết trên máy Client
-<a name="5">
+<a name="5"></a>
+
 Bây giờ máy chủ **Server** được định cấu hình và phục vụ cổ phần của nó, tôi sẽ chuẩn bị máy **Client**.
 
 Để cung cấp các chia sẻ từ xa trên máy **Client**, tôi cần gắn các thư mục trên máy **Server** mà tôi muốn chia sẻ vào các thư mục trống trên máy **Client**.
