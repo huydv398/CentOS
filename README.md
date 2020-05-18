@@ -13,6 +13,7 @@
 1. [Mount & fstab](Tutorial/CentOS-7/Mount-Fstab.md)
 ## Ubuntu 20.04
 1. [Mount](Tutorial/Ubuntu/NFS-Mount-on-Ubuntu20.04.md)
+2. [IP Static](Tutorial/Ubuntu/IP-Static-Ubuntu20.04.md)
 
 # Linux fundameltals
 1. [Filter](Fundamental/filters-command.md)
