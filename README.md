@@ -1,7 +1,7 @@
 # Linux Tutorial
 1. [Swap Memory](Tutorial/Swap-memory.md)
 1. [User Envinronment](Tutorial/User-Envinronment.md)
-2. [Sử dụng Vim với văn bản](Tutorial/Vim.md)
+2. [Sử dụng Vim với văn bản]()
 3. [Process](Tutorial/processes.md)
 4. [Volume-Manager-Basic LVM](Tutorial/Volume-Manager-Basic.md)
 6. [Advanced-Volume-Manager](Tutorial/Advanced-Volume-Manager.md)
@@ -13,8 +13,8 @@
 ## CentOS-7
 1. [Mount & fstab](Tutorial/CentOS-7/Mount-Fstab.md)
 ## Ubuntu 20.04
-1. [Mount](Tutorial/Ubuntu/NFS-Mount-on-Ubuntu20.04.md)
-2. [IP Static](Tutorial/Ubuntu/IP-Static-Ubuntu20.04.md)
+1. [IP Static](Tutorial/Ubuntu/IP-Static-Ubuntu20.04.md)
+2. [Mount](Tutorial/Ubuntu/NFS-Mount-on-Ubuntu20.04.md)
 
 # Linux fundameltals
 1. [Filter](Fundamental/filters-command.md)
