@@ -12,7 +12,7 @@
 
 ## CentOS-7
 1. [Mount & fstab](Tutorial/CentOS-7/Mount-Fstab.md)
-2. [SSH keypair](Tutorial/Ubuntu/SSH-Keypairs.md)
+2. [SSH keypair](Tutorial/CentOS-7/SSH-Keypairs.md)
 3. [test ssh](Tutorial/CentOS-7/testsecuressh.md)
 ## Ubuntu 20.04
 1. [IP Static](Tutorial/Ubuntu/IP-Static-Ubuntu20.04.md)
