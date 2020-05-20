@@ -42,3 +42,4 @@ Trước tiên hãy cài đặt công cụ quản trị, định cấu hình đ�
 # systemctl start target
 ```
 
+Để bắt đầu sử dụng `targetcli`, hãy chạy nó và để có được bố cục của giao diện cây,S
