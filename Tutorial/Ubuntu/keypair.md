@@ -3,10 +3,8 @@
 2. [Copy Public key vào SSH Server ](#2)
 3. [Đăng nhập xác thực](#3)
 4. [Tắt xác thực trên máy Server](#4)
-
-5. [Thực hiện SSh genkey bằng MobaXterm](#gen)
 ## Bước 1: Tạo cặp Key RSA trên **SSH** Client:
-<a name="1"></a>]
+<a name="1"></a>
 
 * Bước đầu tạo ra cặp **SSH** Key Pair Trên **SSH** Client hay chính máy tính thực hiện **SSH**:
 * Mặc định, lệnh `ssh-keygen` sẽ tạo ra 1 cặp **RSA** key pair *2048-bit*, gần như đáp ứng đủ mọi trường hợp. Nếu muốn cặp key phức tạp hơn, có thể tạo key với độ dài (4096-bit) bằng option `-b 4096`.
@@ -16,15 +14,13 @@
 * Sau khi thực hiện, bạn sẽ nhìn thấy output sau:
 ![Imgur](https://i.imgur.com/cKaPCGS.png)
 * Gõ `Enter` để lưu cặp key vào thư mục con `.ssh/` nằm trong thư mục `home` của user hiện hành, hoặc tự chọn 1 con đường khác.
-* Nếu trên máy đã có 1 cặp key từ trước đó, bạn sẽ nhìn thấy output sau:<br>!
+* Nếu trên máy đã có 1 cặp key từ trước đó, bạn sẽ nhìn thấy output sau:<br>
     * `y`: để ghi đè
     * `n`: không ghi đè
 
 * Nếu chọn "`overwrie the key on disk `", bạn sẽ không thể xác thực các key đang sử dụng trước đây nữa.
 * Sau khi lựa chọn, sẽ thấy output tiếp theo :
 * Đây là tùy chọn thêm 1 chuỗi mật khẩu, được khuyến nghị để tăng tính bảo mật. nếu nhập chuỗi `passpharase` này , bạn sẽ phải gõ thêm chúng bất kỳ lúc nào sử dụng key( chỉ trừ khi sử dngj phần mềm để SSH đã lưu trữ passphase). Nếu không muốn sử dụng passphrase, sẽ thấy output sau :
-!
-
 ## Bước 2 - Copy Public key vào SSH server:
 <a name="2"></a>
 
