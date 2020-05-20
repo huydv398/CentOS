@@ -12,10 +12,12 @@
 
 ## CentOS-7
 1. [Mount & fstab](Tutorial/CentOS-7/Mount-Fstab.md)
+2. [SSH keypair](Tutorial/Ubuntu/SSH-Keypairs.md)
+3. [test ssh](Tutorial/CentOS-7/testsecuressh.md)
 ## Ubuntu 20.04
 1. [IP Static](Tutorial/Ubuntu/IP-Static-Ubuntu20.04.md)
 2. [Mount](Tutorial/Ubuntu/NFS-Mount-on-Ubuntu20.04.md)
-
+3. [SSH keypair](Tutorial/Ubuntu/keypair.md)
 # Linux fundameltals
 1. [Filter](Fundamental/filters-command.md)
 2. [Basic Unix Tool](Fundamental/Basic-tool.md)
