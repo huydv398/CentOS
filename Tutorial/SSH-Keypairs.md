@@ -80,14 +80,14 @@ Khi thực hiện SSH từ máy MobaX vào sẽ không được vì đã tắt x
     * Sẽ hiện thị bẳng sau <br> ![Imgur](https://i.imgur.com/XdcGdYJ.png)
     * Click **Load** => chọn file ***private key*** đã tải về từ máy **CLient**
     * Nhập **Password** `passphrase` <br> ![Imgur](https://i.imgur.com/X4fHZP1.png)
-    * Sau khi đã up `Private key` click **Save private key**
+    * Sau khi đã up `Private key` click **Save private key**<br>![Imgur](https://i.imgur.com/FBntrY1.png)
     * Chọn lưu lưu file **.PPK** trên máy Moba:<br> ![Imgur](https://i.imgur.com/rfro93m.png)
-    * Tiếp theo, Thực hiện SSH vào máy Server:<br>![Imgur](https://i.imgur.com/aRlTnM6.png)
-        * 1- New seeson => SSH
-        * 2- Nhập địa chỉ IP cần SSH
-        * 3- Advanced SSH Setting
-        * 4- Sử dụng Private key
-        * 5- Chọn link có đuôi .PPK đã tạo ở trên<br>![Imgur](https://i.imgur.com/Z1Fsp7E.png)
+    * Tiếp theo, Thực hiện **SSH** vào máy Server:<br>![Imgur](https://i.imgur.com/aRlTnM6.png)
+        * 1- **New seeson** => **SSH**
+        * 2- Nhập địa chỉ **IP** cần SSH
+        * 3- *Advanced SSH Setting*
+        * 4- Sử dụng **Private key**
+        * 5- Chọn link có đuôi `.ppk` đã tạo ở trên<br>![Imgur](https://i.imgur.com/Z1Fsp7E.png)
         * 6- Ok 
     * Nhập User và Passphrase để đăng nhập:<br>![Imgur](https://i.imgur.com/U0RlOr3.png)
     * Đăng nhập thành công:
