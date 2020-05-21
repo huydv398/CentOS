@@ -3,8 +3,8 @@
 2. [Copy Public key vào SSH Server ](#2)
 3. [Đăng nhập xác thực](#3)
 4. [Tắt xác thực trên máy Server](#4)
-
 5. [Thực hiện SSh genkey bằng MobaXterm](#gen)
+6. [Mô hình làm việc với người dùng](#test)
 ## Bước 1: Tạo cặp Key RSA trên **SSH** Client:
 <a name="1"></a>
 * Bước đâu tạo ra cặp **SSH** Key Pair Trên **SSH** Client hay chính máy tính thực hiện **SSH**:
@@ -91,3 +91,33 @@ Khi thực hiện SSH từ máy MobaX vào sẽ không được vì đã tắt x
         * 6- Ok 
     * Nhập User và Passphrase để đăng nhập:<br>![Imgur](https://i.imgur.com/U0RlOr3.png)
     * Đăng nhập thành công:
+
+## Trong trường hợp thực tế 
+<a name="test"></a>
+Mô hình:
+
+![Imgur](https://i.imgur.com/rZ1TUcO.png)
+Muốn chia nhỏ server cho người dùng sử dụng: 
+* Tại Server người dùng `root` tạo người dùng và mật khẩu cho user.
+    * Tạo người dùng bằng câu lệnh: `useradd [tên_user]`
+    * Tạo Password cho user vừa tạo:`passwd [tên_user]`
+* Tại máy Client: người dùng tạo KeyGen trên máy Client để có `public key` và `private key`:
+    * copy `public key` sử dụng `ssh-copy-id`:
+        * lệnh: `ssh user@ip_server` 
+
+Với mô hình trên tôi muốn cho Server Client 192.168.202.2/24 SSH được vào user `user1` trên máy Server ta làm tuần tự như sau:
+* Trên server tạo user1
+![Imgur](https://i.imgur.com/uJpYQuQ.png)
+* Copy key public :
+    * nhập user được cấp bên server,ip, pasword, passphrase 
+![Imgur](https://i.imgur.com/La5yGj4.png)
+* SSH kiểm tra lại
+
+![Imgur](https://i.imgur.com/jl6hdm9.png)
+
+Hiện tại con trỏ đang ở tại thư mục /home/user1 của máy server ip:192.168.20.3/24
+
+Kiểm tra tại máy server :
+![Imgur](https://i.imgur.com/PcOuvMk.png)
+
+
