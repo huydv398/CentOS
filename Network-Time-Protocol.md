@@ -1,5 +1,5 @@
 #  Giao thức thời gian mạng(NTP)
-NTP là giao thưc được sử dụng để đồng bộ hóa thời gian của đồng hồ máy tính trong mạng. Thuật ngữ NTP áp dụng cho cả giao thức và chương trình máy Server - Client chạy trên máy tính.
+* NTP là giao thưc được sử dụng để đồng bộ hóa thời gian của đồng hồ máy tính trong mạng. Thuật ngữ NTP áp dụng cho cả giao thức và chương trình máy Server - Client chạy trên máy tính.
 
 ## NTP hoạt động như thế nào?
 * CLient NTP bắt đầu trao đổi yêu cầu thời gian với máy Server NTP 
@@ -85,7 +85,7 @@ Thu 21 May 2020 10:25:12 AM UTC
 * `hwclock`
 hwclock --set --date "dd mmm yyyy HH:MM"
 
-# hwclock 
+#### hwclock 
 * Là tiện ích để truy cập đồng hồ phần cứng, Còn được gọi là đồng hồ thời gian thực(RTC). Đồng hồ phần cứng hoạt động độc lập với hệ điều hành bạn đang sử dụng và hoạt động ngay cả khi tắt máy
 * Đồng hồ phần cứng lưu trữ các giá trị của : Năm, Tháng, Ngày Giờ phút và giây. Không thể lưu trữ tiêu chuẩn thời gian 
 * Tiện ích lưu các thiết lập của nó trong file `/etc/adjtime`, nó được tạo ra với sự thay đổi đầu tiên khi thực hiện chỉnh sưa thời gian.
