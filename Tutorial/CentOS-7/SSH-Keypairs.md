@@ -7,6 +7,7 @@
 6. [Mô hình làm việc với người dùng](#test)
 ## Bước 1: Tạo cặp Key RSA trên **SSH** Client:
 <a name="1"></a>
+
 * Bước đâu tạo ra cặp **SSH** Key Pair Trên **SSH** Client hay chính máy tính thực hiện **SSH**:
 * Mặc định, lệnh `ssh-keygen` sẽ tạo ra 1 cặp **RSA** key pair *2048-bit*, gần như đáp ứng đủ mọi trường hợp. Nếu muốn cặp key phức tạp hơn, có thể tạo key với độ dài (4096-bit) bằng option `-b 4096`.
 
@@ -97,13 +98,14 @@ Khi thực hiện SSH từ máy MobaX vào sẽ không được vì đã tắt x
 Mô hình:
 
 ![Imgur](https://i.imgur.com/rZ1TUcO.png)
+
 Muốn chia nhỏ server cho người dùng sử dụng: 
 * Tại Server người dùng `root` tạo người dùng và mật khẩu cho user.
     * Tạo người dùng bằng câu lệnh: `useradd [tên_user]`
     * Tạo Password cho user vừa tạo:`passwd [tên_user]`
 * Tại máy Client: người dùng tạo KeyGen trên máy Client để có `public key` và `private key`:
     * copy `public key` sử dụng `ssh-copy-id`:
-        * lệnh: `ssh user@ip_server` 
+        * lệnh: `ssh-copy-id user@ip_server` 
 
 Với mô hình trên tôi muốn cho Server Client 192.168.202.2/24 SSH được vào user `user1` trên máy Server ta làm tuần tự như sau:
 * Trên server tạo user1
