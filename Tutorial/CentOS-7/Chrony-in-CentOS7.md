@@ -12,7 +12,10 @@ Chuẩn bị mô hình kết nối
 
 ## Chuẩn bị trước khi cài đặt
 Cấu hình Timezone:
-
+```
+timedatectl set-timezone Asia/Ho_Chi_Minh
+timedatectl
+```
 Cấu hình allow Firewalld.
 ```
 firewall-cmd --add-service=ntp --permanent 
