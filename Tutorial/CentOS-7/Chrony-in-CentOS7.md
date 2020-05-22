@@ -25,7 +25,6 @@ Cấu hình disable SElinux.
 ```
 sudo setenforce 0
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
-sed -i 's/SELINUX=permissive/SELINUX=disabled/g' /etc/sysconfig/selinux
 ```
 ## 3. Cài đặt cấu hình Chrony trên cả 2 server 
 Cài đặt Chrony:
@@ -112,15 +111,27 @@ Kiểm tra đồng bộ:
 ## Các câu lệnh kiểm tra bổ sung
 Kiểm tra verify kết nối
 
-`chronyc tracking`
+* `chronyc tracking`
 
 ![Imgur](https://i.imgur.com/TZLmKD2.png)
-`chronyc sources -v`
-`chronyc sourcestats`
+
+* `chronyc sources -v`
+
+![Imgur](https://i.imgur.com/5ZoaNWK.png)
+
+* `chronyc sourcestats`
+    * Tại máy Client:
+
+    ![Imgur](https://i.imgur.com/IEn9TSF.png)
+
+    * Tại máy client hiện địa chỉ IP của server khi Pool giờ:
+    ![Imgur](https://i.imgur.com/NHdPmmM.png)
 
 ## Stop Chrony và kiểm tra 
 `systemctl stop chronyd`
+
 `chronyc tracking`
+
 ![Imgur](https://i.imgur.com/YTNKX2O.png)
 
 ## Tổng kết
