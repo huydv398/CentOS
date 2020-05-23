@@ -3,7 +3,7 @@
 ## 1. Mô hình chuẩn bị
 Chuẩn bị mô hình kết nối
 
-![Imgur](https://i.imgur.com/aXSS0Rm.png)
+![Imgur](https://i.imgur.com/S595Tam.png)
 
 * Sử dụng 2 Server cho mô hình:
     * CentOS 7
@@ -60,7 +60,7 @@ Chrony cho phép chúng ta cấu hình Server thành một NTP Server. Việc n�
 
 Để lựa chọn Pool đồng bộ thời gian chúng ta có thể truy cập vào NTP Poll đề lựa chọn NTP Server. Ở đây chúng ta có thể truy cập vào NTP Pool để lụa chọn NTP Seerver. Ở đây chúng ta giữ nguyên đồng bộ từ `centos.pool.ntp.org`
 
-Tại Server 192.168.20.3 là Server sẽ làm NTP Server. Chúng ta sẽ cấu hình bổ sung cấu hình cho phép các máy Client 192.168.20.2 phái trong có thể đồng bộ hóa thời gian từ Server này.
+Tại Server `192.168.20.3` là Server sẽ làm NTP Server. Chúng ta sẽ cấu hình bổ sung cấu hình cho phép các máy Client `192.168.20.2` phái trong có thể đồng bộ hóa thời gian từ Server này.
 
 `# sed -i 's|#allow 192.168.141.0/16|allow 192.168.20.0/24|g' /etc/chrony.conf`
 
