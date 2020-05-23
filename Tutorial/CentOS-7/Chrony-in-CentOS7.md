@@ -84,13 +84,16 @@ Thực chất sau khi cài đặt và khởi động Chrony thì Server này đ�
 
 Bây giờ thay vì đồng bộ thời gian từ Internet chúng ta sẽ đồng bộ từ NTP Server chúng ta cấu hình phía trên 
 
-Tại server 192.168.20.3 Chỉnh sửa cấu hình chrony.
+Tại server 192.168.20.2 Chỉnh sửa cấu hình chrony.
 ```
-[root@server1 ~]# sed -i 's|server 0.centos.pool.ntp.org iburst|server 192.168.20.3 iburst|g' /etc/chrony.conf
-[root@server1 ~]# sed -i 's|server 1.centos.pool.ntp.org iburst|server 192.168.20.3 iburst|g' /etc/chrony.conf
-[root@server1 ~]# sed -i 's|server 2.centos.pool.ntp.org iburst|server 192.168.20.3 iburst|g' /etc/chrony.conf
-[root@server1 ~]# sed -i 's|server 3.centos.pool.ntp.org iburst|server 192.168.20.3 iburst|g' /etc/chrony.conf
-[root@server1 ~]#
+server 0.centos.pool.ntp.org iburst
+server 1.centos.pool.ntp.org iburst
+server 2.centos.pool.ntp.org iburst
+server 3.centos.pool.ntp.org iburst
+```
+Và thay đổi thành :
+```
+192.168.10.3
 ```
 Kiểm tra cấu hình
 `cat /etc/chrony.conf | egrep -v '^$|^#'`
