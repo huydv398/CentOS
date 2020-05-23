@@ -56,7 +56,7 @@ Các cấu hình bổ sung:
 * `log` Log file
 
 ## Cấu hình Chrony làm NTP Server 
-Chrony cho phép chúng ta cấu hình Server thành một NTP Server. Vieccj này phù hợp cho các mô hình mạng LAN có nhiều máy kết nối. Thay vì phải tốn thời gian đồng bộ từ Internet thì chúng ta có thể cấu hình 1 Server làm NTP server Local và các máy còn lại sẽ đồng bộ thời gian từ NTP Server này về.
+Chrony cho phép chúng ta cấu hình Server thành một NTP Server. Việc này phù hợp cho các mô hình mạng LAN có nhiều máy kết nối. Thay vì phải tốn thời gian đồng bộ từ Internet thì chúng ta có thể cấu hình 1 Server làm NTP server Local và các máy còn lại sẽ đồng bộ thời gian từ NTP Server này về.
 
 Để lựa chọn Pool đồng bộ thời gian chúng ta có thể truy cập vào NTP Poll đề lựa chọn NTP Server. Ở đây chúng ta có thể truy cập vào NTP Pool để lụa chọn NTP Seerver. Ở đây chúng ta giữ nguyên đồng bộ từ `centos.pool.ntp.org`
 
