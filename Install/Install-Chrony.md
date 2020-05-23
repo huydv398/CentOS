@@ -38,7 +38,7 @@
     * Disable SElinux.
 * Cài đặt Chrony trên cả 2 server 
     * Cấu hình Server làm NTP Server:
-        * Sửa cấu hình cho phép các máy Client đồng bộ hóa thời gian.(`#allow [ip/sm])
+        * Sửa cấu hình cho phép các máy Client đồng bộ hóa thời gian.(`#allow [ip/sm]`)
         * Nếu máy Server đồng bộ hóa từ giờ quốc tế.Thêm cấu hình pool.
         * restart và kiểm tra.
     * Cấu hình Server làm NTP Client:
