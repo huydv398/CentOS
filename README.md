@@ -1,7 +1,7 @@
 # Linux Tutorial
 1. [Swap Memory](Tutorial/Swap-memory.md)
 1. [User Envinronment](Tutorial/User-Envinronment.md)
-2. [Sử dụng Vim với văn bản]()
+2.
 3. [Process](Tutorial/processes.md)
 4. [Volume-Manager-Basic LVM](Tutorial/Volume-Manager-Basic.md)
 6. [Advanced-Volume-Manager](Tutorial/Advanced-Volume-Manager.md)
@@ -35,3 +35,4 @@
 
 ## AAA
 1. [NTP](Network-Time-Protocol.md)
+2. [Configure NTP Server & Client](Fundamental\NTP-configure.md)
