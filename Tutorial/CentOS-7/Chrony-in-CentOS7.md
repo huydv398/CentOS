@@ -80,7 +80,7 @@ Kiểm tra đồng bộ của `date` và `hwclock` đảm bảo đồng bộ
 ![Imgur](https://i.imgur.com/IiqDqCn.png)
 
 ## Cấu hình Chrony Client
-Thực chất sau khi cài đặt và khởi động Chrony thù Server này đã tự động đồng bộ thời gian về từ một trong những NTP SServer thuộc pool `centos.pool.ntp.org`
+Thực chất sau khi cài đặt và khởi động Chrony thì Server này đã tự động đồng bộ thời gian về từ một trong những NTP SServer thuộc pool `centos.pool.ntp.org`
 
 Bây giờ thay vì đồng bộ thời gian từ Internet chúng ta sẽ đồng bộ từ NTP Server chúng ta cấu hình phía trên 
 
@@ -134,6 +134,73 @@ Kiểm tra verify kết nối
 `chronyc tracking`
 
 ![Imgur](https://i.imgur.com/YTNKX2O.png)
+
+## Mô hình đồng bộ hóa thời gian từ Server quốc tế.
+![Imgur](https://i.imgur.com/HPLuq0F.png)
+![Imgur](https://i.imgur.com/jesMj92.png)
+
+* Cần chuẩn bị mô hình:
+    * Máy có hệ điều hành CensOS-7.
+    * Được truy cập dưới quyền root
+    * Có kết nối Internet
+* Chuẩn bị máy trước khi cài đặt:
+    * Cấu hình Timezone:
+    ```
+    timedatectl set-timezone Asia/Ho_Chi_Minh
+    timedatectl
+    ```
+    * Cấu hình allow Firewalld.
+    ```
+    firewall-cmd --add-service=ntp --permanent 
+    firewall-cmd --reload 
+    ```
+    * Cấu hình disable SElinux.
+    ```
+    sudo setenforce 0
+    sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+    ```
+* Cài đặt dịch vụ:
+    * Cài đặt Chrony:
+    Cài đặt Chrony:
+    
+    `yum install -y chrony`
+
+    * Sau khi cài đặt chúng ta tiến hành start Chrony và cho phép khởi động cùng hệ thống:
+    
+    `systemctl enable --now chronyd`
+
+* Kiểm tra dịch vụ đang hoạt động .
+
+`systemctl status chronyd`
+![Imgur](https://i.imgur.com/d5Z9Jrn.png)
+
+* Chỉnh sửa cấu hình file `/etc/chrony.conf`:
+Tìm các dòng như sau :
+```
+server 0.centos.pool.ntp.org iburst
+server 1.centos.pool.ntp.org iburst
+server 2.centos.pool.ntp.org iburst
+server 3.centos.pool.ntp.org iburst
+```
+Và thay đổi thành :
+```
+server 1.vn.pool.ntp.org
+server 2.asia.pool.ntp.org
+server 0.asia.pool.ntp.org
+```
+Câu lệnh trên có ý nghĩa tự động đồng bộ thời gian về từ một trong những NTP Server thuộc pool :`server 1.vn.pool.ntp.org, server 2.asia.pool.ntp.org, server 0.asia.pool.ntp.org`
+
+* Khởi động dịch vụ và kiểm tra:
+
+`systemctl restart chronyd`<br>
+
+
+`timedatectl`<br>
+`chronyc tracking`
+![Imgur](https://i.imgur.com/o0XQwxE.png)
+
+`chronyc sources -v`<br>
+![Imgur](https://i.imgur.com/lkc5inX.png)
 
 ## Tổng kết
 
