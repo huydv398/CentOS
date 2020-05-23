@@ -1,10 +1,11 @@
 <h3> Cài đặt cấu hình Chrony trên CentOS-7 
 
 ## 1. Mô hình chuẩn bị
-Chuẩn bị mô hình kết nối
-
+*Chuẩn bị mô hình kết nối
 ![Imgur](https://i.imgur.com/S595Tam.png)
 
+* IP Planning:
+![Imgur](https://i.imgur.com/tRr1xbs.png)
 * Sử dụng 2 Server cho mô hình:
     * CentOS 7
     * Có kết nối Internet
