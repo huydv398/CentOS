@@ -11,6 +11,7 @@
         * Node 2 là các máy bên dưới đồng bộ hóa thời gian từ máy server.<br>=> Mô hình thích hợp cho mạng lưới có nhiều máy Client liên tuc đồng bộ hóa thời gian tiết kiệm băng thông quốc tế.
 
 ### Với mô hình 1
+![Imgur](https://i.imgur.com/HPLuq0F.png)
 * Cần chuẩn bị mô hình :
     * Một máy có cài đặt hệ điều hành.
     * Đươc truy cập dưới quyền `root`.
@@ -28,6 +29,7 @@
     * Restart và kiểm tra lại dịch vụ
 
 ### Với mô hình 2
+![Imgur](https://i.imgur.com/S595Tam.png)
 * Cần chuẩn bị mô hình:
     * Hai máy đã cài đặt hệ điều hành.
     * Hai được quyền truy cập root
