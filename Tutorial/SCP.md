@@ -58,9 +58,13 @@ Hoàn thành sao chép một file từ máy Client đến máy Server.
 Copy file thành công từ Server về máy Client.
 ## Đứng tại máy Client(máy local của bạn) sao chép dữ liệu của hai máy Server, Từ Server 1 đến Server 2
 * Mô hình:
+
 ![Imgur](https://i.imgur.com/0kYIm6w.png)
+
 * IPPlanning:
+
 ![Imgur](https://i.imgur.com/XQOvZsk.png)
+
 * Chuẩn bị :
     * 3 máy cài sẵn hệ điều hành
     * 3 máy có kết cùng dải mạng.2 máy làm SCP-Server và 1 máy làm SCP-Client.
