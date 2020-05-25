@@ -45,8 +45,11 @@ Với câu lệnh `scp`, bạn có thể sao chép dữ liệu một tập tin h
 Hoàn thành sao chép một file từ máy Client đến máy Server.
 ## Sao chép tệp tin, thư mục từ Server sang máy Client
 * Mô hình:
+
 ![Imgur](https://i.imgur.com/gChdzv0.png)
-* IPPlanning:
+
+* IPPlanning
+
 ![Imgur](https://i.imgur.com/ksYst8v.png)
 * Command: `[root@client ~]# scp root@192.168.20.3:/root/dir/filelog /root/save`
     * `[root@client ~]`: dùng máy client để thực hiện câu lệnh `scp`.
