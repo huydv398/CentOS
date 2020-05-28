@@ -95,3 +95,4 @@ Ví dụ trong một thư mục có nhiều file có định dạng khác nhau: 
     * `scp` an toàn hơn. Do scp có sử dụng cơ chế ssh
     * `rsync --rsh==ssh` để làm nó an toàn như `scp`
 
+<h3> Trên là phần tìm hiểu về câu lệnh Rsync. Cám ơn các bạn đã xem.
