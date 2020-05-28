@@ -82,5 +82,5 @@ Copy file thành công từ Server về máy Client.
     * Nguồn sao chép: `root@192.168.20.3:/root/bookst/` : địa chỉ IP: `192.168.20.3` user `root` thư mục `/root/bookst`
     * NGuồn đích dán:`huyts@192.168.20.4:/home/huyts/save/` Địa chỉ IP: `192.168.20.4`, User : `huyts`, thư mục `/home/huyts/save/`
 
-<h3>**Kết luận**: Trên là phần hướng dẫn sao chép tập tin và thư mục từ máy Client với các máy chủ Server từ xa.
+<h3>Trên là phần hướng dẫn sao chép tập tin và thư mục từ máy Client với các máy chủ Server từ xa.Cám ơn các bạn đã đọc.
 
