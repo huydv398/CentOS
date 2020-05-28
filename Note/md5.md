@@ -24,9 +24,13 @@ b2cfa4183267af678ea06c7407d4d6d8  num.txt
 Khi check mã md5 cũ, do có sự thay đổi nên `FAILED`
 
 * Update md5 và check lại:
+
 ![Imgur](https://i.imgur.com/k6jWyRD.png)
+
 ![Imgur](https://i.imgur.com/4V1EPnz.png)
+
 * Sau khi check lại mã md5 hiện tại là mới nhất
+
 ![Imgur](https://i.imgur.com/s6mlD7V.png)
 
 #### Trên là bài note md5 và cách check md5 khi file có sự đổi 
