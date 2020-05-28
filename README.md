@@ -9,6 +9,8 @@
 8. [Netwoking](Tutorial/Networking.md)
 9. [Network-advanced](Tutorial/Network-advanced.md)
 10. [iSCSI](Tutorial/iSCSI.md)
+11. [SCP-Secure Copy](Tutorial/SCP.md)
+12. [Rsync](Tutorial/Backup.md)
 
 ## CentOS-7
 1. [Mount & fstab](Tutorial/CentOS-7/Mount-Fstab.md)
