@@ -15,6 +15,8 @@ e91db47ae735fa20d793b433452c23e8  Num.txt
 b2cfa4183267af678ea06c7407d4d6d8  num.txt
 
 ```
+
+![Imgur](https://i.imgur.com/ef8e2IG.png)
 * Trên là mã md5 của 2 file mới tạo. Và mã này không trùng nhau.
 
 * Thay đổi file
