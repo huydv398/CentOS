@@ -50,6 +50,7 @@ mount -o remount, rw /
 
 * Kiểm tra trạng thái của phân vùng gốc bằng lệnh sau:
     * `mount | grep -w /`
+    
 ![Imgur](https://i.imgur.com/jGxkTmW.png)
 
 
