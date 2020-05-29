@@ -41,12 +41,12 @@ Hoặc
 ## Tìm kiếm tên tệp
 * Command: `grep [-l/-L/-h/-H] 'string' [folder]`
 
-* `-l` : Để có được các tập tin phù hợp với tìm kiếm. Sẽ in ra kết quả là những tên file có chứa từ cần tìm
-* `-L` : Để có được các tệp không phù hợp với tìm kiếm
-Sẽ in ra kết quả là những tên file không chứa ký tự `string`
+    * `-l` : Để có được các tập tin phù hợp với tìm kiếm. Sẽ in ra kết quả là những tên file có chứa từ cần tìm
+    * `-L` : Để có được các tệp không phù hợp với tìm kiếm
+    Sẽ in ra kết quả là những tên file không chứa ký tự `string`
 
-* `-h` : Chỉ hiện thị các dòng có trong các file. Cho kết quả những dòng chứa `string` mà không kèm tên file.
-* `-H` : Hiện thị tên file + mỗi dòng khớp trả về. Kết quả sẽ bao gồm tên file và dòng chứa `string`
+    * `-h` : Chỉ hiện thị các dòng có trong các file. Cho kết quả những dòng chứa `string` mà không kèm tên file.
+    * `-H` : Hiện thị tên file + mỗi dòng khớp trả về. Kết quả sẽ bao gồm tên file và dòng chứa `string`
 
 ## Hiển thị thêm dòng trước, sau, xung quanh dòng chứa kết quả cần tìm.
 * Command: `grep -[A, B hoặc C] (n) ['string'] [file]`
@@ -55,7 +55,7 @@ Sẽ in ra kết quả là những tên file không chứa ký tự `string`
     * `C` : Hiện thị dòng xung quanh dòng khớp với kí tự cần tìm.Vidu C2 thì hiện thị 2 dòng trên và 2 dòng dưới của dòng được khớp.
     * `n` : Là số tự nhiên chỉ định xem hiển thị trước, sau hay xunh quanh bao nhiêu dòng
 
-##Tìm chính xác với `-w` 
+## Tìm chính xác với `-w` 
 * Command: `grep -w '[string]' file
 * Kết quả sẽ tìm chính xác chỉ những dòng có chứa từ `string`
 ## Tìm tất cả các file trên thư mục con và thư mục cha với tùy chọn `-R`
