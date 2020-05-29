@@ -69,3 +69,4 @@ mount -o remount, rw /
 
 * Đăng nhập với mật khẩu mới
 
+### Trên là cách reset mật khẩu cho Hệ điều hành CentOS-7 và Ubuntu-16.04
