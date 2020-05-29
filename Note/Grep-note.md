@@ -56,15 +56,14 @@ Hoặc
     * `n` : Là số tự nhiên chỉ định xem hiển thị trước, sau hay xunh quanh bao nhiêu dòng
 
 ## Tìm chính xác với `-w` 
-* Command: `grep -w '[string]' file
+* Command: `grep -w '[string]' file`
 * Kết quả sẽ tìm chính xác chỉ những dòng có chứa từ `string`
-## Tìm tất cả các file trên thư mục con và thư mục cha với tùy chọn `-R`
 
 ## Đọc file loại bỏ Comment, dòng trống:
 
 * Command: `egrep -v "^#|^*#|^$" file`
     * `-v` : Tìm các dòng không chứa các ký tự...
-    * `^#` : Những dòng bắt đầu bằng #
-    * `^*#` : Những dòng bắt đầu bằng # kể cả khoảng chắn trước .
+    * `^#` : Những dòng bắt đầu bằng `#`
+    * `^*#` : Những dòng bắt đầu bằng `#` kể cả khoảng chắn trước .
     * `^$` : Những dòng trống
     
