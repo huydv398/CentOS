@@ -49,11 +49,11 @@
     * `-H` : Hiện thị tên file + mỗi dòng khớp trả về. Kết quả sẽ bao gồm tên file và dòng chứa `string`
 
 * Hiển thị thêm dòng trước, sau, xung quanh dòng chứa kết quả cần tìm.
-    * Command: `grep -<A, B hoặc C> (n) ['string'] [file]`
-        * `A` :
-        * `B` :
-        * `C` :
-        * `n` :
+    * Command: `grep -[A, B hoặc C] (n) ['string'] [file]`
+        * `A` :Hiển thị dòng khớp với ký tự được tìm và dòng dưới nó.
+        * `B` : Hiển thị dòng khớp với ký tự được tìm và dòng trên của nó
+        * `C` : Hiện thị dòng xung quanh dòng khớp với kí tự cần tìm.Vidu C2 thì hiện thị 2 dòng trên và 2 dòng dưới của dòng được khớp.
+        * `n` : Là số tự nhiên chỉ định xem hiển thị trước, sau hay xunh quanh bao nhiêu dòng
 
 * Tìm chính xác với `-w` 
     * Command: `grep -w '[string]' file
