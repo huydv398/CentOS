@@ -89,10 +89,6 @@ huy5:x:1004:1004::/home/huy5:/bin/bash
 * `-h` : hiển thị không tên file ( khi chỉ định nhiều file)
 * `-H` : Hiển thị cùng với tên file
 
-
-
-
-
 #### 7.1 So sánh giữa 2 tùy chọn `-l` và `-L`
 ![Imgur](https://i.imgur.com/g9Z5LyC.png)
 * *Tùy chọn `-l` Tìm kiếm trong thư mục **file**, In ra các tên file bên trong có chứa ký tự `cai`
