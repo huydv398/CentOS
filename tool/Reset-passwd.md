@@ -39,7 +39,7 @@ mount -o remount, rw /
 * Khởi động lại máy giữ shift và khi hiện ra màn hình bên dưới
 ![Imgur](https://i.imgur.com/kLKEIgy.png) 
 * Nhấn phím **`e`** , chữ e là viết tắt của edit
-* Sau khi nhấn `**e**` bạn sẽ được chuyển vào màn hình sau:
+* Sau khi nhấn **`e`** bạn sẽ được chuyển vào màn hình sau:
 ![Imgur](https://i.imgur.com/WOUIVN0.png)
 
 * Tìm đến văn bản: `ro find_preseed=/preseed.cfg noprompt quite` và thay thế nó bằng `rw init=/bin/bash` 
@@ -50,7 +50,7 @@ mount -o remount, rw /
 
 * Kiểm tra trạng thái của phân vùng gốc bằng lệnh sau:
     * `mount | grep -w /`
-    
+
 ![Imgur](https://i.imgur.com/jGxkTmW.png)
 
 
