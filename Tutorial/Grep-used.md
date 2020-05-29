@@ -51,22 +51,25 @@ Kết quả sẽ hiện thị những dòng không chứa từ **cai**
 
 ![Imgur](https://i.imgur.com/JPV0sGF.png)
 
-     Hiện thị số dòng mà key cần tìm nằm tại dòng thứ 5
+Hiện thị số dòng mà key cần tìm nằm tại dòng thứ 5
+
 * -c : Đếm số dòng khớp với kí tự cần tìm
 
 ![Imgur](https://i.imgur.com/LQyph2f.png)
+
 Có 1 Key phù hợp
 
 ![Imgur](https://i.imgur.com/RJIasik.png)
+
 Có 2 từ phù hợp
 
 ![Imgur](https://i.imgur.com/nYfFGfu.png)
 Có 4 từ phù hợp ký tự cần tìm
 
 * -m: Giới hạn số lượng dòng khớp.
-![Imgur](https://i.imgur.com/jFw6I95.png)
 
-  `-m3`: chỉ cho phép hiện thị 3 tìm kiếm.
+![Imgur](https://i.imgur.com/jFw6I95.png)
+*  `-m3`: chỉ cho phép hiện thị 3 tìm kiếm.
 
 ### 6.Tìm kiếm nhiều chuỗi
 
