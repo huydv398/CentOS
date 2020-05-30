@@ -30,7 +30,7 @@ Bây giờ đăng nhập với tư cách người dùng thông thường
 * Vì tường lửa hiện tại đang chặn tất cả các kết nối ngoại trừ SSH
 
 ## Bước 5: Kích hoạt quyền truy cập bên ngoài cho người dùng thông thường của bạn
-* Quá trình định cấu hình quyền truy cập SSH cho người dùng mới của bạn tùy thuộc vào ciệc tài khoản gốc của áy chỉ của bạn sử dụng mật khẩu hay Key SSH để xác thực
+* Quá trình định cấu hình quyền truy cập SSH cho người dùng mới của bạn tùy thuộc vào việc tài khoản gốc của máy chỉ của bạn sử dụng mật khẩu hay Key SSH để xác thực
 * Nếu tài khoản root sử dụng xác thực mật khẩu, thì xác thực mật khẩu sẽ được bật cho SSH. Bạn có thể SSH vào tài khoản người dùng mới bằng cách mở một phiên cuuoios và sử dụng SSH  với tên người dùng mới :
 `$ ssh huyts@IP`
 * Sau khi nhập mật khẩu người dung thông thường bạn sẽ đăng nhâp. Hãy nhớ, nếu bạn cần chạy một lệnh với đặc quyền quản trị hãy nhập `sudo` khi nó như thế này
