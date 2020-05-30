@@ -50,7 +50,7 @@ Tạo xong Telegram_bot
 * 2 máy linux có IP Public (hoặc IP Private) có kết nối ra bên ngoài Internet.
 * Thao tác với user `root`
 
-<h4>Cài đặt
+- Cài đặt
 
 * `jq` là ứng dụng để đọc thông tin file JSON trên Linux.
 
