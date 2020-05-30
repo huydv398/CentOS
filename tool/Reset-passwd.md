@@ -1,5 +1,13 @@
 # Singer User Mode - Chế độ người dùng đơn
+Phôi phục reset password:
+1. [CentOS-6.10](#1)
+2. [CentOS-7.7](#2)
+3. [Ubuntu 1404](#3)
+4. [Ubuntu 1604](#4)
+5. [Ubuntu 1804](#5)
+5. [Ubuntu 2004](#6)
 
+<a name="1"></a>
 ## 1.Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong CentOS-6.10
 
 Trong trường hợp quên mật khẩu người dùng, để thực hiện lấy lại mật khẩu root ta làm như sau:
@@ -27,6 +35,7 @@ Trong trường hợp quên mật khẩu người dùng, để thực hiện l�
 ![Imgur](https://i.imgur.com/c99SdOc.png)
 * reboot lại máy và nhập mật khẩu mới
 
+<a name="2"></a>
 ## 2.Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong CentOS-7.7 1908.
 
 Trong trường hợp quên mật khẩu người dùng, để thực hiện lấy lại mật khẩu root ta làm như sau:
@@ -64,6 +73,8 @@ mount -o remount, rw /
 * Đăng nhập vào tài khoản root và xem mọi thứ có hoạt động không?
 
 
+<a name="3"></a>
+
 ## 3. Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong Ubuntu 1404
 * Khởi động lại máy giữ shift và khi hiện ra màn hình bên dưới
 ![Imgur](https://i.imgur.com/hSHly50.png)
@@ -94,6 +105,9 @@ mount -o remount, rw /
 ### Trên là cách reset mật khẩu cho Hệ điều hành Ubuntu-18.04
 
 
+
+
+<a name="4"></a>
 
 ## 4.Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong Ubuntu 1604
 
@@ -132,6 +146,9 @@ mount -o remount, rw /
 
 ### Trên là cách reset mật khẩu cho Hệ điều hành CentOS-7 và Ubuntu-16.04
 
+
+<a name="5"></a>
+
 ## 5.Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong Ubuntu 1804
 * Khởi động lại máy giữ shift và khi hiện ra màn hình bên dưới
 ![Imgur](https://i.imgur.com/hSHly50.png)
@@ -161,6 +178,7 @@ mount -o remount, rw /
 
 ### Trên là cách reset mật khẩu cho Hệ điều hànhUbuntu-18.04
 
+<a name="6"></a>
 
 ## 6.Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong Ubuntu 2004
 * Khởi động lại máy giữ shift và khi hiện ra màn hình bên dưới
