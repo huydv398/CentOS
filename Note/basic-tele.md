@@ -41,11 +41,11 @@ Cách 2:
 
 * Khi đó trình duyệt sẽ hiện tất cả các thông báo trong đó có username, ID, văn bản được gửi, ...
 
-<h4> Tạo xong Telegram_bot
+Tạo xong Telegram_bot
 
 ### Gửi cảnh báo tới Telegram qua API Token
 
-<h4> chuẩn bị :
+- Chuẩn bị :
 
 * 2 máy linux có IP Public (hoặc IP Private) có kết nối ra bên ngoài Internet.
 * Thao tác với user `root`
