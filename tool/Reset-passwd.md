@@ -1,5 +1,33 @@
 # Singer User Mode - Chế độ người dùng đơn
-## Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong CentOS-7.7 1908.
+
+## 1.Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong CentOS-6.10
+
+Trong trường hợp quên mật khẩu người dùng, để thực hiện lấy lại mật khẩu root ta làm như sau:
+* Khởi động lại máy và và nhấn phím **`e`** , chữ e là viết tắt của edit
+* Sau khi nhấn e bạn sẽ được chuyển vào màn hình sau:
+![Imgur](https://i.imgur.com/Ve5Fa1K.png)
+
+* Sau khi nhấn phím **e** sẽ chuyển vào kernel OS đang chạy:
+
+![Imgur](https://i.imgur.com/e47w7px.png)
+
+* Chọn dòng `kernel /vmlinuz` nhấn **e** :
+![Imgur](https://i.imgur.com/GxGpJUv.png)
+
+* Thêm `1` vào sau `rhgb quite` để chuyển sang chế độ **singer mode** 
+
+![Imgur](https://i.imgur.com/8H5syBU.png)
+
+* Nhấn phím **b** để ***boot***
+
+![Imgur](https://i.imgur.com/rDqAf5Q.png)
+
+* `passwd root` để lấy lại mật khẩu root
+
+![Imgur](https://i.imgur.com/c99SdOc.png)
+* reboot lại máy và nhập mật khẩu mới
+
+## 2.Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong CentOS-7.7 1908.
 
 Trong trường hợp quên mật khẩu người dùng, để thực hiện lấy lại mật khẩu root ta làm như sau:
 * Khởi động lại máy và và nhấn phím **`e`** , chữ e là viết tắt của edit
@@ -35,7 +63,40 @@ mount -o remount, rw /
 
 * Đăng nhập vào tài khoản root và xem mọi thứ có hoạt động không?
 
-## Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong Ubuntu 1604
+
+## 3. Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong Ubuntu 1404
+* Khởi động lại máy giữ shift và khi hiện ra màn hình bên dưới
+![Imgur](https://i.imgur.com/hSHly50.png)
+* Nhấn phím **`e`** , chữ e là viết tắt của edit
+* Sau khi nhấn **`e`** bạn sẽ được chuyển vào màn hình sau:
+![Imgur](https://i.imgur.com/4fvBnHm.png)
+
+* Tìm đến văn bản: `ro debian-installer/custom-installation=/custom find_preseed=/preseed.cfg auto preseed.file=/floppy/preseed.cfg automatic-ubiquity noprompt` và thay thế nó bằng `rw init=/bin/bash` 
+
+
+* Sau khi chỉnh sửa xong **ctrl**+**x** hoặc **F10**, nó sẽ bắt đầu khởi động với tham số đã chỉ định. Và sẽ hiện thị **bash prompt** được sử dụng với quyền root.
+
+![Imgur](https://i.imgur.com/1TwvfUD.png)
+
+* Kiểm tra trạng thái của phân vùng gốc bằng lệnh sau:
+    * `mount | grep -w /`
+
+![Imgur](https://i.imgur.com/zXkI5ej.png)
+
+* Bây giờ có thể đặt lại mật khẩu cho root
+    * `passwd huydv`
+![Imgur](https://i.imgur.com/NEre6nZ.png)
+* Khởi động lại 
+    * `exec /sbin/init`
+
+* Đăng nhập với mật khẩu mới
+
+### Trên là cách reset mật khẩu cho Hệ điều hành Ubuntu-18.04
+
+
+
+## 4.Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong Ubuntu 1604
+
 * Khởi động lại máy giữ shift và khi hiện ra màn hình bên dưới
 ![Imgur](https://i.imgur.com/kLKEIgy.png) 
 * Nhấn phím **`e`** , chữ e là viết tắt của edit
@@ -70,3 +131,67 @@ mount -o remount, rw /
 * Đăng nhập với mật khẩu mới
 
 ### Trên là cách reset mật khẩu cho Hệ điều hành CentOS-7 và Ubuntu-16.04
+
+## 5.Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong Ubuntu 1804
+* Khởi động lại máy giữ shift và khi hiện ra màn hình bên dưới
+![Imgur](https://i.imgur.com/hSHly50.png)
+* Nhấn phím **`e`** , chữ e là viết tắt của edit
+* Sau khi nhấn **`e`** bạn sẽ được chuyển vào màn hình sau:
+![Imgur](https://i.imgur.com/4fvBnHm.png)
+
+* Tìm đến văn bản: `ro debian-installer/custom-installation=/custom find_preseed=/preseed.cfg auto preseed.file=/floppy/preseed.cfg automatic-ubiquity noprompt` và thay thế nó bằng `rw init=/bin/bash` 
+
+
+* Sau khi chỉnh sửa xong **ctrl**+**x** hoặc **F10**, nó sẽ bắt đầu khởi động với tham số đã chỉ định. Và sẽ hiện thị **bash prompt** được sử dụng với quyền root.
+
+![Imgur](https://i.imgur.com/1TwvfUD.png)
+
+* Kiểm tra trạng thái của phân vùng gốc bằng lệnh sau:
+    * `mount | grep -w /`
+
+![Imgur](https://i.imgur.com/zXkI5ej.png)
+
+* Bây giờ có thể đặt lại mật khẩu cho root
+    * `passwd huydv`
+![Imgur](https://i.imgur.com/NEre6nZ.png)
+* Khởi động lại 
+    * `exec /sbin/init`
+
+* Đăng nhập với mật khẩu mới
+
+### Trên là cách reset mật khẩu cho Hệ điều hànhUbuntu-18.04
+
+
+## 6.Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong Ubuntu 2004
+* Khởi động lại máy giữ shift và khi hiện ra màn hình bên dưới
+![Imgur](https://i.imgur.com/GMVxHXA.png)
+* Nhấn phím **`e`** , chữ e là viết tắt của edit
+* Sau khi nhấn **`e`** bạn sẽ được chuyển vào màn hình sau:
+![Imgur](https://i.imgur.com/TyaqptV.png)
+
+* Tìm đến văn bản: `ro debian-installer/custom-installation=/custom find_preseed=/preseed.cfg auto preseed.file=/floppy/preseed.cfg automatic-ubiquity noprompt` và thay thế nó bằng `rw init=/bin/bash` 
+
+
+* Sau khi chỉnh sửa xong **ctrl**+**x** hoặc **F10**, nó sẽ bắt đầu khởi động với tham số đã chỉ định. Và sẽ hiện thị **bash prompt** được sử dụng với quyền root.
+
+!
+
+* Kiểm tra trạng thái của phân vùng gốc bằng lệnh sau:
+    * `mount | grep -w /`
+
+![Imgur](https://i.imgur.com/eyfIQG5.png)
+
+* Bây giờ có thể đặt lại mật khẩu cho root
+    * `adduser nhudahua`
+
+![Imgur](https://i.imgur.com/M55Jt6O.png)
+
+![Imgur](https://i.imgur.com/lEZPeLP.png)
+
+* Khởi động lại 
+    * `exec /sbin/init`
+
+* Đăng nhập với mật khẩu mới
+
+### Trên là cách reset mật khẩu cho Hệ điều hành và Ubuntu-20.04
+
