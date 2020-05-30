@@ -24,7 +24,7 @@
 1. [IP Static](Tutorial/Ubuntu/IP-Static-Ubuntu20.04.md)
 2. [Mount](Tutorial/Ubuntu/NFS-Mount-on-Ubuntu20.04.md)
 3. [SSH keypair](Tutorial/Ubuntu/keypair.md)
-
+4. [Basic setup](Install/Ubuntu/basic-setup-ubuntu2004.md)
 # Linux fundameltals
 1. [Filter](Fundamental/filters-command.md)
 2. [Basic Unix Tool](Fundamental/Basic-tool.md)
