@@ -13,7 +13,7 @@
 12. [Rsync](Tutorial/Backup.md)
 13. [Reset password](tool/Reset-passwd.md)
 14. [SSH Secure](Tutorial/SSH-Secure.md)
-15. [User sudo & disable ssh root](Tutorial\dis-ssh-root.md)
+15. [User sudo & disable ssh root](Tutorial/dis-ssh-root.md)
 ## CentOS-7
 1. [Mount & fstab](Tutorial/CentOS-7/Mount-Fstab.md)
 2. [SSH keypair](Tutorial/CentOS-7/SSH-Keypairs.md)
