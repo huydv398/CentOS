@@ -44,3 +44,5 @@ Lệnh sudo là gì ?
 * Đăng nhập bằng user root.
 ![Imgur](https://i.imgur.com/mj2tvYJ.png)
 * Hệ thống sẽ không thể SSH từ xa đăng nhập bằng tài khoản root. Nhưng tài khoản vẫn có thể đăng nhập bằng tài khoản người dùng.
+
+## Trên là quá trình tại tài khoản user sudo và disable ssh root.
