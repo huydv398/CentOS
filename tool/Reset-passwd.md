@@ -192,12 +192,12 @@ mount -o remount, rw /
 
 * Sau khi chỉnh sửa xong **ctrl**+**x** hoặc **F10**, nó sẽ bắt đầu khởi động với tham số đã chỉ định. Và sẽ hiện thị **bash prompt** được sử dụng với quyền root.
 
-!
+![Imgur](https://i.imgur.com/eyfIQG5.png)
 
 * Kiểm tra trạng thái của phân vùng gốc bằng lệnh sau:
     * `mount | grep -w /`
 
-![Imgur](https://i.imgur.com/eyfIQG5.png)
+![Imgur](https://i.imgur.com/neE3DfW.png)
 
 * Bây giờ có thể đặt lại mật khẩu cho root
     * `adduser nhudahua`
