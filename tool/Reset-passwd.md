@@ -11,27 +11,27 @@ Phôi phục reset password:
 ## 1.Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong CentOS-6.10
 
 Trong trường hợp quên mật khẩu người dùng, để thực hiện lấy lại mật khẩu root ta làm như sau:
-* Khởi động lại máy và và nhấn phím **`e`** , chữ e là viết tắt của edit
-* Sau khi nhấn e bạn sẽ được chuyển vào màn hình sau:
+* Khởi động lại máy và và nhấn phím bất kỳ.
+* Bạn sẽ được chuyển vào màn hình sau:
 ![Imgur](https://i.imgur.com/Ve5Fa1K.png)
 
 * Sau khi nhấn phím **e** sẽ chuyển vào kernel OS đang chạy:
 
-![Imgur](https://i.imgur.com/e47w7px.png)
+
 
 * Chọn dòng `kernel /vmlinuz` nhấn **e** :
-![Imgur](https://i.imgur.com/GxGpJUv.png)
+![Imgur](https://i.imgur.com/e47w7px.png)
+
 
 * Thêm `1` vào sau `rhgb quite` để chuyển sang chế độ **singer mode** 
-
-![Imgur](https://i.imgur.com/8H5syBU.png)
+![Imgur](https://i.imgur.com/GxGpJUv.png)
+![Imgur](https://i.imgur.com/nHeriHV.png)
 
 * Nhấn phím **b** để ***boot***
+![Imgur](https://i.imgur.com/8H5syBU.png)
 
-![Imgur](https://i.imgur.com/rDqAf5Q.png)
 
 * `passwd root` để lấy lại mật khẩu root
-
 ![Imgur](https://i.imgur.com/c99SdOc.png)
 * reboot lại máy và nhập mật khẩu mới
 
@@ -39,8 +39,8 @@ Trong trường hợp quên mật khẩu người dùng, để thực hiện l�
 ## 2.Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong CentOS-7.7 1908.
 
 Trong trường hợp quên mật khẩu người dùng, để thực hiện lấy lại mật khẩu root ta làm như sau:
-* Khởi động lại máy và và nhấn phím **`e`** , chữ e là viết tắt của edit
-* Sau khi nhấn e bạn sẽ được chuyển vào màn hình sau:
+* Khởi động lại máy và và nhấn phím bất kỳ.
+* Nhấn **e** bạn sẽ được chuyển vào màn hình sau:
 ![Imgur](https://i.imgur.com/uOMUBZx.png)
 
 * Tìm đến văn bản: `rhgb quite` và thay thế nó bằng `init=/bin/bash` 
