@@ -104,9 +104,6 @@ mount -o remount, rw /
 
 ### Trên là cách reset mật khẩu cho Hệ điều hành Ubuntu-18.04
 
-
-
-
 <a name="4"></a>
 
 ## 4.Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong Ubuntu 1604
@@ -144,7 +141,7 @@ mount -o remount, rw /
 
 * Đăng nhập với mật khẩu mới
 
-### Trên là cách reset mật khẩu cho Hệ điều hành CentOS-7 và Ubuntu-16.04
+### Trên là cách reset mật khẩu cho Hệ điều hành và Ubuntu-16.04
 
 
 <a name="5"></a>
