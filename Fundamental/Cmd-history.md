@@ -26,7 +26,7 @@
    43  passwd duonghuy
 [root@srv01 ~]#
 ```
-### Tìm kiếm coomand đã sử dụng trong quá khứ.
+### Tìm kiếm command đã sử dụng trong quá khứ.
 * Muốn tìm 1 lệnh nhất định thì sử dụng thêm lệnh `grep` để lọc ra kết quả mong muốn.
 ![Imgur](https://i.imgur.com/ciaLtLH.png)
 
