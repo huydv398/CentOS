@@ -17,7 +17,7 @@
 16. [TCP Wrappers](Tutorial/TCP-Wrappers.md)
 ## CentOS-7
 1. [Mount & fstab](Tutorial/CentOS-7/Mount-Fstab.md)
-2. [SSH keypair](Tutorial/CentOS-7/SSH-Keypairs.md)
+2. [SSH keypair](Install/CentOS-7/SSH-Keypairs.md)
 3. [test ssh](Tutorial/CentOS-7/testsecuressh.md)
 4. [Cài đăt Chrony (Network Time Protocol)](Tutorial/CentOS-7/Chrony-in-CentOS7.md)
 
