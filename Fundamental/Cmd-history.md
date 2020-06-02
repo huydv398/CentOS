@@ -62,9 +62,9 @@ Bash sẽ chạy lệnh số 32 trong lịch sử câu lệnh
 
 ![Imgur](https://i.imgur.com/K4d2iun.png)
 * option:
-    * %d - Ngày 
-    * %m - Tháng
-    * %y - Năm
-    * %T - Thời gian
+    * `%d` - Ngày 
+    * `%m` - Tháng
+    * `%y` - Năm
+    * `%T` - Thời gian
     * `/` : có thể thay đổi bằng ký tự khác, hoặc dấu cách tùy thuộc vào hiện thị của người sử dụng.
 
