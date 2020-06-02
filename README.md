@@ -37,7 +37,7 @@
 
 ## AAA
 1. [NTP](Network-Time-Protocol.md)
-2. [Configure NTP Server & Client](Fundamental/NTP-configure.md)
+2. [Configure Network Time Protocol Server & Client](Fundamental/NTP-configure.md)
 
 ### Note
 1. [Basic Telegram_bot](Note/basic-tele.md)
