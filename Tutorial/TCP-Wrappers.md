@@ -83,11 +83,29 @@ Không thể SSH tới máy Server
 
 * Cho phép tất cả các máy chủ ngoại trừ một máy chủ cụ thể
 
-Bạn có thể cho phép các kết nối đến từ tất cả các máy chủ, nhưng không cho phép từ chủ cụ thể. Ví dụ, để cho phép các kết nối đến 
+Bạn có thể cho phép các kết nối đến từ tất cả các máy chủ, nhưng không cho phép từ chủ cụ thể.
 
-Ví dụ :
 * Mô hình:
+
+![Imgur](https://i.imgur.com/pnyxZ3W.png)
 
 * IPPlanning
 
-Cho phép tất cả các kết nối trong dải 192.168.20. ,nhưng không cho máy có địa chỉ 192.168.20.4.
+![Imgur](https://i.imgur.com/tjym7Tt.png)
+
+* Cấu hình: 
+    * Tại file : `/etc/hosts.deny` thêm câu lệnh "`sshd : 192.168.20.4`"
+    * Tại file : `/etc/hosts.allow` thêm câu lệnh "`ALL : 192.168.20.`"
+    * Lưu cấu hình.
+
+Cho phép tất cả các kết nối trong dải 192.168.20. ,nhưng không cho máy có địa chỉ 192.168.20.4. kết nối đến.
+
+Máy 192.168.20.140 có thể SSH đến Server :
+
+![Imgur](https://i.imgur.com/lpycTpl.png)
+
+Máy 192.168.20.4 Không thể SSH tới server 192.168.20.3.
+
+![Imgur](https://i.imgur.com/H6btW98.png)
+
+## Trên là bài LAB về TCP Wrapper. Cám ơn các bạn đã xem.
