@@ -36,9 +36,13 @@ Trong đó:
 * `list_of_client` là danh sách tên máy chủ, địa chỉ IP, mẫu đặc bietj hoặc ký tự đại diện sẽ được so sánh với từng máy khách được kết nối.
 ### Cách tiếp cận được đề xuất để bảo mật máy chủ của bạn
 * Mô hình:
+
 ![Imgur](https://i.imgur.com/Wn4FAz1.png)
+
 * IPPlanning:
+
 ![Imgur](https://i.imgur.com/NjPyZ9Y.png)
+
 * Vấn đề: Chỉ cho phép máy có địa chỉ IP 192.168.20.3 truy cập.
 Để bảo mật máy chủ linux là chặn tắt cả các kết nối đến và chỉ cho phép một vài máy chủ hoặc mạng cụ thể. 
 
