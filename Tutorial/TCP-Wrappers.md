@@ -91,7 +91,7 @@ Bạn có thể cho phép các kết nối đến từ tất cả các máy ch�
 
 * IPPlanning
 
-![Imgur](https://i.imgur.com/tjym7Tt.png)
+![Imgur](https://i.imgur.com/yCnqAoP.png)
 
 * Cấu hình: 
     * Tại file : `/etc/hosts.deny` thêm câu lệnh "`sshd : 192.168.20.4`"
