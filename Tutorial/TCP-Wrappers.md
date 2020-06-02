@@ -43,7 +43,7 @@ Trong đó:
 
 ![Imgur](https://i.imgur.com/NjPyZ9Y.png)
 
-* Vấn đề: Chỉ cho phép máy có địa chỉ IP 192.168.20.3 truy cập.
+* **Vấn đề**: Chỉ cho phép máy có địa chỉ IP 192.168.20.3 truy cập.
 Để bảo mật máy chủ linux là chặn tắt cả các kết nối đến và chỉ cho phép một vài máy chủ hoặc mạng cụ thể. 
 
 Để làm vậy, chỉnh sửa tệp `/etc/hosts.deny`:
