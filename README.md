@@ -15,6 +15,7 @@
 14. [SSH Secure](Tutorial/SSH-Secure.md)
 15. [User sudo & disable ssh root](Tutorial/dis-ssh-root.md)
 16. [TCP Wrappers](Tutorial/TCP-Wrappers.md)
+17. [Change Atrribute](Tutorial/chattr-change_attribute.md)
 ## CentOS-7
 1. [Mount & fstab](Tutorial/CentOS-7/Mount-Fstab.md)
 2. [SSH keypair](Install/CentOS-7/SSH-Keypairs.md)
