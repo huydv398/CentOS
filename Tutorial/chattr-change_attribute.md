@@ -48,7 +48,7 @@ chmod: changing permissions of ‘huyts.txt’: Operation not permitted
 Có thể thấy rằng không thể thay đổi file.
 
 
-## Cách để unset thuộc tính đã them cho file
+## Cách để unset thuộc tính đã thêm cho file
 Ta sử dụng operator `-`
 Unset thuộc tính `i` trên file `huyts.txt`
 
@@ -125,3 +125,8 @@ Thêm thuộc tính `i` cho các file này để tránh bị xóa nhầm. Lưu �
 useradd: cannot open /etc/passwd
 
 ```
+Không thể thêm vào file `/etc/passwd` do file đã thêm thuộc tính immutable nên file không thể chỉnh hoặc thêm
+
+## Kết luận 
+Trên là bài lab về phần
+Bảo vệ tệp tin cho thư mục và file bằng câu lệnh chattr
