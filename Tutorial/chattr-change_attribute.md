@@ -24,7 +24,7 @@ Các flag thường dùng là:
 
 Tạo một file trong thư mục
 ## Cách thêm thuộc tính trên file để bảo vệ file khỏi bị xóa
-Chúng ta thêm thuộc tính `i` (immutable)- không thể rename, Không thể tạo symlink, Không thể thực thi, không thể write, không thể xóa.
+Chúng ta thêm thuộc tính `i` (*immutable*)- không thể rename, Không thể tạo symlink, Không thể thực thi, không thể write, không thể xóa.
 
 ```
 # Thực hiện thêm thuộc tính 
@@ -91,11 +91,11 @@ Chen noi dung file
 [root@server1 duonghuy]#  chattr -a huyfile.txt
 
 ```
-**Kết luận**: -a có thể chỉ chèn thêm nội dung  
+**Kết luận**: `-a` có thể chỉ chèn thêm nội dung  
 ## Cách dùng chattr để bảo vệ thư mục
 
 Để bảo vệ cả thư mục và các file bên trong thư mục đó
-dùng -R (recursively) và +i với đường dẫn của thư mục đó.
+dùng `-R` (recursively) và `+i` với đường dẫn của thư mục đó.
 
 ```
 # Thêm thuộc tính cho thư mục
@@ -125,8 +125,8 @@ Thêm thuộc tính `i` cho các file này để tránh bị xóa nhầm. Lưu �
 useradd: cannot open /etc/passwd
 
 ```
-Không thể thêm vào file `/etc/passwd` do file đã thêm thuộc tính immutable nên file không thể chỉnh hoặc thêm
+Không thể thêm vào file `/etc/passwd` do file đã thêm thuộc tính *immutable* nên file không thể chỉnh hoặc thêm
 
 ## Kết luận 
 Trên là bài lab về phần
-Bảo vệ tệp tin cho thư mục và file bằng câu lệnh chattr
+Bảo vệ tệp tin cho thư mục và file bằng câu lệnh `chattr`
