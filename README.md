@@ -19,7 +19,7 @@
 1. [Mount & fstab](Tutorial/CentOS-7/Mount-Fstab.md)
 2. [SSH keypair](Install/CentOS-7/SSH-Keypairs.md)
 3. [test ssh](Tutorial/CentOS-7/testsecuressh.md)
-4. [Cài đăt Chrony (Network Time Protocol)](Tutorial/CentOS-7/Chrony-in-CentOS7.md)
+4. [Cài đăt Chrony (Network Time Protocol)](Install/CentOS-7/Chrony-in-CentOS7.md)
 
 ## Ubuntu 20.04
 1. [IP Static](Tutorial/Ubuntu/IP-Static-Ubuntu20.04.md)
