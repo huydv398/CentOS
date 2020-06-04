@@ -17,16 +17,16 @@
 16. [TCP Wrappers](Tutorial/TCP-Wrappers.md)
 17. [Change Atrribute](Tutorial/chattr-change_attribute.md)
 ## CentOS-7
-1. [Mount & fstab](Tutorial/CentOS-7/Mount-Fstab.md)
-2. [SSH keypair](Install/CentOS-7/SSH-Keypairs.md)
-3. [test ssh](Tutorial/CentOS-7/testsecuressh.md)
-4. [Cài đăt Chrony (Network Time Protocol)](Install/CentOS-7/Chrony-in-CentOS7.md)
+1. [Mount & fstab](CentOS-7/Mount-Fstab.md)
+2. [SSH keypair](CentOS-7/SSH-Keypairs.md)
+3. [test ssh](CentOS-7/testsecuressh.md)
+4. [Cài đăt Chrony (Network Time Protocol)](CentOS-7/Chrony-in-CentOS7.md)
 
 ## Ubuntu 20.04
-1. [IP Static](Tutorial/Ubuntu/IP-Static-Ubuntu20.04.md)
-2. [Mount](Tutorial/Ubuntu/NFS-Mount-on-Ubuntu20.04.md)
-3. [SSH keypair](Tutorial/Ubuntu/keypair.md)
-4. [Basic setup](Install/Ubuntu/basic-setup-ubuntu2004.md)
+1. [IP Static](Ubuntu/IP-Static-Ubuntu20.04.md)
+2. [Mount](Ubuntu/NFS-Mount-on-Ubuntu20.04.md)
+3. [SSH keypair](Ubuntu/keypair.md)
+4. [Basic setup](Ubuntu/basic-setup-ubuntu2004.md)
 # Linux fundameltals
 1. [Filter](Fundamental/filters-command.md)
 2. [Basic Unix Tool](Fundamental/Basic-tool.md)
