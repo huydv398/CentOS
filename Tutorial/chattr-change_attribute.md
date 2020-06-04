@@ -16,6 +16,8 @@ Các flag thường dùng là:
 * `R`- Recursively: Thay đổi đệ quy các thuộc tính của thư mục và các cấu hình của chúng.
 * `i`-(immutable): Flag này khiến file không thể rename, Không thể tạo symlink, Không thể thực thi, không thiể write. Chỉ có user rôt mới set và uset được thuộc tính này.
 * `a`: Khiến file không thể : rename, tạo symlink, không thể thực thi, chỉ có thể thêm nội dung vào file. Chỉ root mới có thể set và unset được thuộc tính này.
+
+
 * `d` : file có thuộc tính này sẽ không được backup khi tiến trình dump chạy.
 * `s` : Nếu file có thuộc tính này bị sửa, thay đổi sẽ đọc cập nhật đồng bộ hóa trên ổ cứng.
 * `A` : khi File có thuộc tính được truy cập, giá trị `atime` của file sẽ không thay đổi.
