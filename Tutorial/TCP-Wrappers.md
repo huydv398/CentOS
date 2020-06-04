@@ -55,7 +55,7 @@ Trong đó:
 
 Sau đó, chỉnh sửa tệp `/etc/hosts.allow`:
 
-`sudo vi /etc/host.allowsudo`
+`sudo vi /etc/host.allow`
 
 * Thêm địa chỉ mạng muốn kết nối:
 
