@@ -64,11 +64,13 @@ Có 1 Key phù hợp
 Có 2 từ phù hợp
 
 ![Imgur](https://i.imgur.com/nYfFGfu.png)
+
 Có 4 từ phù hợp ký tự cần tìm
 
 * -m: Giới hạn số lượng dòng khớp.
 
 ![Imgur](https://i.imgur.com/jFw6I95.png)
+
 *  `-m3`: chỉ cho phép hiện thị 3 tìm kiếm.
 
 ### 6.Tìm kiếm nhiều chuỗi
@@ -93,12 +95,16 @@ huy5:x:1004:1004::/home/huy5:/bin/bash
 * `-H` : Hiển thị cùng với tên file
 
 #### 7.1 So sánh giữa 2 tùy chọn `-l` và `-L`
+
 ![Imgur](https://i.imgur.com/g9Z5LyC.png)
+
 * *Tùy chọn `-l` Tìm kiếm trong thư mục **file**, In ra các tên file bên trong có chứa ký tự `cai`
 
 ![Imgur](https://i.imgur.com/XKMcykr.png)
+
 * *Tùy chọn `-L` sẽ ra kết quả là những tên file không có chứa từ* **cai**
 #### 7.2 So sánh 2 tùy chọn `-h` và `-H`
+
 ![Imgur](https://i.imgur.com/HpX8MTA.png)
 
 * Tùy chon `-h` sẽ cho kết quả những dòng chứa từ **"cai dai"** mà không kèm với tên file
@@ -112,13 +118,17 @@ Trong đó:
 * `B` : Hiển thị dòng khớp với ký tự được tìm và dòng trên của nó.
 * `C` : Hiện thị dòng xung quanh dòng khớp với kí tự cần tìm.Vidu C2 thì hiện thị 2 dòng trên và 2 dòng dưới của dòng được khớp.
 * `n` : Là số tự nhiên chỉ định xem hiển thị trước, sau hay xunh quanh bao nhiêu dòng
+
 ![Imgur](https://i.imgur.com/Tq60H7P.png)
+
 ### 9. Tìm chính xác với `-w`
+
 VD: Mình có file info
+
 ![Imgur](https://i.imgur.com/HF1uXjm.png)
 
-* Khi bạn tìm kiếm bình thường với `grep`, kết quả sẽ hiển thị tất cả những dòng có chứa từ >>> kể cả >>>>>.
-* Với tùy chọn `-w`, kết quả sẽ tìm chính xác chỉ những dòng có chứa từ >>>/
+* Khi bạn tìm kiếm bình thường với `grep`, kết quả sẽ hiển thị tất cả những dòng có chứa từ `huyts` Nhưng linux liệt kê các văn bản kể cả `huytsxxx`.
+* Với tùy chọn `-w`, kết quả sẽ tìm chính xác chỉ những dòng có chứa từ huyts
 
 ### 10 Đọc file loại bỏ comment, dòng trống
 
