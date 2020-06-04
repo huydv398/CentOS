@@ -13,6 +13,7 @@ Phôi phục reset password:
 Trong trường hợp quên mật khẩu người dùng, để thực hiện lấy lại mật khẩu root ta làm như sau:
 * Khởi động lại máy và và nhấn phím bất kỳ.
 * Bạn sẽ được chuyển vào màn hình sau:
+
 ![Imgur](https://i.imgur.com/Ve5Fa1K.png)
 
 * Sau khi nhấn phím **e** sẽ chuyển vào kernel OS đang chạy:
@@ -20,19 +21,25 @@ Trong trường hợp quên mật khẩu người dùng, để thực hiện l�
 
 
 * Chọn dòng `kernel /vmlinuz` nhấn **e** :
+
 ![Imgur](https://i.imgur.com/e47w7px.png)
 
 
 * Thêm `1` vào sau `rhgb quite` để chuyển sang chế độ **singer mode** 
+
 ![Imgur](https://i.imgur.com/GxGpJUv.png)
+
 ![Imgur](https://i.imgur.com/nHeriHV.png)
 
 * Nhấn phím **b** để ***boot***
+
 ![Imgur](https://i.imgur.com/8H5syBU.png)
 
 
 * `passwd root` để lấy lại mật khẩu root
+
 ![Imgur](https://i.imgur.com/c99SdOc.png)
+
 * reboot lại máy và nhập mật khẩu mới
 
 <a name="2"></a>
@@ -41,16 +48,20 @@ Trong trường hợp quên mật khẩu người dùng, để thực hiện l�
 Trong trường hợp quên mật khẩu người dùng, để thực hiện lấy lại mật khẩu root ta làm như sau:
 * Khởi động lại máy và và nhấn phím bất kỳ.
 * Nhấn **e** bạn sẽ được chuyển vào màn hình sau:
+
 ![Imgur](https://i.imgur.com/uOMUBZx.png)
 
 * Tìm đến văn bản: `rhgb quite` và thay thế nó bằng `init=/bin/bash` 
 
 * Sau khi chỉnh sửa xong **ctrl**+**x**, nó sẽ bắt đầu khởi động với tham số đã chỉ định. Và sẽ hiện thị **bash prompt**.
+
 ![Imgur](https://i.imgur.com/UgNFwEH.png)
+
 * Kiểm tra trạng thái của phân vùng gốc bằng lệnh sau:
     * `mount | grep root`
 
 ![Imgur](https://i.imgur.com/lpdQrZE.png)
+
 * Bạn có thể nhận thấy, phân vùng gốc hiển thị `ro`(chỉ đọc). Cần chỉnh sửa quyền đọc ghi trên phân vùng gốc để thay đổi mật khẩu gốc.
 
 ```
@@ -77,9 +88,13 @@ mount -o remount, rw /
 
 ## 3. Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong Ubuntu 1404
 * Khởi động lại máy giữ shift và khi hiện ra màn hình bên dưới
+
 ![Imgur](https://i.imgur.com/hSHly50.png)
+
 * Nhấn phím **`e`** , chữ e là viết tắt của edit
+
 * Sau khi nhấn **`e`** bạn sẽ được chuyển vào màn hình sau:
+
 ![Imgur](https://i.imgur.com/4fvBnHm.png)
 
 * Tìm đến văn bản: `ro debian-installer/custom-installation=/custom find_preseed=/preseed.cfg auto preseed.file=/floppy/preseed.cfg automatic-ubiquity noprompt` và thay thế nó bằng `rw init=/bin/bash` 
@@ -96,7 +111,9 @@ mount -o remount, rw /
 
 * Bây giờ có thể đặt lại mật khẩu cho root
     * `passwd huydv`
+
 ![Imgur](https://i.imgur.com/NEre6nZ.png)
+
 * Khởi động lại 
     * `exec /sbin/init`
 
@@ -109,15 +126,21 @@ mount -o remount, rw /
 ## 4.Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong Ubuntu 1604
 
 * Khởi động lại máy giữ shift và khi hiện ra màn hình bên dưới
+
 ![Imgur](https://i.imgur.com/kLKEIgy.png) 
+
 * Nhấn phím **`e`** , chữ e là viết tắt của edit
+
 * Sau khi nhấn **`e`** bạn sẽ được chuyển vào màn hình sau:
+
 ![Imgur](https://i.imgur.com/WOUIVN0.png)
 
 * Tìm đến văn bản: `ro find_preseed=/preseed.cfg noprompt quite` và thay thế nó bằng `rw init=/bin/bash` 
+
 ![Imgur](https://i.imgur.com/zCe08Cq.png)
 
 * Sau khi chỉnh sửa xong **ctrl**+**x** hoặc **F10**, nó sẽ bắt đầu khởi động với tham số đã chỉ định. Và sẽ hiện thị **bash prompt**.
+
 ![Imgur](https://i.imgur.com/FvcErc3.png)
 
 * Kiểm tra trạng thái của phân vùng gốc bằng lệnh sau:
@@ -148,9 +171,12 @@ mount -o remount, rw /
 
 ## 5.Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong Ubuntu 1804
 * Khởi động lại máy giữ shift và khi hiện ra màn hình bên dưới
+
 ![Imgur](https://i.imgur.com/hSHly50.png)
+
 * Nhấn phím **`e`** , chữ e là viết tắt của edit
 * Sau khi nhấn **`e`** bạn sẽ được chuyển vào màn hình sau:
+
 ![Imgur](https://i.imgur.com/4fvBnHm.png)
 
 * Tìm đến văn bản: `ro debian-installer/custom-installation=/custom find_preseed=/preseed.cfg auto preseed.file=/floppy/preseed.cfg automatic-ubiquity noprompt` và thay thế nó bằng `rw init=/bin/bash` 
@@ -166,8 +192,10 @@ mount -o remount, rw /
 ![Imgur](https://i.imgur.com/zXkI5ej.png)
 
 * Bây giờ có thể đặt lại mật khẩu cho root
+
     * `passwd huydv`
 ![Imgur](https://i.imgur.com/NEre6nZ.png)
+
 * Khởi động lại 
     * `exec /sbin/init`
 
@@ -179,9 +207,13 @@ mount -o remount, rw /
 
 ## 6.Đặt lại / Khôi phục mật khẩu tài khoản người dùng đã quên trong Ubuntu 2004
 * Khởi động lại máy giữ shift và khi hiện ra màn hình bên dưới
+
 ![Imgur](https://i.imgur.com/GMVxHXA.png)
+
 * Nhấn phím **`e`** , chữ e là viết tắt của edit
+
 * Sau khi nhấn **`e`** bạn sẽ được chuyển vào màn hình sau:
+
 ![Imgur](https://i.imgur.com/TyaqptV.png)
 
 * Tìm đến văn bản: `ro debian-installer/custom-installation=/custom find_preseed=/preseed.cfg auto preseed.file=/floppy/preseed.cfg automatic-ubiquity noprompt` và thay thế nó bằng `rw init=/bin/bash` 
