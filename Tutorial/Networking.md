@@ -138,7 +138,7 @@ Sau đó restart lại network: `service restart network`
 3. Cấu hình bằng giao diện GUI
 * Trong Terminal gõ lệnh `#nmtui`
 * trong cửa sổ **NetworkManager TUI** hiện ra, chọn **Edit a connect** => **OK**
-<img src=https://i.imgur.com/y4eMSIq.png>
+![Imgur](https://i.imgur.com/DQgkhre.png)
 
 * Chọn Card mạng cần chỉnh sửa:
 <img src=https://imgur.com/uOVjyeJ.png>
