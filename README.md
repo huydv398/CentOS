@@ -38,6 +38,7 @@
 
 ## Wordpress
 1. [Setup LAMP C7](CentOS-7/LAMP.md)
+2. [Wordpress setup All in One](CentOS-7/WP-1node.md)
 ## tool - setup
 1. [Stress test](tool/Stress-test.md)
 
