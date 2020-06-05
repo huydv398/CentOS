@@ -25,6 +25,8 @@ Kiểm tra trạng thái hoạt động trên server:
 
 `systemctl status httpd`
 
+![Imgur](https://i.imgur.com/Yf1md5D.png)
+
 Kiểm tra trạng thái hoạt động trên web:
 
 `[Địa chỉ IP Server]`
@@ -32,6 +34,7 @@ Kiểm tra trạng thái hoạt động trên web:
 Nếu sử dụng hệ điều hành trên máy ảo, tắt firewall để có thể truy cập trên browser máy thực:
 
 `systemctl stop firewalld`
+
 
 ### 3.Cài hệ quản trị cơ sở dữ liệu
 Trên thực tế với LAMP, bạn có thể sử dụng MySQL hoặc Mariadb.
@@ -49,6 +52,34 @@ Cài lại mật khẩu cho root của cơ sở dữ liệu:
 `mysql_secure_installation`
 
 Thiết lập một số cấu hình tại bước này như sau:
+
+* **Enter** khi đã có mật khẩu:
+
+![Imgur](https://i.imgur.com/0kUCDRx.png)
+
+* **Enter** Khi chưa có mật khẩu:
+
+![Imgur](https://i.imgur.com/Jl2d0je.png)
+
+![Imgur](https://i.imgur.com/M3zy1lG.png)
+* 1: Nhấn `y` để cài mật khẩu mới cho root
+* 2: Nhập mật khẩu mới cho root
+* 3: Nhập lại mật khẩu cho root
+
+* Nhập `y` xóa bỏ các User khác:
+
+![Imgur](https://i.imgur.com/o5QZlJI.png)
+
+* Không cho phép root đăng nhập từ xa:
+![Imgur](https://i.imgur.com/JuAa7ap.png)
+
+* Xóa bỏ database:
+![Imgur](https://i.imgur.com/7OLrFFG.png)
+
+* Khởi chạy lại bảng Privileges(Bảng phân quyền)
+![Imgur](https://i.imgur.com/252vBxj.png)
+
+Sau khi thiết lập, Kích hoạt mariadb để khởi động cùng hệ thống
 
 ### 4.Cài đặt PHP
 Cài đặt phiên bản mới nhất.Tiến hành thêm kho Remi CentOS:
@@ -91,3 +122,4 @@ Vào trình duyệt, gỗ trên thanh URL địa chỉ như sau:
 
 Sau khi màn hình xuất hiện, đã thực hiện thành công!
 
+![Imgur](https://i.imgur.com/3vye4eB.png)
