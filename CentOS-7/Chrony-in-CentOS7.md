@@ -1,11 +1,15 @@
 <h3> Cài đặt cấu hình Chrony trên CentOS-7 
 
 ## 1. Mô hình chuẩn bị
-*Chuẩn bị mô hình kết nối
+
+* Chuẩn bị mô hình kết nối
+
 ![Imgur](https://i.imgur.com/S595Tam.png)
 
 * IP Planning:
+
 ![Imgur](https://i.imgur.com/tRr1xbs.png)
+
 * Sử dụng 2 Server cho mô hình:
     * CentOS 7
     * Có kết nối Internet
@@ -29,17 +33,23 @@ sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 ```
 ## 3. Cài đặt cấu hình Chrony trên cả 2 server 
 Cài đặt Chrony:
+
 `yum install -y chrony`
 
 Sau khi cài đặt chúng ta tiến hành start Chrony và cho phép khởi động cùng hệ thống:
+
 `systemctl enable --now chronyd`
 
 Kiểm tra dịch vụ đang hoạt động .
+
 `systemctl status chronyd`
+
 ![Imgur](https://i.imgur.com/83WpnKq.png)
 
-Mặc định trên CenOS7 file cấu hình của Chnory nằm trong file `/etc/chnory.config `, Tiến hành kiểm tra file cấu hình
+Mặc định trên CenOS7 file cấu hình của Chnory nằm trong file `/etc/chnory.config `,Tiến hành kiểm tra file cấu hình
+
 `cat /etc/chrony.conf | egrep -v '^$|^#'`
+
 Trong đó :
 * `server` Xác định các NTP Server bạn muốn sử dụng.
 * prefer Đối với nhiều NTP Server chúng ta có thể chỉ định ưu tien kết nối từ NTP Server nào trươc sthay vì để hệ thống tự lựa chọn
@@ -63,13 +73,14 @@ Chrony cho phép chúng ta cấu hình Server thành một NTP Server. Việc n�
 
 Tại Server `192.168.20.3` là Server sẽ làm NTP Server. Chúng ta sẽ cấu hình bổ sung cấu hình cho phép các máy Client `192.168.20.2` phái trong có thể đồng bộ hóa thời gian từ Server này.
 
-`# sed -i 's|#allow 192.168.141.0/16|allow 192.168.20.0/24|g' /etc/chrony.conf`
+`# sed -i 's|#allow 192.168.0.0/16|allow 192.168.20.0/24|g' /etc/chrony.conf`
 
 Trong đó 192.168.20.0/24 chính là dải IP local mà chúng ta cho phép các Client kết nối vào NTP Server này để đồng bộ thời gian
 
 Kiểm tra lại file cấu hình:
 
 `cat /etc/chrony.conf | egrep -v '^$|^#'`
+
 ![Imgur](https://i.imgur.com/CnDd7vs.png)
 
 Restart lại dịch vụ để cập nhật cấu hình.
@@ -77,6 +88,7 @@ Restart lại dịch vụ để cập nhật cấu hình.
 `systemctl restart chronyd`
 
 Kiểm tra đồng bộ của `date` và `hwclock` đảm bảo đồng bộ
+
 ![Imgur](https://i.imgur.com/IiqDqCn.png)
 
 ## Cấu hình Chrony Client
@@ -85,31 +97,42 @@ Thực chất sau khi cài đặt và khởi động Chrony thì Server này đ�
 Bây giờ thay vì đồng bộ thời gian từ Internet chúng ta sẽ đồng bộ từ NTP Server chúng ta cấu hình phía trên 
 
 Tại server 192.168.20.2 Chỉnh sửa cấu hình chrony.
+
 ```
 server 0.centos.pool.ntp.org iburst
 server 1.centos.pool.ntp.org iburst
 server 2.centos.pool.ntp.org iburst
 server 3.centos.pool.ntp.org iburst
 ```
+
 Và thay đổi thành :
+
 ```
 192.168.10.3
 ```
+
 Kiểm tra cấu hình
+
 `cat /etc/chrony.conf | egrep -v '^$|^#'`
+
 ![Imgur](https://i.imgur.com/5fq0wBy.png)
 
 Sử dụng `chronyc` kiểm tra đồng bộ.
+
 `# chronyc sources -v`
+
 ![Imgur](https://i.imgur.com/RrgWne6.png)
 
 Kiểm tra đồng bộ `timedatectl`
+
 ![Imgur](https://i.imgur.com/Uu3AahF.png)
 
 Set đồng bộ thời gian cho đồng hồ của BIOS `hwclock`.
 
 `hwclock --systohc`
+
 Kiểm tra đồng bộ:
+
 ![Imgur](https://i.imgur.com/xaseZTy.png)
 
 ## Các câu lệnh kiểm tra bổ sung
@@ -129,6 +152,7 @@ Kiểm tra verify kết nối
     ![Imgur](https://i.imgur.com/IEn9TSF.png)
 
     * Tại máy client hiện địa chỉ IP của server khi Pool giờ:
+
     ![Imgur](https://i.imgur.com/NHdPmmM.png)
 
 ## Stop Chrony và kiểm tra 
@@ -139,7 +163,9 @@ Kiểm tra verify kết nối
 ![Imgur](https://i.imgur.com/YTNKX2O.png)
 
 ## Mô hình đồng bộ hóa thời gian từ Server quốc tế.
+
 ![Imgur](https://i.imgur.com/HPLuq0F.png)
+
 ![Imgur](https://i.imgur.com/jesMj92.png)
 
 * Cần chuẩn bị mô hình:
@@ -175,6 +201,7 @@ Kiểm tra verify kết nối
 * Kiểm tra dịch vụ đang hoạt động .
 
 `systemctl status chronyd`
+
 ![Imgur](https://i.imgur.com/d5Z9Jrn.png)
 
 * Chỉnh sửa cấu hình file `/etc/chrony.conf`:
@@ -191,7 +218,9 @@ server 1.vn.pool.ntp.org
 server 2.asia.pool.ntp.org
 server 0.asia.pool.ntp.org
 ```
-Câu lệnh trên có ý nghĩa tự động đồng bộ thời gian về từ một trong những NTP Server thuộc pool :`server 1.vn.pool.ntp.org, server 2.asia.pool.ntp.org, server 0.asia.pool.ntp.org`
+Câu lệnh trên có ý nghĩa tự động đồng bộ thời gian về từ một trong những NTP Server thuộc pool :
+
+ `server 1.vn.pool.ntp.org **server 2.asia.pool.ntp.org** server 0.asia.pool.ntp.org`
 
 * Khởi động dịch vụ và kiểm tra:
 
@@ -199,10 +228,14 @@ Câu lệnh trên có ý nghĩa tự động đồng bộ thời gian về từ 
 
 
 `timedatectl`<br>
+
 `chronyc tracking`
+
 ![Imgur](https://i.imgur.com/o0XQwxE.png)
 
+
 `chronyc sources -v`<br>
+
 ![Imgur](https://i.imgur.com/lkc5inX.png)
 
 ## Tổng kết
