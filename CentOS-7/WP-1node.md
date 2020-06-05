@@ -115,4 +115,4 @@ Login để đăng nhập:
 
 ![Imgur](https://i.imgur.com/SntjYhJ.png)
 
-Trên là hướng dẫn cài đặt WordPress trên 1 Server - All in One. Mời bạn đọc tiếp phần Wordpress cài đặt Wordpress trên 2 Server [tại đây](CentOS-7\Wp-2node.md)
+Trên là hướng dẫn cài đặt WordPress trên 1 Server - All in One. Mời bạn đọc tiếp phần Wordpress cài đặt Wordpress trên 2 Server [tại đây](CentOS-7/Wp-2node.md)
