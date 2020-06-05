@@ -35,7 +35,7 @@ Hoàn tất và thoát khỏi Mariadb:
 
 `exit`
 
-### Tải và cài đăt WordPress 
+### Tải và cài đặt WordPress 
 Cài gói hỗ trợ `php-gd`:
 `yum -y install php-gd`
 
