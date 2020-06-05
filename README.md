@@ -16,13 +16,15 @@
 15. [User sudo & disable ssh root](Tutorial/dis-ssh-root.md)
 16. [TCP Wrappers](Tutorial/TCP-Wrappers.md)
 17. [Change Atrribute](Tutorial/chattr-change_attribute.md)
+
+
 ## CentOS-7
 1. [Mount & fstab](CentOS-7/Mount-Fstab.md)
 2. [SSH keypair](CentOS-7/SSH-Keypairs.md)
 3. [test ssh](CentOS-7/testsecuressh.md)
 4. [Cài đăt Chrony (Network Time Protocol)](CentOS-7/Chrony-in-CentOS7.md)
 
-## Ubuntu 20.04
+## Ubuntu
 1. [IP Static](Ubuntu/IP-Static-Ubuntu20.04.md)
 2. [Mount](Ubuntu/NFS-Mount-on-Ubuntu20.04.md)
 3. [SSH keypair](Ubuntu/keypair.md)
@@ -34,6 +36,8 @@
 4. [Vim](Tutorial/Vim.md)
 5. [Lệnh History](Fundamental/Cmd-history.md)
 
+## Wordpress
+1. [Setup LAMP C7](CentOS-7/LAMP.md)
 ## tool - setup
 1. [Stress test](tool/Stress-test.md)
 
