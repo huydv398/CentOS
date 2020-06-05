@@ -50,3 +50,4 @@
 ### Note
 1. [Basic Telegram_bot](Note/basic-tele.md)
 2. [md5sum check](Note/md5.md)
+3. [Install WordPress](Note/wp1.md)
