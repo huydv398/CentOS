@@ -46,22 +46,28 @@ Bao gồm:
 Hiển thị tất cả các IP có trong file Accesslog
 
 **Cách 1** thống kê bằng câu lệnh Grep
-* Với câu lệnh:
+* Với câu lệnh, hiển thị ngẫu nhiên không theo sắp xếp thứ tự:
 
-`grep -o "[0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+" /var/log/httpd/access_log | sort | uniq`
+`grep -o "[0-9]\+\.[0-9]\+\.[0-255]\+\.[0-9]" /var/log/httpd/access_log | sort | uniq`
 
-Hiển thị ngẫu nhiên không theo sắp xếp thứ tự.
+![Imgur](https://i.imgur.com/eYHiY3A.png)
 
-* Với câu lệnh:
+* Với câu lệnh, Hiện thị tổng số lần xuất hiện theo thứ tự tăng dần:
 
-`grep -o "[0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+" /var/log/httpd/access_log | sort | uniq -c | sort -n`
+`grep -o "[0-9]\+\.[0-9]\+\.[0-255]\+\.[0-9]" /var/log/httpd/access_log | sort | uniq -c | sort -n`
 
-Hiện thị tổng số lần xuất hiện theo thứ tự tăng dần
+![Imgur](https://i.imgur.com/Y8BVzxV.png)
 
-* Với câu lệnh :`grep -o "[0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+" /var/log/httpd/access_log | sort | uniq -c | sort -nr`
+* Với câu lệnh, Hiện thị tổng số lần xuất hiện theo thứ tự giảm dần :
 
-Hiện thị tổng số lần xuất hiện theo thứ tự giảm dần
+`grep -o "[0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+" /var/log/httpd/access_log | sort | uniq -c | sort -nr`
+
+![Imgur](https://i.imgur.com/tXsstGn.png)
+
+
 
 **Cách 2** Hiển thị những địa chỉ IP có ở phần đầu của file access log
 
 `awk '{print $1}' /var/log/httpd/access_log | sort | uniq -c | sort -nr`
+
+![Imgur](https://i.imgur.com/rUiMFIr.png)
