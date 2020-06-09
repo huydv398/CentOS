@@ -25,7 +25,7 @@ Bạn cần tạo một tài khoản riêng để quản lý cơ sở dữ liệ
 
 Tiến hành cấp quyền quản lý CSDL Wordpress cho user mới tạo:
 
-`GRANT ALL PRIVILEGES ON wordpress.* TO huydv@localhost IDENTIFIED BY 'HUYdv398';`
+`GRANT ALL PRIVILEGES ON testwp.* TO huydv@localhost IDENTIFIED BY 'HUYdv398';`
 
 Xác thực lại những thay đổi về quyền: 
 
