@@ -52,6 +52,8 @@ Show file vừa tải xuống
 
 ![Imgur](https://i.imgur.com/5aGXj5V.png)
 
+`tar xvfz latest.tar.gz`
+
 >**Lưu ý**: giải nén file sẽ ra thư mục wordpress có đường dẫn /root/wordpress
 
 Copy các file trong thư mục sau WordPress tới đường dẫn `/var/www/html` Như sau:
