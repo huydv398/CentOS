@@ -63,20 +63,51 @@ Cài đặt PHP 7.4 :
 
 `yum install -y yum-utils`
 
-`yum install php php-mysqlnd php-fpm`
+`yum-config-manager --enable remi-php74`
+
+`yum install -y php php-mysqlnd php-fpm`
 
 Kiểm tra lại php:
 
 `php --version`
 
-Mở tệp cấu hình `/etc/php-fpm.d/www.conf` tệp cấu hình và chỉnh sửa:
+Mở tệp cấu hình `/etc/php-fpm.d/www.conf` và chỉnh sửa:
 
 `vi /etc/php-fpm.d/www.conf`
 
+Tìm kiếm các dòng lệnh sau và thay `apache` => `nginx`
+
+```
+user = apache
+
+group = apache
+```
+
+Sửa thành 
+
+```
+user = nginx
+
+group = nginx
+```
+Hoặc chạy hai lệnh sau:
+
+```
+sed -i 's/user = apache/user = nginx/g' /etc/php-fpm.d/www.conf 
+sed -i 's/group = apache/group = nginx/g' /etc/php-fpm.d/www.conf
+```
+
+
 Xác định vị trí lệnh `listen`, Theo mặc định `php-fpm` sẽ lắng nghe trên một máy chủ và cổng cụ thể qua TCP. Thay đổi cài đặt để nó lắng nghe trên socket file, vì điều này giúp cải thiện hiệu suất tổng thể của máy chủ.
 
+`sed -i 's/listen = 127.0.0.1:9000/listen = /var/run/php-fpm/php-fpm.sock;/g' /etc/php-fpm.d/www.conf`
 
 Thay đổi cài đặt của chủ sở hữu và nhóm cho tệp. Xác định vị trí lệnh `listen.owner`, `listen.group`, `listen.mode`. Loại bỏ dấu `;` dấu trước ở đầu dòng. Sau đó thay đổi thành nginx.
+```
+sed -i 's/;listen.owner = nobody/listen.owner = nginx/g' /etc/php-fpm.d/www.conf
+sed -i 's/;listen.group = nobody/;listen.group = nginx/g' /etc/php-fpm.d/www.conf
+sed -i 's/;listen.mode = 0660/listen.mode = 0660/g' /etc/php-fpm.d/www.conf
+```
 
 Kích hoạt và khởi động `php-fpm`
 
@@ -129,7 +160,7 @@ Lưu và đóng tệp khi hoàn tất.
 
 Khởi động lại nginx:
 
-`sudo systemctl restart nginx`
+`systemctl restart nginx`
 
 ## Kiểm tra xử lý PHP trên máy chủ Web của bạn
 
@@ -154,5 +185,8 @@ Kiểm tra tại trình duyệt
 `http://server_host_or_IP/info.php`
 
 Hiển thị kết quả như sau:
+
+![Imgur](https://i.imgur.com/tICTazD.png)
+
 
 
