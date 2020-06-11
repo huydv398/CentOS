@@ -71,26 +71,23 @@ Kiểm tra lại php:
 
 `php --version`
 
+### Cấu hình file `www.conf`
+**Cách 1**: Sửa File
 Mở tệp cấu hình `/etc/php-fpm.d/www.conf` và chỉnh sửa:
 
 `vi /etc/php-fpm.d/www.conf`
 
 Tìm kiếm các dòng lệnh sau và thay `apache` => `nginx`
-
 ```
 user = apache
-
 group = apache
 ```
-
 Sửa thành 
-
 ```
 user = nginx
-
 group = nginx
 ```
-Hoặc chạy hai lệnh sau:
+**Cách 2** Chạy lệnh sau:
 
 ```
 sed -i 's/user = apache/user = nginx/g' /etc/php-fpm.d/www.conf 
