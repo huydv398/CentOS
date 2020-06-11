@@ -34,15 +34,15 @@ firewall-cmd --permanent --zone=public --add-service=http
 firewall-cmd --permanent --zone=public --add-service=https
 firewall-cmd --reload
 ```
+Tại thanh URL nhập địa chỉ Domain hoặc IP:
 
-; RPM: apache user chosen to provide access to the same directories as httpd
-user = apache
-; RPM: Keep a group allowed to write in log dir.
-group = apache
+![Imgur](https://i.imgur.com/aI9lpvf.png)
+
+Cài đặt thành công Nginx.
 
 * Để cho phép Nginx khởi động cùng server :
 
-`sudo systemctl enable nginx`
+`systemctl enable nginx`
 
 ## Cài đặt CSDL
 
@@ -53,7 +53,7 @@ group = apache
 * Cài đặt kho Remi cho CentOS-7:
 
 
-`yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm`
+`yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm`
 
 * Sau khi cài đặt xong, bạn sẽ cần chạy một lệnh để kích hoạt kho lưu trữ chứa phiên bản PHP:
 
