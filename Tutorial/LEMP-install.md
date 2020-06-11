@@ -13,19 +13,18 @@ LEMP là một nhóm các phần mềm có thể phục vụ các trang web đ�
 * Có kết nối ra môi trường Internet
 
 ## Cài đặt Nginx
+```
+yum install -y update
+yum install -y epel-release
+```
 
-`yum install -y update`
 
-`yum install -y epel-release`
+* Cài đặt và khởi động `nginx`
 
-
-* Cài đặt `nginx`
-
-`yum install nginx -y`
-
-* Khởi động nginx:
-
-`systemctl start nginx`
+```
+yum install nginx -y
+systemctl start nginx
+```
 
 Nếu bạn đang chạy tường lửa, hãy chạy lệnh sau để cho phép lưu lượng HTTP và HTTPS:
 
@@ -60,13 +59,11 @@ Cài đặt thành công Nginx.
 `yum --disablerepo="*" --enablerepo="remi-safe" list php[7-9][0-9].x86_64`
 
 Cài đặt PHP 7.4 :
-
-`yum install -y yum-utils`
-
-`yum-config-manager --enable remi-php74`
-
-`yum install -y php php-mysqlnd php-fpm`
-
+```
+yum install -y yum-utils
+yum-config-manager --enable remi-php74
+yum install -y php php-mysqlnd php-fpm
+```
 Kiểm tra lại php:
 
 `php --version`
@@ -97,7 +94,7 @@ sed -i 's/group = apache/group = nginx/g' /etc/php-fpm.d/www.conf
 
 Xác định vị trí lệnh `listen`, Theo mặc định `php-fpm` sẽ lắng nghe trên một máy chủ và cổng cụ thể qua TCP. Thay đổi cài đặt để nó lắng nghe trên socket file, vì điều này giúp cải thiện hiệu suất tổng thể của máy chủ.
 
-` sed -i "s/listen = 127.0.0.1:9000/#/g" /etc/php-fpm.d/www.conf `
+` sed -i "s/listen = 127.0.0.1:9000/listen = var/run/php-fpm/php-fpm.sock;/g" /etc/php-fpm.d/www.conf `
 
 `echo "listen = var/run/php-fpm/php-fpm.sock;" >> /etc/php-fpm.d/www.conf`
 
