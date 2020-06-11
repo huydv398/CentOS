@@ -35,7 +35,7 @@ firewall-cmd --reload
 ```
 Tại thanh URL nhập địa chỉ Domain hoặc IP:
 
-![Imgur](https://i.imgur.com/aI9lpvf.png)
+![Imgur](https://i.imgur.com/f60zmTC.png)
 
 Cài đặt thành công Nginx.
 
@@ -69,7 +69,7 @@ Kiểm tra lại php:
 `php --version`
 
 ### Cấu hình file `www.conf`
-**Cách 1**: Sửa File
+ Sửa File
 Mở tệp cấu hình `/etc/php-fpm.d/www.conf` và chỉnh sửa:
 
 `vi /etc/php-fpm.d/www.conf`
@@ -84,25 +84,20 @@ Sửa thành
 user = nginx
 group = nginx
 ```
-**Cách 2** Chạy lệnh sau:
-
-```
-sed -i 's/user = apache/user = nginx/g' /etc/php-fpm.d/www.conf 
-sed -i 's/group = apache/group = nginx/g' /etc/php-fpm.d/www.conf
-```
-
 
 Xác định vị trí lệnh `listen`, Theo mặc định `php-fpm` sẽ lắng nghe trên một máy chủ và cổng cụ thể qua TCP. Thay đổi cài đặt để nó lắng nghe trên socket file, vì điều này giúp cải thiện hiệu suất tổng thể của máy chủ.
 
-` sed -i "s/listen = 127.0.0.1:9000/listen = var/run/php-fpm/php-fpm.sock;/g" /etc/php-fpm.d/www.conf `
+Tìm đến dòng có chứa câu lệnh `listen = 127.0.0.1:9000`
 
-`echo "listen = var/run/php-fpm/php-fpm.sock;" >> /etc/php-fpm.d/www.conf`
+Và sửa thành
+
+`listen = var/run/php-fpm/php-fpm.sock;`
 
 Thay đổi cài đặt của chủ sở hữu và nhóm cho tệp. Xác định vị trí lệnh `listen.owner`, `listen.group`, `listen.mode`. Loại bỏ dấu `;` dấu trước ở đầu dòng. Sau đó thay đổi thành nginx.
 ```
-sed -i 's/;listen.owner = nobody/listen.owner = nginx/g' /etc/php-fpm.d/www.conf
-sed -i 's/;listen.group = nobody/listen.group = nginx/g' /etc/php-fpm.d/www.conf
-sed -i 's/;listen.mode = 0660/listen.mode = 0660/g' /etc/php-fpm.d/www.conf
+;listen.owner = nobody  => listen.owner = nginx
+;listen.group = nobody  => listen.group = nginx
+;listen.mode = 0660     => listen.mode = 0660
 ```
 
 Kích hoạt và khởi động `php-fpm`
