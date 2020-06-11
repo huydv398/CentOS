@@ -100,12 +100,14 @@ sed -i 's/group = apache/group = nginx/g' /etc/php-fpm.d/www.conf
 
 Xác định vị trí lệnh `listen`, Theo mặc định `php-fpm` sẽ lắng nghe trên một máy chủ và cổng cụ thể qua TCP. Thay đổi cài đặt để nó lắng nghe trên socket file, vì điều này giúp cải thiện hiệu suất tổng thể của máy chủ.
 
-`sed -i 's/listen = 127.0.0.1:9000/listen = /var/run/php-fpm/php-fpm.sock;/g' /etc/php-fpm.d/www.conf`
+` sed -i "s/listen = 127.0.0.1:9000/#/g" /etc/php-fpm.d/www.conf `
+
+`echo "listen = var/run/php-fpm/php-fpm.sock;" >> /etc/php-fpm.d/www.conf`
 
 Thay đổi cài đặt của chủ sở hữu và nhóm cho tệp. Xác định vị trí lệnh `listen.owner`, `listen.group`, `listen.mode`. Loại bỏ dấu `;` dấu trước ở đầu dòng. Sau đó thay đổi thành nginx.
 ```
 sed -i 's/;listen.owner = nobody/listen.owner = nginx/g' /etc/php-fpm.d/www.conf
-sed -i 's/;listen.group = nobody/;listen.group = nginx/g' /etc/php-fpm.d/www.conf
+sed -i 's/;listen.group = nobody/listen.group = nginx/g' /etc/php-fpm.d/www.conf
 sed -i 's/;listen.mode = 0660/listen.mode = 0660/g' /etc/php-fpm.d/www.conf
 ```
 
