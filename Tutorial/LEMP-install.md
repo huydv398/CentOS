@@ -45,6 +45,55 @@ Cài đặt thành công Nginx.
 
 ## Cài đặt CSDL
 
+Bạn có thể sử dụng MySQL hoặc Mariadb.
+
+* Trên cửa sổ Terminal, tiến hành cài Mariadb:
+
+`yum -y install mariadb mariadb-server `
+
+* Tiến hành khởi động mariadb service: 
+
+`systemctl start mariadb `
+
+* Cài lại mật khẩu cho root của cơ sở dữ liệu:
+
+`mysql_secure_installation`
+
+* Thiết lập một số cấu hình tại bước này như sau:
+
+* **Enter** khi đã có mật khẩu:
+
+![Imgur](https://i.imgur.com/0kUCDRx.png)
+
+* **Enter** Khi chưa có mật khẩu:
+
+![Imgur](https://i.imgur.com/Jl2d0je.png)
+
+![Imgur](https://i.imgur.com/M3zy1lG.png)
+
+1: Nhấn `y` để cài mật khẩu mới cho root
+
+ 2: Nhập mật khẩu mới cho root
+
+ 3: Nhập lại mật khẩu cho root
+
+* Nhập `y` xóa bỏ các User khác:
+
+![Imgur](https://i.imgur.com/o5QZlJI.png)
+
+* Không cho phép root đăng nhập từ xa:
+
+![Imgur](https://i.imgur.com/JuAa7ap.png)
+
+* Xóa bỏ database:
+
+![Imgur](https://i.imgur.com/7OLrFFG.png)
+
+* Khởi chạy lại bảng Privileges(Bảng phân quyền)
+
+![Imgur](https://i.imgur.com/252vBxj.png)
+
+Sau khi thiết lập, Kích hoạt mariadb để khởi động cùng hệ thống
 ## Cài đặt PHP
 
 * PHP là thành phần thiết lập nội dung quan trọng.
@@ -178,6 +227,35 @@ Kiểm tra tại trình duyệt
 Hiển thị kết quả như sau:
 
 ![Imgur](https://i.imgur.com/tICTazD.png)
+### Tạo cơ sở dữ liệu cho tài khoản Wordpress 
+* Đăng nhập vào tài khoản root của cơ sở dữ liệu:
+
+`mysql -u root -p`
+
+Bạn cần nhập Password mà bạn đã thiết lạp cài đặt khi cài đặt Mariadb. Khi nhập xong sẽ chuyển sang màn hình Mariadb .
+
+Tiếp theo thiết lập bạn sẽ tạo cơ sở dữ liệu cho wordpress. Có thể dùng tên bất kỳ cho tên của Database.
+Trong bài mình đặt là **testwp**.
+
+`CREATE DATABASE testwp;`
+
+Bạn cần tạo một tài khoản riêng để quản lý cơ sở dữ liệu cho Wordpress. Trong bài sẽ đặt 
+* user: huydv
+* password: HUYdv398
+
+    `CREATE USER huydv@localhost IDENTIFIED BY 'HUYdv398';`
+
+Tiến hành cấp quyền quản lý CSDL Wordpress cho user mới tạo:
+
+`GRANT ALL PRIVILEGES ON testwp.* TO huydv@localhost IDENTIFIED BY 'HUYdv398';`
+
+Xác thực lại những thay đổi về quyền: 
+
+`FLUSH PRIVILEGES;`
+
+Hoàn tất và thoát khỏi Mariadb:
+
+`exit`
 
 ## Tải và cài đặt WordPress 
 Cài gói hỗ trợ `php-gd`:
