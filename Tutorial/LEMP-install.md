@@ -179,5 +179,88 @@ Hiển thị kết quả như sau:
 
 ![Imgur](https://i.imgur.com/tICTazD.png)
 
+## Tải và cài đặt WordPress 
+Cài gói hỗ trợ `php-gd`:
+`yum -y install php-gd`
 
+Cài gói tải xuống `wget`
+Tiến hành tải xuống Wordpress với phiên bản mới nhất;
+
+```
+yum install wget -y
+wget http://wordpress.org/latest.tar.gz
+``` 
+
+>**Lưu ý**: Bạn cần để ý tới thư mục mà wget tải xuống. ở đây mình đang đứng tại thư mục /root/
+
+Giải nén tệp tin.
+
+`tar xvfz latest.tar.gz`
+
+>**Lưu ý**: giải nén file sẽ ra thư mục wordpress có đường dẫn /root/wordpress
+
+Copy các file trong thư mục sau WordPress tới đường dẫn `/usr/share/nginx/html/` Như sau:
+
+`cp -Rvf /root/wordpress/* /usr/share/nginx/html/`
+
+### Cấu hình Wordpress
+
+Di chuyển tới thư mục chứa Wordpress 
+
+`cd /usr/share/nginx/html/`
+
+File có cấu hình wp là file `wp-config.php`. Tuy nhiên ở đây chỉ có file `wp-config-sample.php`.Tiến hành cophy lại file cấu hình như sau:
+
+`cp wp-config-sample.php wp-config.php`
+
+Mở file `wp-config.php` với trình vi để sửa:
+
+`vi wp-config.php`
+
+Trong file tìm đến dòng dưới để chỉnh sửa:
+
+```
+/** Tên database cho WordPress */
+define( 'DB_NAME', 'testwp' );
+
+/** MySQL database tên Usern */
+define( 'DB_USER', 'huydv' );
+
+/** MySQL database password cho user */
+define( 'DB_PASSWORD', 'HUYdv398' );
+
+/** MySQL hostname */
+define( 'DB_HOST', 'localhost' );
+
+/** Database Charset to use in creating database tables. */
+define( 'DB_CHARSET', 'utf8' );
+```
+
+Lưu và thoát khỏi trình vi.
+
+Khởi động lại nginx
+
+`systemctl restart nginx`
+
+### Hoàn tất phần giao diện 
+
+Trên trình duyệt, gõ địa chỉ IP server trên thanh url, trình duyệt sẽ xuất hiện như sau:
+
+
+
+Nhập đầy đủ thông rồi `Install WorPress `
+
+![Imgur](https://i.imgur.com/CfbmgAN.png)
+
+
+
+Login để đăng nhập:
+
+![Imgur](https://i.imgur.com/UatyBYP.png)
+
+
+
+Đây là bảng điều khiển quản trị của website:
+
+![Imgur](https://i.imgur.com/LdHCyLK.png)
 
