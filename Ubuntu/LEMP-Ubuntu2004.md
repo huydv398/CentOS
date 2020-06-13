@@ -44,7 +44,7 @@ Hoặc nhập địa chỉ IP máy chủ:
 ### Thiết lập khối máy chủ
 Khi sử dụng Nginx web server, server blocks (tương tự máy chủ ảo trong Apache) có thể được sử dụng để đóng gói chi tiết cấu hình và lưu trữ nhiều tên miền từ một máy chủ.
 
-Thiết lập một tên miền được gọi là `test_domain`.
+Thiết lập một tên miền được gọi là `test_domain.com`.
 
 Nginx trên Ubuntu 20.04 có một server block được bật theo mặc dịnh được  cấu hình để phấn phát tài liệu ra khỏi thư mục `/var/www/html`. Mặc dù hoạt động tốt trên một trang web nhưng nó trở nên khó sử dụng nếu bạn đang lưu trữ nhiều trang web.Thay vì sửa đổi `/var/www/html`, hãy tạo cấu trúc trang**test_domain.com** trong thư mục `var/www`
 
