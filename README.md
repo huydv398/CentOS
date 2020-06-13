@@ -29,6 +29,7 @@
 2. [Mount](Ubuntu/NFS-Mount-on-Ubuntu20.04.md)
 3. [SSH keypair](Ubuntu/keypair.md)
 4. [Basic setup](Ubuntu/basic-setup-ubuntu2004.md)
+5. [LEMP.U20](Ubuntu/LEMP-Ubuntu2004.md)
 
 # Linux fundameltals
 1. [Filter](Fundamental/filters-command.md)
