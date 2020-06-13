@@ -29,7 +29,7 @@
 2. [Mount](Ubuntu/NFS-Mount-on-Ubuntu20.04.md)
 3. [SSH keypair](Ubuntu/keypair.md)
 4. [Basic setup](Ubuntu/basic-setup-ubuntu2004.md)
-5. [LEMP.U20](Ubuntu/LEMP-Ubuntu2004.md)
+
 
 # Linux fundameltals
 1. [Filter](Fundamental/filters-command.md)
@@ -38,11 +38,8 @@
 4. [Vim](Tutorial/Vim.md)
 5. [Lệnh History](Fundamental/Cmd-history.md)
 6. [File_log Http](Fundamental/Filelog-httpd.md)
-## Wordpress
-1. [Install LAMP](CentOS-7/LAMP.md)
-2. [Wordpress setup All in One](CentOS-7/WP-1node.md)
-3. [Wordpres setup 2 Server](CentOS-7/Wp-2node.md)
-4. [Install LEMP && WordPress](Tutorial/LEMP-install.md)
+
+
 
 ## tool - setup
 1. [Stress test](tool/Stress-test.md)
@@ -50,6 +47,15 @@
 ## AAA
 1. [NTP](Network-Time-Protocol.md)
 2. [Configure Network Time Protocol Server & Client](Fundamental/NTP-configure.md)
+
+### Web Server
+5. [LEMP.U20](Ubuntu/LEMP-Ubuntu2004.md)
+4. [Install LEMP && WordPress](Tutorial/LEMP-install.md)
+3. [Wordpres setup 2 Server](CentOS-7/Wp-2node.md)
+1. [Install LAMP](CentOS-7/LAMP.md)
+2. [Wordpress setup All in One](CentOS-7/WP-1node.md)
+3. [Wordpres setup 2 Server](CentOS-7/Wp-2node.md)
+
 
 ### Note
 1. [Basic Telegram_bot](Note/basic-tele.md)
