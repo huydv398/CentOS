@@ -14,11 +14,11 @@ Tải xuống và cài đặt Nginx:
 
 `yum install -y nginx`
 
-Trong hướng dẫn sẽ hướng dẫn tạo một khối máy chủ cho `demo1.com` và một khối cho `demo2.com`. Nên thay thế tên miền hoặc giá trị riêng của bạn khi làm theo.
+Trong hướng dẫn sẽ hướng dẫn tạo một khối máy chủ cho `huydv.com` và một khối cho `huyts.com`. Nên thay thế tên miền hoặc giá trị riêng của bạn khi làm theo.
 
 **Bước một - Tạo cấu trúc thư mục**
 
-Trong mỗi thư mục này, tạo một thư mục html với flag -c cho phép tạo một thư mục lồng bên trong nó:
+Trong mỗi thư mục này, tạo một thư mục html với flag `-c` cho phép tạo một thư mục lồng bên trong nó:
 
 ```
 mkdir -p /usr/share/huydv.com/html
@@ -55,7 +55,7 @@ Trong tệp này, tạo một tài liệu HTML đơn giản cho web:
     <title>Welcome to huydv.com!</title>
   </head>
   <body>
-    <h1>Success! Thanh cong</h1>
+    <h1>Success! Thanh cong huydv.com</h1>
   </body>
 </html>
 ```
@@ -78,7 +78,7 @@ Mở tệp vừa tạo và sửa đổi các thông tin có liên quan:
     <title>Welcome to huyts.com!</title>
   </head>
   <body>
-    <h1>Success! Thanh cong</h1>
+    <h1>Success! Thanh cong huyts.com</h1>
   </body>
 </html>
 ```
@@ -241,4 +241,12 @@ Sửa file với cấu trúc sau
 Điều này sẽ chỉ dẫn bất kỳ yêu cầu nào cho huydv.com và huyts.com trên máy tính local của tôi và gửi chúng đến máy chủ tại server có IP: `192.168.20.3`
 
 ## Kiểm tra kết quả của bạn
+Kiểm tra tại trình duyệt:
+* Khối` huydv.com`:
+![Imgur](https://i.imgur.com/560A1I2.png)
 
+* Khối `huyts.com`:
+
+![Imgur](https://i.imgur.com/3ZVHdEE.png)
+
+Trên là quá trình thực hiện setup hai khối trang web cơ bản lên một server nginx.
