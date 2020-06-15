@@ -55,7 +55,7 @@
 4. [C7 Wordpress All in One](CentOS-7/WP-1node.md)
 5. [C7 Wordpres 2 Server](CentOS-7/Wp-2node.md)
 6. [U20 Nginx](Ubuntu/Nginx-Ubuntu2004.md)
-7. [C7 Nginx](CentOS-7/Nginx.md)
+7. [C7 Nginx - 2Web](CentOS-7/Nginx.md)
 ### Note
 1. [Basic Telegram_bot](Note/basic-tele.md)
 2. [md5sum check](Note/md5.md)
