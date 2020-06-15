@@ -1,4 +1,4 @@
-# Cài đặt Nginx lên CentOS-7
+# Cài đặt Nginx lên CentOS-7 2Web
 
 ## Điều kiện
 Trước khi bắt đầu
