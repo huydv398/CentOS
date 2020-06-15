@@ -16,7 +16,7 @@ Tải xuống và cài đặt Nginx:
 
 Trong hướng dẫn sẽ hướng dẫn tạo một khối máy chủ cho `huydv.com` và một khối cho `huyts.com`. Nên thay thế tên miền hoặc giá trị riêng của bạn khi làm theo.
 
-**Bước một - Tạo cấu trúc thư mục**
+**Tạo cấu trúc thư mục**
 
 Trong mỗi thư mục này, tạo một thư mục html với flag `-c` cho phép tạo một thư mục lồng bên trong nó:
 
@@ -29,7 +29,7 @@ mkdir -p /usr/share/huyts.com/html
 Cấu trúc thư mục được sở hữu bởi người dùng *root*, nếu muốn người dùng thường xuyên có thể sửa đổi các tệp trong thư mục web, thay đổi quyền sở hữu với `chown`:
 
 ```
- chown -R $USER:$USER /usr/share/huyts.com/html/
+chown -R $USER:$USER /usr/share/huyts.com/html/
 chown -R $USER:$USER /usr/share/huydv.com/html/
 ```
 
