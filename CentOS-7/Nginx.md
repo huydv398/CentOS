@@ -21,23 +21,23 @@ Trong hướng dẫn sẽ hướng dẫn tạo một khối máy chủ cho `demo
 Trong mỗi thư mục này, tạo một thư mục html với flag -c cho phép tạo một thư mục lồng bên trong nó:
 
 ```
-mkdir -p /var/www/huydv.com/html
-mkdir -p /var/www/huyts.com/html
+mkdir -p /usr/share/huydv.com/html
+mkdir -p /usr/share/huyts.com/html
 ```
 
 #### Cấp quyền 
 Cấu trúc thư mục được sở hữu bởi người dùng *root*, nếu muốn người dùng thường xuyên có thể sửa đổi các tệp trong thư mục web, thay đổi quyền sở hữu với `chown`:
 
 ```
- chown -R $USER:$USER /var/www/huyts.com/html/
-chown -R $USER:$USER /var/www/huydv.com/html/
+ chown -R $USER:$USER /usr/share/huyts.com/html/
+chown -R $USER:$USER /usr/share/huydv.com/html/
 ```
 
 Các biến `$USER` sẽ mất giá trị giá trị của người dùng mà bạn đăng nhập bằng lệnh. Bằng cách này, người dùng thông thường hiện sở hữu các thư mục con `public_html` nơi sẽ lưu trữ nội dung.
 
 Nên sửa đổi các quyền để đảm bảo rằng quyền truy cập đọc được phép vào thư mục web chung và tất cả các tệp và thư mục bên trong, để các trang có thể phục vụ chính xác:
 
-`chmod -R 755 /var/www`
+`chmod -R 755 /usr/share/`
 
 Máy chủ web của bạn bây giờ sẽ có các quyền cần thiết để phân phát nội dung và người dùng của bạn sẽ có thể tạo nội dung trong các thư mục phù hợp
 
@@ -45,7 +45,7 @@ Máy chủ web của bạn bây giờ sẽ có các quyền cần thiết để 
 
 Tạo một trang `index.html` cho mỗi trang web xác định.
 
-`vi /var/www/huydv.com/html/index.html`
+`vi /usr/share/huydv.com/html/index.html`
 
 Trong tệp này, tạo một tài liệu HTML đơn giản cho web:
 
@@ -64,10 +64,14 @@ Lưu và đóng tệp khi hoàn thành.
 
 Có thể sao chép tệp này để sử dụng làm mẫu cho trang web thứ hai:
 
-`cp /var/www/huydv.com/html/index.html /var/www/huyts.com/html/index.html`
+`cp /usr/share/huydv.com/html/index.html /usr/share/huyts.com/html/index.html`
 
 
 Mở tệp vừa tạo và sửa đổi các thông tin có liên quan:
+
+`vi /usr/share/huyts.com/html/index.html`
+
+
 ```
 <html>
   <head>
@@ -148,7 +152,7 @@ server {
 
 * `root`: Trỏ tới gốc tài liệu của trang mà bạn đã tạo:
 
-`root /var/www/huydv.com/html;`
+`root /usr/share/huydv.com/html;`
 
 
 Thêm một lệnh `try_files`, lệnh kết thúc bằng lỗi 404 nếu không tìm thấy tên tệp hoặc thư mục mong muốn:
@@ -163,7 +167,7 @@ server {
     server_name  huydv.com www.huydv.com;
     try_files $uri $uri/ =404;
     location / {
-        root   /var/www/huydv/html;
+        root   /usr/share/huydv/html;
         index  index.html index.htm;
     }
     error_page   500 502 503 504  /50x.html;
@@ -193,7 +197,7 @@ server {
     server_name  huyts.com www.huyts.com;
     try_files $uri $uri/ =404;
     location / {
-        root   /var/www/huyts.com/html;
+        root   /usr/share/huyts.com/html;
         index  index.html index.htm;
     }
     error_page   500 502 503 504  /50x.html;
