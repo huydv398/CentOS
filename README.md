@@ -49,14 +49,13 @@
 2. [Configure Network Time Protocol Server & Client](Fundamental/NTP-configure.md)
 
 ### Web Server
-5. [LEMP.U20](Ubuntu/LEMP-Ubuntu2004.md)
-4. [Install LEMP && WordPress](Tutorial/LEMP-install.md)
-3. [Wordpres setup 2 Server](CentOS-7/Wp-2node.md)
-1. [Install LAMP](CentOS-7/LAMP.md)
-2. [Wordpress setup All in One](CentOS-7/WP-1node.md)
-3. [Wordpres setup 2 Server](CentOS-7/Wp-2node.md)
-
-
+1. [U20 LEMP](CentOS-7/LEMP.md)
+2. [C7 LEMP && WordPress](Tutorial/LEMP-install.md)
+3. [C7 LAMP](CentOS-7/LAMP.md)
+4. [C7 Wordpress All in One](CentOS-7/WP-1node.md)
+5. [C7 Wordpres 2 Server](CentOS-7/Wp-2node.md)
+6. [U20 Nginx](Ubuntu/Nginx-Ubuntu2004.md)
+7. [C7 Nginx](CentOS-7/Nginx.md)
 ### Note
 1. [Basic Telegram_bot](Note/basic-tele.md)
 2. [md5sum check](Note/md5.md)
