@@ -78,7 +78,7 @@ http {
 
 ```
 
-Lý do cho phép nhiều khai bào về Server Context là mỗi trường hợp xác định một máy chủ ảo cụ thể để xử lý các yêu cầu của máy khách. Bạn có thể có nhiều khối máy chủ. Mỗi khối có thể xử lý một tập hợp con cụ thể của các kết nối.
+Lý do cho phép nhiều khai báo về **Server Context** là mỗi trường hợp xác định một máy chủ ảo cụ thể để xử lý các yêu cầu của máy khách. Bạn có thể có nhiều khối máy chủ. Mỗi khối có thể xử lý một tập hợp con cụ thể của các kết nối.
 
 Do khả năng của nhiều máy chủ, Context này cũng là lần đầu tiên Nginx phải sử dụng thuật toán lựa chọn để đưa ra quyết định. Mỗi yêu cầu máy khách sẽ được sử lý theo  cấu hình được xác định trong một ngữ cảnh máy chủ, do đó Nginx phải quyết định bối cảnh máy chủ nào phù hợp nhất dựa trên chi tiết của yêu cầu. Các chỉ thị quyết định nếu một khối máy chủ sẽ được sử dụng yêu cầu :
 
@@ -88,7 +88,7 @@ Do khả năng của nhiều máy chủ, Context này cũng là lần đầu ti�
 
 Các lệnh trong ngữ cảnh này có thể ghi đè nhiều lệnh có thể được xác định trong ngữ cảnh http, bao gồm ghi logging, document root,compression(nén), etc ...Ngoài các lệnh được lấy từ ngữ cảnh http, chúng tôi có thể định cấu hình tệp để cố gắng trả lời yêu cầu(`try_file`), đưa ra các chuyển hướng và viết lại (`return`) và (`rewrite`) và đặt các biến tùy ý (`set`).
 
-location context: chia sẻ nhiều phẩm chất quan hệ với bối cảnh máy chủ. ví dụ nhiều bối cảnh vị trí có thể được xác định, mỗi vị trí được sử dụng để xứ lý một loại yêu cầu khách hàng nhất định và mỗi vị trí được chọn nhờ phù hợp với định nghĩa vị trí so với yêu cầu khách hàng thông qua thuật toán lựa chọn.
+`Location context`: chia sẻ nhiều phẩm chất quan hệ với bối cảnh máy chủ. ví dụ nhiều bối cảnh vị trí có thể được xác định, mỗi vị trí được sử dụng để xứ lý một loại yêu cầu khách hàng nhất định và mỗi vị trí được chọn nhờ phù hợp với định nghĩa vị trí so với yêu cầu khách hàng thông qua thuật toán lựa chọn.
 
 Mặc dù các chỉ thị xác định có chọn khối máy chủ được xác định trong ngữ cảnh máy chủ hay không, thành phần quyết định khả năng sử lý yêu cầu của vị trí được đạt trong định nghĩa vị trí 
 
