@@ -1,6 +1,6 @@
-# Hiểu cấu trúc cấu hình và cấu hình tệp cấu hình Nginx.
+# Tìm hiểu cấu trúc cấu hình và cấu hình tệp cấu hình Nginx.
 
-## Hiểu contexts cấu hình Nginx
+## Tìm hiểu contexts cấu hình Nginx
 Bài viết này bao gồm cấu trúc cơ bản được tìm thấy trong tệp cấu hình Nginx chính. Vị trị của tệp này sẽ thay đổi tùy thuộc vào cách bạn cài đặt phần mềm trên máy tính của mình. Đối với nhiều bản phân phối, tệp sẽ được đặt tại `/etc/nginx/nginx.conf`. Nếu nó không tồn tại ở đó thì nó cũng có thể ở `/usr/local/nginx/nginx.conf` hoặc `usr/local/etc/nginx/nginx/conf`.
 
 Điều đầu tiên cần chú ý khi xem tệp cấu hình chính là nó dường như được tổ chức theo cấu trúc giống như root, được xác định bởi các bộ dấu ngoặc '`{` `}`'. Theo cách nói của Nginx, các khu vực mà các dấu ngoặc này xác định được gọi là bối cảnh của web vì chúng chứa các chi tiết cấu hình được phân tách theo khu vực quân tâm của chúng. Về cơ bản, có bộ phận này cung cấp một cấu trúc tổ chúc cùng với một số logic có điều kiện để quyết định có áp dụng các cấu hình bên trong hay không.
