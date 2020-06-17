@@ -335,8 +335,28 @@ index index.html index.htm;
 }
 ```
 rooi trỏ tới thư mục `html/`. Trong cài đặt mặc định của Nginx, đường dẫn đầy đủ đến thư mục này là `/etc/nginx/html`
+
 **Request**: [http://demo.com/blog/style.css]()
-**Returns**: NGINX sẽ tìm yêu cầu của client theo đường dẫn /etc/nginx/html/blog/style.css
+
+**Returns**: NGINX sẽ tìm yêu cầu của client theo đường dẫn `/etc/nginx/html/blog/style.css`
+
+Ví dụ 2:
+```
+location / {
+root /srv/www/example.com/public_html;
+index index.html index.htm;
+}
+location ~ \.pl$ {
+gzip off;
+include /etc/nginx/fastcgi_params;
+fastcgi_pass unix:/var/run/fcgiwrap.socket;
+fastcgi_index index.pl;
+fastcgi_param SCRIPT_FILENAME /srv/www/example.com/public_html$fastcgi_script_name;
+}
+```
+Tất cả các yêu cầu tài nguyên kết thúc bằng phần mở rộng `.pl` được xử lý bởi location context thứ hai, chỉ didngj xử lý fastcgi cho các yêu cầu này. Nginx sử dụng chỉ thị vị trí đầu tiên. Tài nguyên được đặt trên hệ thống tệp tại thư mục `/srv/www/example.com/`. Nếu không có tên tệp nào được chỉ định trong yêu cầu, Ngĩn sẽ tìm cung cấp tệp `index.html` hoặc `index.htm`. Nếu không tìm thấy tệp máy chủ sẽ trả về lỗi 404.
+
+
  Mặc dù bối cảnh máy chủ được chọn dựa trên tổ hợp địa chỉ IP/ port được yêu cầu máy chủ trong tiêu đề của máy chủ lưu trữ, các khối vị trí tiếp tục phân chia xử lý yêu cầu trong khối máy chủ bằng cách xem URI yêu cầu. URI yêu cầu  là một phần của yêu cầu xuất hiện sau khi kết hợp tên miền hoặc địa chỉ IP /port 
 
 **The Upstream context**: được sử dụng để xác định và cấu hình các máy chủ upstream của web. Về cơ bản, bối cảnh này xác định một nhóm máy chủ được đặt tên mà nginx sau đó có thể yêu cầu proxy. context này có thể sẽ được sử dụng khi bạn định cấu hình các loại proxy.
@@ -408,3 +428,4 @@ location /restricted-write {
 
 Điều này sẽ áp dụng các chỉ thị bên trong ngữ cảnh(có nghĩa là hạn chế quyền truy cập) khi gặp bất kì phương thức HTTP nào ngoại trừ các phương thúc được liệt ke trong tiêu đề context. Kết quả của ví dụ tren là bất kỳ máy khách nào cũng có thể sử dụng nọi dung động từ GET và HEAD, nhưng chỉ những máy khách đến từ subnet `192.168.1.1/24` mới được phép sử dụng các phương thức khác.
 
+Trên là những tìm hiểu về tệp tin cấu hình mặc định của Nginx
