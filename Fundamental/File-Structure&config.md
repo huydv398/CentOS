@@ -1,4 +1,31 @@
 # Tìm hiểu cấu trúc cấu hình và cấu hình tệp cấu hình Nginx.
+Cấu trúc thư mục để xây dựng Nginx web server và VirtualHost
+
+* Tất cả cấu hình nằm trong File thư mục:`/etc/nginx/`<br>Trong đó File `/etc/nginx/nginx.conf` là file cấu hình tổng quan trong hệ Nginx. Có thể sửa đổi để thay đổi cấu hình chung Nginx.
+    * Thư mục:`/etc/nginx/sites-available/`- cấu các file cấu hình khối máy chủ trên mỗi trang web. Nginx chỉ có thể sử dụng khi kích hoạt khối tại thư mục `sites-enabled`.
+    * Thư mục: `/etc/nginx/sites-enabled/`- Dùng để kích hoạt các khối máy chủ của mỗi trang web. Thông thường tạo liên kết file từ thư mục `sites-available` để dễ dàng quản lý và bật tắt size.
+
+**Thư mục nội dung website**
+
+Mặc định nó có thể nằm tại thư mục `/var/www/html/` hoặc thư mục `/usr/share/html`, nhưng bạn có thể thay đổi đường dẫn thư mục để quản lý hoặc bảo mật hơn khi sử dụng nhiều site trên cùng một server.
+
+**Các thao tác cần thực hiện trước và sau khi chỉnh sửa file config.**
+
+Trước khi thay đổi cấu hình, sao lưu lại file cấu hình:
+
+`cp /etc/nginx/conf/nginx.conf /etc/nginx/conf/nginx.conf.backup`
+
+Định kì sao lưu tập tin cấu hình nginx
+
+Sau khi thực hiện thay đổi cấu hình trong file cấu hình, Restart lại Service.
+
+`systemctl restart nginx`
+
+>**Chú ý**
+* Tất cả các dòng có chưa dấu `#` phía trước là những dòng chú thích (comment). Không có ý nghĩa với cấu lệnh.
+* Các thiết lập được đặt trong ngoặc nhọn. Các ngoặc nhọn có thể lòng vào nhau cho nhiều khối lệnh.
+
+
 
 ## Tìm hiểu contexts cấu hình Nginx
 Bài viết này bao gồm cấu trúc cơ bản được tìm thấy trong tệp cấu hình Nginx chính. Vị trị của tệp này sẽ thay đổi tùy thuộc vào cách bạn cài đặt phần mềm trên máy tính của mình. Đối với nhiều bản phân phối, tệp sẽ được đặt tại `/etc/nginx/nginx.conf`. Nếu nó không tồn tại ở đó thì nó cũng có thể ở `/usr/local/nginx/nginx.conf` hoặc `usr/local/etc/nginx/nginx/conf`.
@@ -14,6 +41,69 @@ Chỉ thị có thể được sử dụng trong bối cảnh mà chúng đượ
 The first group of contexts is The Core contexts that nginx use để create tree phân cấp.
 
 **The main Context**
+Cũng có thể gọi là Global context. Đây là context tổng quát nhất bao gồm tất cả các directive đơn giản, block directive và các context khác.
+
+Về nội dung config file của nginx:
+
+```
+#user  nobody;
+worker_processes  1;
+
+#error_log  /var/log/nginx/error.log;
+#pid        logs/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+    #                  '$status $body_bytes_sent "$http_referer" '
+    #                  '"$http_user_agent" "$http_x_forwarded_for"';
+
+    #access_log  logs/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    server {
+        listen       80;
+        server_name  localhost;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+            root   html;
+            index  index.html index.htm;
+        }
+
+        #error_page  404              /404.html;
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+        # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+        #
+        #location ~ \.php$ {
+        #    proxy_pass   http://127.0.0.1;
+        #}
+    }
+
+}
+```
+File bắt đầu cùng với 4 chị thị(directives): `user`, `worker_processes`, `error_log` và `pid`. Chúng nằm ngoài bất kỳ block hay context cụ thể nào do dố cúng nằm trong Main Vontext.
 
 **The Events Context** : Được sử dụng để đặt các tùy chọn global ảnh hưởng đến cách Nginx xử lý các kết nối ở mức chung. Chỉ có thể có một bối cảnh sự kiện duy nhất được xác định trong cấu hình **Nginx**:
 
@@ -90,9 +180,68 @@ Các lệnh trong ngữ cảnh này có thể ghi đè nhiều lệnh có thể 
 
 `Location context`: chia sẻ nhiều phẩm chất quan hệ với bối cảnh máy chủ. ví dụ nhiều bối cảnh vị trí có thể được xác định, mỗi vị trí được sử dụng để xứ lý một loại yêu cầu khách hàng nhất định và mỗi vị trí được chọn nhờ phù hợp với định nghĩa vị trí so với yêu cầu khách hàng thông qua thuật toán lựa chọn.
 
-Mặc dù các chỉ thị xác định có chọn khối máy chủ được xác định trong ngữ cảnh máy chủ hay không, thành phần quyết định khả năng sử lý yêu cầu của vị trí được đạt trong định nghĩa vị trí 
+Mặc dù các chỉ thị xác định có chọn khối máy chủ được xác định trong ngữ cảnh máy chủ hay không, thành phần quyết định khả năng sử lý yêu cầu của vị trí được đạt trong định nghĩa vị trí:
+```
+location match_modifier location_match {
+
+    . . .
+
+}
+```
+*  match_modifier: Bạn có thể hiểu là so sánh để tìm ra đối chiếu với location_match
+* ví dụ
+```
+location /site{
+    . . .
+}
+```
+Các Request có dạng URI có dạng như sau: `/site`, `/site/login.index`, `/site/page/theme/our` location sẽ sử lý để tìm đến thư mục /site/ trên server để hiện thị nội dung.
+
+Với khai báo trên thì chỉ có `/site` có thể được sử lý, nhưng file `/site/index.html` và `/site/index.php` thì không.
+
+```
+location ~ \.(jpeg|png|gif|ico)$ {
+
+. . .
+
+}
+```
+Các yêu cầu có đuôi là `.jpeg`, `.png`, `.gif`, `.ico` có thể xử lý để hiện thị.
 
 Điều này có thể hữu ích cho việc tạo bối cảnh vị trí tổng quát hơn và sau đó xử lý thêm dựa trên các tiêu chí cụ thể hơn với bối cảnh bổ sung bên trong:
+```
+# main context
+
+server {
+
+    # server context
+
+    location /match/criteria {
+
+        # first location context
+
+    }
+
+    location /other/criteria {
+
+        # second location context
+
+        location nested_match {
+
+            # first nested location
+
+        }
+
+        location other_nested {
+
+            # second nested location
+
+        }
+
+    }
+
+}
+```
 
 Các khối vị trí sống trong bối cảnh máy. Không giống các khối máy chủ, có thể được lồng vào nhau. Điều này có tể hữu ích cho việc tạo bối cảnh vị trí tổng quát hơn để bắt một tập hợp lưu lượng truy cập nhất định và sau đó xử lý thêm dựa trên các tiêu chí cụ thể hơn với bối cảnh bổ sung ben trong:
 ```
@@ -128,6 +277,66 @@ server {
 
 }
 ```
+Thông thường khi mà location block được dùng để phục vụ một request nào đó thì action sẽ hoàn toàn nằm trong context của nó. Và nó sẽ chỉ nhảy sang các block khác hay chuyển hướng xử lý request khi có yêu cầu từ chính bên trong context của nó. Một vài chỉ thị có thể yêu cầu:
+```
+- index
+- try_files
+- rewrite
+- error_page
+```
+***index directive***
+Nằm bên trong location luon được nginx trỏ tới trang đầu tiền khi xử lý điều hướng yêu cầu. Chỉ rõ các file hoặc chính xác tên và nó sẽ không phát sinh khi có tên mới.
+
+```
+location = / {
+    index index.html;
+}
+```
+
+***try_files directive***
+Cố gắng phục vụ một tệp tin được chỉ rõ(các tham số), nếu không có tệp tin nào tồn tại, nhảy đến khối location được khai báo(tham số cuối cùng trong chỉ thị) hoặc phục vụ 1 URI được chỉ định
+```
+location / {
+    try_files $uri $uri.html $uri/ /fallback/index.html;
+}
+```
+***rewrite directive***
+
+Khác với Apache, Ngĩn không sử dụng file *.htaccess* nên khi bạn cần rewrite Url sẽ phải convert qua rule Nginx.
+```
+location /download/ {
+    rewrite ^(/download/.*)/media/(.*)\..*$ $1/mp3/$2.mp3 break;
+    rewrite ^(/download/.*)/audio/(.*)\..*$ $1/mp3/$2.ra  break;
+    return  403;
+}
+```
+
+***error_page directive***
+Chỉ thị khi không tìm thấy file tham chiếu.
+```
+location / {
+    error_page 404 = @fallback;
+}
+
+location @fallback {
+    proxy_pass http://backend;
+}
+```
+
+* Xử lý trong `location context` 
+    * Nginx sẽ đọc `root` directive để xác định thư mục chứa trang client yêu cầu. Thứ tự các trang được ưu tiên sẽ được khai báo trong chỉ thị index.
+    * Nếu không tìm thấy nội dung mà client yeu cầu, Nginx sẽ điều hướng sang Location context khác và thông báo lỗi cho người dùng
+
+ví dụ 1:
+```
+location / {
+root html;
+index index.html index.htm;
+}
+```
+rooi trỏ tới thư mục `html/`. Trong cài đặt mặc định của Nginx, đường dẫn đầy đủ đến thư mục này là `/etc/nginx/html`
+**Request**: [http://demo.com/blog/style.css]()
+**Returns**: NGINX sẽ tìm yêu cầu của client theo đường dẫn /etc/nginx/html/blog/style.css
  Mặc dù bối cảnh máy chủ được chọn dựa trên tổ hợp địa chỉ IP/ port được yêu cầu máy chủ trong tiêu đề của máy chủ lưu trữ, các khối vị trí tiếp tục phân chia xử lý yêu cầu trong khối máy chủ bằng cách xem URI yêu cầu. URI yêu cầu  là một phần của yêu cầu xuất hiện sau khi kết hợp tên miền hoặc địa chỉ IP /port 
 
 **The Upstream context**: được sử dụng để xác định và cấu hình các máy chủ upstream của web. Về cơ bản, bối cảnh này xác định một nhóm máy chủ được đặt tên mà nginx sau đó có thể yêu cầu proxy. context này có thể sẽ được sử dụng khi bạn định cấu hình các loại proxy.
