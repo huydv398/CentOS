@@ -53,7 +53,7 @@
 2. [C7 Wordpress All in One](CentOS-7/WP-1node.md)
 3. [C7 Wordpres 2 Server](CentOS-7/Wp-2node.md)
 4. [C7_LEMP + WP_All-in-One](CentOS-7/LEMP.md)
-4. [C7 Install PHP](CentOS-7/php-nginx.md)
+4. [C7 Install PHP in Nginx](CentOS-7/php-nginx.md)
 4. [Cấu trúc và cấu hình Nginx](Fundamental/File-Structure&config.md)
 5. [VirtualHost](Tutorial/virtualhost.md)
 5. [C7 Nginx - 2Web-basic](CentOS-7/Nginx.md)
