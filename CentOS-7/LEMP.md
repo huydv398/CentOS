@@ -14,7 +14,7 @@ LEMP là một nhóm các phần mềm có thể phục vụ các trang web đ�
 
 ## Cài đặt Nginx
 ```
-yum install -y update
+yum -y update
 yum install -y epel-release
 ```
 
