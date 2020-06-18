@@ -36,7 +36,7 @@ Chuẩn bị giao diện cho 2 website, cài [LAMP](https://github.com/huydv398/
 Chuẩn bị gói cài:
 
 ```
-yum install -y update
+yum -y update
 yum install -y epel-release
 ```
 
