@@ -33,11 +33,11 @@ Nếu bạn muốn cài đặt tất cả các thư viện Development bằng m�
 
 Lệnh trên sẽ tải xuống và cài đặt tất cả các thư viện phát triển cần thiết vào hệ thống của bạn
 
-Cài đặt các thư viện cần thiết, các gói được đề cập để biên dịch Nginx từ mà nguồn của nó.
+Cài đặt các thư viện cần thiết, các gói được đề cập bên trên để biên dịch Nginx từ mà nguồn của nó.
 
 `yum install zlib-devel pcre-devel openssl-devel -y`
 
-Cài đặt kho Epel repository cho hệ thống>
+Cài đặt kho Epel repository cho hệ thống:
 
 `yum install epel-release -y`
 
