@@ -72,6 +72,10 @@ drwxr-xr-x. 9 1001 1001   91 May 20 21:30 src
 ```
 
 
+Để xem tất cả các tùy chọn, cần chạy lệnh script bên dưới và kiểm tra các tùy chọn nên được cấu hình để cài đặt Nginx. Hoặc bạn cũng có thể cài đặt cấu hình mặc định bằng cách chạy lệnh cònigure script mà không có bất kỳ tùy chọn nào theo sau nó.
+
+`./configure --help`
+
 Chạy các lệnh Configure script theo sau là các tùy chọn cần thiết:
 
 `./configure --prefix=/etc/nginx --sbin-path=/usr/sbin/nginx --error-log-path=/var/log/nginx/error.log --pid-path=/var/run/nginx.pid --lock-path=/var/run/nginx.lock --user=nginx --group=nginx`
@@ -133,3 +137,4 @@ Chuyển sang trình duyệt và nhập IP của máy. Trang web mặc định c
 ![Imgur](https://i.imgur.com/aJVbSMY.png)
 
 
+Link tham khảo: https://www.linuxhelp.com/how-to-install-nginx-from-source-code-on-centos-7
