@@ -2,11 +2,12 @@
 
 ## Các Bước cài đặt WordPress trên 2 Server 
 ## Chuẩn bị
-* IP planning
-* Mô hình Lab
 * Tiến hành tắt tường lửa và selinux trên cả 2 máy Web và Sql :
 
-`
+```
+systemctl stop firewalld
+setenforce 0
+```
 
 ## Tại máy Database 
 ### Cài đặt dịch vụ MySQL 
