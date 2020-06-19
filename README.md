@@ -16,7 +16,7 @@
 15. [User sudo & disable ssh root](Tutorial/dis-ssh-root.md)
 16. [TCP Wrappers](Tutorial/TCP-Wrappers.md)
 17. [Change Atrribute](Tutorial/chattr-change_attribute.md)
-
+18. [DNS](Fundamental/dns.md)
 
 ## CentOS-7
 1. [Mount & fstab](CentOS-7/Mount-Fstab.md)
