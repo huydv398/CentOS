@@ -95,6 +95,14 @@ define( 'DB_CHARSET', 'utf8' );
 
 Lưu và thoát khỏi trình vi.
 
+
+Phân quyền:
+```
+chmod -R 755 /var/www/*
+chown -R apache:apache /var/www/*
+```
+
+
 Khởi động lại Httpd
 
 `systemctl restart httpd`
