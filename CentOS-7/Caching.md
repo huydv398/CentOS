@@ -2,9 +2,9 @@ Lab Nginx Reverse Proxy & Caching
 
 ## Giới thiệu
 
-Web cache (proxy server ) là gì tìm hiểu [tại đây](Fundamental/web-cache.md)
+**Webcache** (*Proxy Server*) là gì? Tìm hiểu [tại đây](Fundamental/web-cache.md).
 
-Về Cache: Nhiệm vụ chung của cache giúp tăng tốc độ truy cập dữ liệu và giảm tắc nghẽn về băng thông khi có quá nhiều người dùng cung truy cập đồng thời vào dữ liệu web.
+Về **Cache**: Nhiệm vụ chung của cache giúp tăng tốc độ truy cập dữ liệu và giảm tắc nghẽn về băng thông khi có quá nhiều người dùng cung truy cập đồng thời vào dữ liệu web.
 
 Với Nginx đóng vai trò là cache: Kỹ thuật Cache trong Nginx được sử dụng để việc cải tiến tốc độ truy cập web hoặc ứng dụng trong các giải pháp CDN(Content Delivery Network)
 
@@ -37,9 +37,7 @@ yum update -y
 yum install -y epel-release 
 yum install -y wget byobu 
 ```
-Cài đặt Apache:
-
-Cài đặt HTTPD:
+Cài đặt HTTPD-Apache:
 
 `yum install -y httpd`
 
@@ -87,7 +85,7 @@ yum install -y epel-release
 yum install -y wget byobu 
 ```
 
-Cài đặt cấu hình Nginx từ Package:
+Cài đặt cấu hình **Nginx** từ Package:
 
 `yum install -y nginx`
 
@@ -104,7 +102,7 @@ Kiểm tra hoạt động của Nginx"
 
 ### Cấu hình Nginx làm reverse proxy
 
-Sao lưu cấu hình Nginx.conf:
+Sao lưu cấu hình `Nginx.conf`:
 
 `cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup`
 
