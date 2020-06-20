@@ -2,6 +2,8 @@ Lab Nginx Reverse Proxy & Caching
 
 ## Giới thiệu
 
+Web cache (proxy server ) là gì tìm hiểu [tại đây](Fundamental/web-cache.md)
+
 Về Cache: Nhiệm vụ chung của cache giúp tăng tốc độ truy cập dữ liệu và giảm tắc nghẽn về băng thông khi có quá nhiều người dùng cung truy cập đồng thời vào dữ liệu web.
 
 Với Nginx đóng vai trò là cache: Kỹ thuật Cache trong Nginx được sử dụng để việc cải tiến tốc độ truy cập web hoặc ứng dụng trong các giải pháp CDN(Content Delivery Network)
