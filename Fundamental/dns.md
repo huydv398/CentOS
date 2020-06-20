@@ -9,4 +9,4 @@ DNS để làm con người và máy tính có thể giao tiếp dễ dàng hơn
 * Bản chất truy cập vào các tên miền ví dụ: news.cloud365.vn, google.com, ... là truy cập vào địa chỉ IP của Server chứa dữ liệu của các trang web này. 
 
 * DNS đóng vai trò như một người phiên dịch, dịch giữa địa chỉ IP và tên miền chứ không có tác dụng thay thế hoàn toàn cho địa chỉ IP. 
-* Ghi nhớ những tên miền mà nó đã phân giải và ưu tiên cho những lần truy cập tiếp theo.
+* Ghi nhớ những tên miền mà nó đã phân giải và ưu tiên cho những lần truy cập tiếp theo.s
