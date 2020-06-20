@@ -16,7 +16,12 @@ Trong mô hình thực hiện các cấu hình sau:
 4. Người dùng truy cập nhiều lần vào web hoặc dùng curl để kiểm tra xem đã cache được chưa?
 
 ## Triển khai
+Tiến hành tắt tường lửa và SElinux trên cả 2 máy:
 
+```
+systemctl stop firewalld
+setenforce 0
+```
 ### Cài đặt Apache trên máy web-server 
 
 Thiết lập IP theo mô hình.
@@ -112,12 +117,12 @@ Nội dung như sau:
 ```
 server {
     listen 80;
-    server_name web1cloud365.vn;
-    access_log /var/log/nginx/web1cloud.access.log;
-    error_log /var/log/nginx/web1cloud.error.log;
+    server_name huynet.com;
+    access_log /var/log/nginx/huynet.access.log;
+    error_log /var/log/nginx/huynet.error.log;
     
     location / {
-        proxy_pass http://192.168.80.131:80/;
+        proxy_pass http://2.2.2.3:80/;
         # Input any other settings you may need that are not already contained in the default snippets.
     }
 }
