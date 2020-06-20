@@ -4,7 +4,7 @@
 
 ## Tổng quan về HTTP
 
-    Hyper Text Protocol (HTTP)- giao thức tầng ứng dụng của web - là trái tim của web. HTTP được triển khai trên cả phía client và server.Giao tiếp với nhau qua việc trao đổi thông điệp HTTP.
+**Hyper Text Protocol (HTTP)**- giao thức tầng ứng dụng của web - là trái tim của web. HTTP được triển khai trên cả phía client và server.Giao tiếp với nhau qua việc trao đổi thông điệp HTTP.
 
 **Web** (trang web, webpage, website- một tập tin) chứa các đối tượng đơn giản như một file HTML, file hình ảnh,... Đối tượng được xác định qua url. 
 
@@ -12,7 +12,7 @@
 
 `www.example-web.com.vn/image/banner/image.jpg` 
 
-www.example-web.com.vn là tên máy chủ và image/banner/image.jpg là đường dẫn đối tượng
+www.example-web.com.vn là tên máy chủ và *image/banner/image.jpg* là đường dẫn đối tượng.
 
 **Trình duyệt**(Browser) - chương trình giao tiếp người dùng của ứng dụng web cho phép hiển thị trang web. Browser là phía client của giao thức HTTP. Hiện nay có rất nhiều trình duyệt web phổ biến là Chorme , Coc Coc, Fire Fox, ... Web server lưu trữ các đối tượng web và được xác định qua địa chỉ url. Một số phần mềm phổ biến Apache, Nginx,...
 
@@ -37,7 +37,7 @@ Chế độ mặc định của HTTP 1.1 : Sử dụng kết nối liên tục
 
 **Kết nối liên tục**
 
- Có một vài nhược điểm trong kết nối không liên tục: khi kết nối mới được tạo client và server phải tạo vùng đệm TCP cũng như lưu trữ các biến TCP - là gánh nặng cho server khi có nhiều client cùng lúc.
+Có một vài nhược điểm trong kết nối không liên tục: khi kết nối mới được tạo client và server phải tạo vùng đệm TCP cũng như lưu trữ các biến TCP - là gánh nặng cho server khi có nhiều client cùng lúc.
 
 Với kết nối liên tục, Server không đóng liên kết TCP sau khi gửi thông điệp trả lời. Các thông điệp yêu cầu và trả lời sau đó được gửi qua cùng một kết nối. HTTP server đóng liên kết khi liên kết không được sử dụng trong một khoảng thời gian nào đó.
 
