@@ -49,6 +49,6 @@ GET / HTTP/1.1"
 AppleWebKit/537.36 (KHTML, like Gecko) 
 Chrome/83.0.4103.106 Safari/537.36
 ```
-Dòng đầu tiên dòng yêu cầu các dòng sau là dòng tiêu đề header
+Dòng đầu tiên dòng yêu cầu, các dòng sau là dòng tiêu đề header
 
 Dòng yêu cầu có 3 trường Method, URL và phiên bản HTTP.  Trường Method nhận một trong 3 giá trị: **GET**, **POST** và **HEAD**. Phần lớn sử dụng phương thức **GET**. Với phương thức **POST** người dùng yêu cầu trang Web nhưng nội dung cụ thể phụ thuộc vào nội dung điền trong form. Phương thức **HEAD** thường dùng sử dụng để phương thức **HEAD** để gỡ lỗi.
