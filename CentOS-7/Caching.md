@@ -2,7 +2,7 @@ Lab Nginx Reverse Proxy & Caching
 
 ## Giới thiệu
 
-**Webcache** (*Proxy Server*) là gì? Tìm hiểu [tại đây](Fundamental/web-cache.md).
+**Webcache** (*Proxy Server*) là gì? Tìm hiểu [tại đây](https://github.com/huydv398/Linux-tutorial/blob/master/Fundamental/web-cache.md).
 
 Về **Cache**: Nhiệm vụ chung của cache giúp tăng tốc độ truy cập dữ liệu và giảm tắc nghẽn về băng thông khi có quá nhiều người dùng cung truy cập đồng thời vào dữ liệu web.
 
