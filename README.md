@@ -57,7 +57,6 @@
 4. [C7_LEMP + WP_All-in-One](CentOS-7/LEMP.md)
 4. [C7 Install PHP in Nginx](CentOS-7/php-nginx.md)
 4. [Cấu trúc và cấu hình Nginx](Fundamental/File-Structure&config.md)
-5. [VirtualHost](Tutorial/virtualhost.md)
 5. [C7 Nginx - 2Web-basic](CentOS-7/Nginx.md)
 6. [U20 Nginx](Ubuntu/Nginx-Ubuntu2004.md)
 7. [C7 Nginx reverse Proxy](CentOS-7/reverse-proxy.md)
