@@ -21,7 +21,7 @@ yum -y install php php-opcache php-mysql php-mysqlnd php-fpm
 
 Sao lưu file cấu hình trước khi chỉnh sửa
 
- `cp /etc/php-fpm.d/www.conf` `vi /etc/php-fpm.d/www.conf.backup`
+ `cp /etc/php-fpm.d/www.conf /etc/php-fpm.d/www.conf.backup`
 
 Mở tệp `/etc/php-fpm.d/www.conf` cấu hình bằng trình soạn thảo:
 
