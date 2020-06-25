@@ -29,7 +29,7 @@ Bây giờ bạn muốn giới hạn request có hiệu lực ở đâu thì b�
 
 * Nếu bạn muốn nó áp dụng cho tất cả các trang web trên nginx này thì bạn đặt trong block `http{}`.
 
-!
+![Imgur](https://i.imgur.com/PazZS1L.png)
 
 * Nếu muốn áp dụng cho một trang web riêng biệt thì đặt vào trong block `server {}`.
 
