@@ -188,7 +188,7 @@ proxy_cache backcache;
 add_header X-Proxy-Cache $upstream_cache_status;
 ```
 
-Kiểm tra khai bào cache ở trên bằng lệnh nginx -t, kết quả như sau:
+Kiểm tra khai báo cache ở trên bằng lệnh nginx -t, kết quả như sau:
 
 ```
 proxy_cache_path /var/lib/nginx/cache levels=1:2 keys_zone=backcache:8m max_size=50m;
