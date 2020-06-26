@@ -24,7 +24,7 @@ Certbot là công cụ dòng lệnh miễn phí giúp đơn giản hóa quy trì
 * Cài đặt các gói cần thiết
 
 ```
-yum module -y install python36
+yum module python36
 yum install -y gcc mod_ssl python3-virtualenv redhat-rpm-config augeas-libs libffi-devel openssl-devel 
 ```
 
@@ -40,7 +40,7 @@ mv certbot-auto /usr/local/bin/certbot-auto
 chmod 0755 /usr/local/bin/certbot-auto
 ```
 
-Tạo virtualhost 
+### Tạo virtualhost 
 
 Tạo 1 file cấu hình virtual host(server block) cho tên miền **ssl.duonghuy.xyz**
 
@@ -93,7 +93,13 @@ Khởi động lại Nginx
 
 `nginx -s reload`
 
-Tạo bản ghi DNS
+Kiểm tra trang web 
+
+![Imgur](https://i.imgur.com/HQONPsP.png)
+
+Chú ý trang web chưa được cài chứng nhận SSL
+
+### Tạo bản ghi DNS
 
 * Truy cập vào công cụ quản lý DNS:
 
@@ -102,6 +108,7 @@ Tạo bản ghi DNS
 >**Chú ý**: Bản ghi phải loại A hoặc AAAA
 
 * Kiểm tra đường truyền DNS
+
 
 Cài đặt: 
 
@@ -113,7 +120,7 @@ Tra Domain
 
 ![Imgur](https://i.imgur.com/pHLwCaR.png)
 
-Thiết lập nhận chứng chỉ miễn phí từ Let's Encrypy
+### Thiết lập nhận chứng chỉ miễn phí từ Let's Encrypy
 
 Sử dụng câu lệnh `certboot` để tạo và cài đặt chứng chỉ Let's Encrypt.
 
@@ -181,7 +188,7 @@ blank to select all options shown (Enter 'c' to cancel): 1
 Cert not yet due for renewal
 ```
 
->Tại bước này máy chủ yêu cầu chọn số của tên domain muốn cài SSL, tại đây có 1 domain chọn phím 1.
+#### Tại bước này máy chủ yêu cầu chọn số của tên domain muốn cài SSL, tại đây có 1 domain chọn phím 1.
 
 ```
 What would you like to do?
@@ -203,15 +210,15 @@ Congratulations! You have successfully enabled https://ssl.duonghuy.xyz
 
 Đến đây đã cài đặt thành công SSL cho website.
 
-Redirect tất cả các truy vẫn tới HTTPS
+### Redirect tất cả các truy vẫn tới HTTPS
 
 Thêm vào file `ssl.duonghuy.xyz.conf`
 ```
- server {
-    listen 80;
-    server_name thuyhiend.space;
-    return 301 https://thuyhiend.space$request_uri;
-  } 
+server {
+listen 80;
+server_name ssl.duonghuy.xyz;
+return 301 https://ssl.duonghuy.xyz$request_uri;
+} 
 ```
 
 * restart service Nginx:
