@@ -63,6 +63,7 @@
 8. [Web-cache](Fundamental/web-cache.md)
 8. [C7 Nginx Reverse Proxy && Caching](CentOS-7/Caching.md)
 9. [What is SSL? & Install SSL in Nginx.](Fundamental/SSL.md)
+14. [Install SSL for WordPress ](CentOS-7/ssl&wp.md)
 15. [Giới hạn số lượng truy cập- request trong một khoảng thời gian](CentOS-7/limit_request.md)
 ### Note
 1. [Basic Telegram_bot](Note/basic-tele.md)
