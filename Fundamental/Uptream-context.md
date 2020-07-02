@@ -10,7 +10,7 @@ Dưới đây là ví dụ đơn giản:
 ```
 # http context
 
-upstream backend_hosts {
+upstream backend {
     server host1.example.com;
     server host2.example.com;
     server host3.example.com;
@@ -21,7 +21,7 @@ server {
     server_name example.com;
 
     location /proxy-me {
-        proxy_pass http://backend_hosts;
+        proxy_pass http://backend;
     }
 }
 
