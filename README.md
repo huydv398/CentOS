@@ -65,6 +65,8 @@
 9. [What is SSL? & Install SSL in Nginx.](Fundamental/SSL.md)
 14. [Install SSL for WordPress ](CentOS-7/ssl&wp.md)
 15. [Giới hạn số lượng truy cập- request trong một khoảng thời gian](CentOS-7/limit_request.md)
+16. [Load Balancing](Fundamental/Uptream-context.md)
+17. [WordOps](Fundamental/word-ops.md)
 ### Note
 1. [Basic Telegram_bot](Note/basic-tele.md)
 2. [md5sum check](Note/md5.md)
