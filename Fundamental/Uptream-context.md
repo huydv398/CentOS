@@ -20,7 +20,7 @@ server {
     listen 80;
     server_name example.com;
 
-    location /proxy-me {
+    location / {
         proxy_pass http://backend;
     }
 }
@@ -45,7 +45,7 @@ Khi thay đổi thuật toán cân bằng, Khối có thể như sau:
 ```
 # http context
 
-upstream backend_hosts {
+upstream backend {
 
     least_conn;
 
@@ -61,7 +61,7 @@ Trong ví dụ trên, máy chủ sẽ được chọn dựa trên cái nào có 
 ```
 # http context
 
-upstream backend_hosts {
+upstream backend {
 
     hash $remote_addr$remote_port consistent;
 
@@ -82,7 +82,7 @@ Theo khai báo của các máy chủ phụ trợ, theo mặc định, mỗi máy
 ```
 # http context
 
-upstream backend_hosts {
+upstream backend {
     server host1.example.com weight=3;
     server host2.example.com;
     server host3.example.com;
@@ -91,7 +91,7 @@ upstream backend_hosts {
 . . .
 ```
 
-Trong ví dụ trên, `host1.example.com` sẽ nhận được ba lần lưu lượng như hai máy chủ khác. Theo mặc định, mỗi máy chủ được gán một  số **weight**.
+Trong ví dụ trên, `host1.example.com` sẽ nhận được ba lần lưu lượng như hai máy chủ còn lại. Theo mặc định, mỗi máy chủ được gán một  số **weight**.
 
 
 
