@@ -9,7 +9,7 @@ Công cụ được xây dựng bằng Python 3
 
 Vị trí file cấu hình- file-WordOps
 
-**/etc/wo/wo.conf**
+* **/etc/wo/wo.conf**
 
 ## Các tính năng chính
 * Dễ dàng cài đặt: Trình cài đặt tự động
@@ -26,7 +26,7 @@ Vị trí file cấu hình- file-WordOps
 
 Command: 
 
-`wo [OPTIONS] {ARGUMENTS}`
+* `wo [OPTIONS] {ARGUMENTS}`
 
 OPTIONS:
 * `--version`: Hiển thị phiên bản đang sử dụng
@@ -68,25 +68,29 @@ Ví dụ
 * `site` :
     * `cd [domain]`: cd đến thư mục của web 
     * `list --enabled/--disabled`: Liệt kê danh sách các site đang được kích hoạt/ chưa được kích hoạt
-    * `info [domain]` Thông tin domain
-    * `show`
-    * `enable`/`disable`
-    * `edit`
+    * `info [domain]` Thông tin domain, user/pass
+    * `show`: Thông tin các file lưu cấu hình và các cấu hình gọi vào site
+    * `enable`/`disable` kích hoạt hoặc tạm ngưng dịch vụ của trang web
+    * `edit`: Sửa các file cấu hình của site muốn chọn
     
-    * show
-* site create/update example.com
-    * --html
-    * --php
-    * --php73
-    * --mysql 
-* site delete example.com
-    * --db
-    * --files
-    * --no-prompt
+* `site create/update example.com`: Tạo hoặc update một site
+    * `--html`: Tạo hoặc Update site --html
+    * `--php`:
+    * `--php73`:
+    * `--mysql`: Tạo một website PHP+MySQL 
+    * `--wpfc`: Tạo trang web WordPress với Nginx fastcgi_cache
+* `site delete example.com`
+    * `--db`: xóa database của trang web
+    * `--files`: xóa trang web chính.
+    * `--no-prompt`: Không cần xác nhận khi xóa
 * secure [--auth | --port | --ip |--ssh | --sshport]
+    * `--auth`: Cập nhật thông tin xác thực của HTTP
+    * `--port`: Thay đổi port WordOps Admin hiện tại là 22222.
+    * `--ip`: 
+    * `--ssh`: Tăng cường bảo mật ssh. Tạo khóa SSH RSA
+    * `--sshport` thay đổi port ssh mặc định là 22
 
-
-### Usege 
+### Usage 
 
 ## Yêu cầu phần cứng 
 
@@ -150,4 +154,203 @@ Bạn có thể lựa chọn danh sách các thành phần WordOps (Nginx, php, 
 Với câu lệnh sau WordOps sẽ cài tát cả các thành phần phụ thuộc:
 
 `wo stack install`
+
+Chờ 2-3 phút để WordOps thực hiện cài đặt các thành phần:
+
+![Imgur](https://i.imgur.com/E963HWJ.png)
+
+Phần cuối là User và Pass để đăng nhập HTTP Auth
+ 
+ ![Imgur](https://i.imgur.com/wcfu9cw.png)
+
+### Đặt lại tài khoản và mật khẩu khi đăng nhập HTTP Auth
+
+`wo secure --auth`
+
+[Imgur](https://i.imgur.com/Nw51i1Y.png)
+
+* Nhập Username mới hoặc Enter để sử dụng đề xuất User của WordOps.
+* Nhập password mới hoặc Enter để sử dụng đề xuất Pass của WordOps.
+
+Sau khi nhập xong, nếu muốn truy cập web monitoring, chuyển đến trình duyệt và điều hướng đến link sau: `https://địa_chỉ_ip_server:22222`
+
+## Tạo trang web
+### Tạo trang web với WordPress
+
+Để tạo một trang WordPress, bạn cần chạy câu lệnh sau:
+
+`wo site
+
+Sau khi chạy lệnh trên, WordOps sẽ tạo 1 trang WordPress với Domain là **wp.duonghuy.xyz**(thay tên Domain bằng tên Domain của bạn). Sau khi lệnh cài đặt xong sẽ có tài khoản và mật khẩu sử dụng để truy cập trang quản trị của WordPress:
+
+![Imgur](https://i.imgur.com/LQFOGkc.png)
+
+Và WordOps sẽ tạo ra User và Pass để đăng nhập quản trị WordPress
+
+Truy cập vào Url để kiểm tra tên miền
+
+![Imgur](https://i.imgur.com/QyCafPs.png)
+
+Truy cập vào trang quản trị:
+
+**Domain/wp-admin** - wp.duonghuy.xyz/wp-admin
+
+![Imgur](https://i.imgur.com/fWevoFg.png)
+
+
+User và Pass được WordOps cung cấp phần cuối dòng lệnh.
+
+![Imgur](https://i.imgur.com/l49cIdC.png)
+
+#### Tạo một trang web khác
+
+Nếu không cài WordPress, bạn cũng có thể sử dụng các tùy chọn của WordOps để cài các trang web cơ bản như:
+
+* Tạo trang **Web HTML**
+
+` wo site create html.duonghuy.xyz --html`
+
+Kiểm tra thông tin:
+
+`wo site info html.duonghuy.xyz`
+
+![Imgur](https://i.imgur.com/vRn6nDA.png)
+
+Thêm nội dung vào trang web
+
+`echo 'html.duonghuy.xyz' >> /var/www/html.duonghuy.xyz/htdocs/index.html`
+
+Kiểm tra:
+
+![Imgur](https://i.imgur.com/cxS1pNm.png)
+
+* Tạo trang **Web PHP**
+
+`wo site create php.duonghuy.xyz --php`
+
+* Tạo trang Web PHP + MySQL
+
+`wo site create web.duonghuy.xyz --mysql`
+
+### Cập nhật thông tin trang web
+
+Xem thông tin trang web:
+
+Để biết các tùy chọn khi sử dụng:
+
+`wo site -h` 
+
+hoặc 
+
+`wo site --help`
+
+
+Để liệt kê các Web site được tạo và quản lý bởi WordOps:
+
+`wo site list`
+
+#### Để xem thông tin chi tiết của 1 web site, ta sử dụng:
+
+`wo site info wp.duonghuy.xyz`
+
+![Imgur](https://i.imgur.com/HZwOQAl.png)
+
+#### Cập nhật trang web
+
+Nếu trước đó bạn đã tạo một trang WordPress với WordOps mà chưa có Let's Encrypt, bạn có thể sử dụng lệnh sau để cập nhật chứng chỉ SSL cho site như sau:
+
+`wo site update wp.duonghuy.xyz -le`
+
+Sau khi tạo SSL sẽ có thời gian 80 ngày, nhưng tất cả các chứng chỉ được tự động gia hạn 60 ngày bởi `acme.sh` bằng cách sử dụng Cronjob.
+
+#### Vô hiệu hóa tạm thời trang web và kích hoạt
+
+Khi không có nhu cầu sử dụng trang web, ta có thể vô hiệu hóa trang web như sau:
+
+`wo site disable html.duonghuy.xyz`
+
+Khi muốn sử dụng lại website
+
+`wo site enable html.duonghuy.xyz`
+
+#### Xóa 1 trang Web 
+
+Sử dụng tùy chọn `delete`
+
+`wo site delete php.duonghuy.xyz`
+
+WordOps yêu cầu xác nhận **Y** để xác nhận xóa:
+
+```
+Deleting Webroot, /var/www/php.duonghuy.xyz
+Deleted webroot successfully
+Testing Nginx configuration     [OK]
+Reloading Nginx                 [OK]
+Deleted site php.duonghuy.xyz
+
+
+```
+
+
+## Truy cập trang Web Monitoring
+
+Sau khi cài đặt trang web, để theo dõi tải cũng như hiệu năng của trang web ta có thể truy cập theo địa chỉ https//IP.server:22222 để theo dõi tải cũng như các thông số giám sát của web.
+
+![Imgur](https://i.imgur.com/wtLpjNi.png)
+
+Mặc định Port để đăng nhập WordOps là 22222 muốn thay đổi bằng câu lệnh WordOps ta làm như sau:
+
+`wo secure --port`
+
+Nhập port muốn thay đổi: Ở đây tôi đổi thành port 51234
+
+![Imgur](https://i.imgur.com/QIKcxfc.png)
+
+Và đăng nhập lại:
+
+https://IP_server:51234
+
+![Imgur](https://i.imgur.com/cpaq4G6.png)
+
+### `--sshport` thay đổi port ssh mặc định là 22
+
+Mặc định port ssh là 22 sử dụng WordOps để thay đổi port SSH:
+
+`wo secure --sshport`
+
+Nhập port mới:
+
+![Imgur](https://i.imgur.com/LLnmklJ.png)
+
+Kiểm tra lại
+
+SSH bằng Port 22
+
+![Imgur](https://i.imgur.com/YLj7rJq.png)
+
+SSH bằng port mới:
+
+![Imgur](https://i.imgur.com/b1qxlVg.png)
+
+![Imgur](https://i.imgur.com/DY21gmw.png)
+
+![Imgur](https://i.imgur.com/uBvFwIA.png)
+
+Đổi port SSH thành công.
+
+## Kết luận.
+WordOps là một công cụ sử dụng dòng lệnh để cài đặt nhanh chóng các Website chỉ bằng 1 dòng lệnh
+
+Câu lệnh dễ làm việc
+
+Xây dựng bằng câu lệnh Python3
+
+* Hiện thị, nén, xóa log.
+* Cập nhật, cài đặt, status, enable/disable, restart/reload, remove tất cả các gói phụ trợ mà WordOps hỗ trợ hoặc các thể làm việc với từng gói phụ trợ tên lẻ như mysql, nginx, php, phpmyadmin,...
+* Tạo, cập nhật, xóa, hiển thị danh sách, thông tin, enable/disable, chỉnh sửa từng site riêng biệt.
+* Tùy chỉnh tăng cơ chế bảo mật như:
+    * Thay đổi thông tin xác thực HTTP
+    * Thay đổi port WordOps Admin 
+    * Tạo khóa SSH RSA
+    * Thay đổi Port SSH
 
