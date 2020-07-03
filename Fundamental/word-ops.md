@@ -167,7 +167,7 @@ Phần cuối là User và Pass để đăng nhập HTTP Auth
 
 `wo secure --auth`
 
-[Imgur](https://i.imgur.com/Nw51i1Y.png)
+![Imgur](https://i.imgur.com/Nw51i1Y.png)
 
 * Nhập Username mới hoặc Enter để sử dụng đề xuất User của WordOps.
 * Nhập password mới hoặc Enter để sử dụng đề xuất Pass của WordOps.
@@ -179,7 +179,7 @@ Sau khi nhập xong, nếu muốn truy cập web monitoring, chuyển đến tr�
 
 Để tạo một trang WordPress, bạn cần chạy câu lệnh sau:
 
-`wo site
+`wo site create wp.duonghuy.xyz --wp`
 
 Sau khi chạy lệnh trên, WordOps sẽ tạo 1 trang WordPress với Domain là **wp.duonghuy.xyz**(thay tên Domain bằng tên Domain của bạn). Sau khi lệnh cài đặt xong sẽ có tài khoản và mật khẩu sử dụng để truy cập trang quản trị của WordPress:
 
