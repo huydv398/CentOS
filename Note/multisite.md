@@ -1,0 +1,7 @@
+Một số lý do rất hữu ích mà Multisite mang lại:
+
+* **Bạn có thể làm mọi thứ từ một bảng điều khiển duy nhất**: việc lưu giữ và ghi nhớ tài khoản cho nhiều trang web khác nhau có thể khiến bạn “đau đầu”. Với WordPress Multisite bạn chỉ cần ghi nhớ một tài khoản duy nhất mà thôi.
+* **Bạn có thể đăng nội dung mới cho các website**: Multisite cho phép bạn truy cập trình soạn thảo WordPress giống như bạn đã sử dụng và sử dụng nó để xuất bản nội dung mới cho bất kỳ trang nào của bạn.
+* **Nó cho phép bạn quản lý themes/plugins trên toàn bộ network**: admin của Multisite có thể cho phép các plugins hay themes nào được phép sử dụng trên network. Nếu có nhiều hơn một người cùng tham gia quản lý, bạn có thể đảm bảo rằng không thể có bất cứ thứ gì được sử dụng trên network mà không phải qua sự kiểm duyệt của bạn.
+* **Quản lý người dùng trên toàn network một cách hợp lý**: bạn có thể thêm người dùng mới vào network và thiết lập các roles riêng cho họ. Điều này có nghĩa là bạn sẽ không cần phải truy cập từng website rinêg biệt để thực hiện việc thêm người dùng và thiết lập roles.
+* **Thực hiện cập nhật cho WordPress Multisite dễ dàng hơn bao giờ hết**: admin của network sẽ có thể cập nhật phiên bản mới nhất cho toàn bộ các website trong network tương tụ như việc thực hiện cho 1 website.
