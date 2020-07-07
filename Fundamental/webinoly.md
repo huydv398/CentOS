@@ -4,3 +4,4 @@
 3. [Câu lệnh site](Fundamental/webinoly/site.md)
 4. [Câu lệnh stack](Fundamental/webinoly/stack.md)
 5. [Câu lệnh webinoly](Fundamental/webinoly/webinoly.md)
+6. [Câu lệnh log](Fundamental/webinoly/log.md)
