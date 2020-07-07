@@ -48,6 +48,89 @@ Khi cài đặt hoàn tất sẽ có 2 thư mục được xuất hiện là **s
 * **sites-available** là thư mục **/etc/nginx/sites-available**: là thư mục chứa file cấu hình của trang web
 * **www** là thư mục **/var/www/**: là webroot của web site chứa các file hiển thị như **.html**, **.php**, **.image**, ...
 
+## Command HTTPAUTH
+Xác thực HTTP cơ bản
+* Tạo user 
+* Xóa user 
+* list
+* Wordpress login
+* Bảo vệ thư mục tùy chỉnh hoặc file
+
+Lệnh của HTTP Auth, cho phép chúng tôi quản lý người dùng có quyền truy cập các trang được bảo vệ bởi phương thức xác thực HTTP, Ngoài việc kiểm soát kích hoạt lớp bảo mật bổ sung này trong các tang truy cập cung cụ như PHPMyAdmin và wp-admin hoặc wp-login. Về cơ bản, nó là để bảo vệ một số thành phần trong trang web của bạn yêu cầu người dùng và mật khẩu để có thể truy cập nội dung của nó.
+
+Cú pháp:
+
+`sudo httpauth <option>`
+
+Option:
+* -add :
+* -delete
+* -list
+* -path
+* -whitelist
+* -wp-admin
+
+### Tạo user 
+
+Tạo người dùng và pass cho phép truy cập vào các phần được bảo vệ bằng Xác thực HTTP, hãy sử dụng lệnh:
+
+`httpauth -add`
+
+Bạn cũng có thể tạo người dùng có quyền hạn chế để chỉ truy cập một tên miền cụ thể.
+
+`httpauth example.com -add`
+
+Sau khi bạn đã tạo một hoặc nhiều người dùng cho một tên miền cụ thể **Chỉ những người dùng này được phép truy cập tên miền này**
+
+Ví dụ:
+
+Tạo một trang Wordpress
+
+`site huy.vn -wp `
+
+Truy cập bằng trình duyệt:
+
+![Imgur](https://i.imgur.com/6rxn6hg.png)
+
+Trình duyệt yêu cầu xác thực 
+
+### Xóa User 
+Để xóa người dùng sử dụng lệnh sau:
+
+`httpauth -delete`
+
+Xóa User từ một tên miền cụ thể
+
+`httpauth example.com -delete`
+
+### Danh sách
+Hiển thị danh sách tất cả người dùng được tạo với quyền truy cập vào HTTP Auth
+
+`httpauth -list`
+
+Hiện thị User của tragn web 
+
+`httpauth example.com -list`
+
+### wp-admin
+
+Lớp bảo mật này có thể gây khó chịu cho một số người dung, nếu bạn bật/tắt HTTPAuth trong các trang đăng nhập Wordpress, và trang web sau đó sẽ mất thiết lập này.
+
+`httpauth -wp-admin=off`
+
+`httpauth example.com -wp-admin=off`
+
+Bảo vệ tùy chọn folder hoặc file
+
+`httpauth example.com -path=/folder`
+
+### Whitelist IP
+Để thêm IP vào Whitelist và không được yêu cầu thông tin đăng nhập mỗi khi yêu cầu xác thực HTTP
+`httpauth -whitelist`
+
+Xóa địa chỉ IP khỏi danh sách whitelist IP
+
+`httpauth -whitelist -purge`
 ## Command **site**
 * Dùng để tạo bất kỳ một trang web mới của bạn, thêm chứng chỉ SSL, kích hoạt FastCgi Cache cho cài đặt WordPress của bạn và nhiều tính năng khác sẽ cho phép bạn có toàn quyền kiểm soát các trang web của mình một cách dễ dàng và đáng tin cậy, luôn luôn ở một lệnh 
 
@@ -317,3 +400,124 @@ Có thể được sử dụng một mình trong bất kỳ trang web WordPress 
 
 Để sao chép hoặc thay thế nội dung -được kết nối với cơ sở dữ liệu bên ngoài, cần phải nhập tên người dùng và mật khẩu. Để bỏ qua những câu hỏi này, bạn có thể sử dụng tùy chọn `-external-db=[user,pass]`
 
+## Command Stack
+
+Lệnh Stack trên nền tảng cho phép chúng ta cài đặt và gỡ bỏ các gói hoặc công cụ được cài đặt bởi webinoly.
+
+Cú pháp :
+
+`stack <option> <option2>`
+
+Option: 
+* -html
+* -lemp
+* -mysql
+* -php
+* -php-ver
+* -pma
+* -purge
+* -purge-server-all
+
+### cài đặt 
+* nginx
+  * `stack nginx`
+* php
+  * `stack -php`
+* MySQL(MariaDB)
+  * `stack -mysql` 
+* Install PHPMyAdmin: Được cài đặt tự động với MySQL
+  * `stack -pma`
+* Install LEMP: Cài đặt Nginx, PHP, MySQL và các công cụ bổ sung.
+  * `stack -lemp`
+
+### Thay đổi hoặc sửa đổi phiên bản PHP
+
+`stack -php-ver=7.2`
+
+### Xóa các gói
+
+`stack [package] -purge`
+
+Package:
+* Nginx
+* PHP
+* mysql 
+* pma
+
+#### Xóa tất cả các gói được cài đặt bởi Webinoly
+
+`stack -purge-server-all`
+
+hoặc 
+
+`-purge-server-all=force`
+
+#### Xóa và thu hồi tát cả các Chứng chỉ SSl
+
+>**Khuyến nghị**: Nên xóa và thu hồi trước khi xóa Nginx:
+
+`site -delete-all -revoke=on`
+
+`site domain.com -delete=force -revoke=on`
+
+Chọn website chỉ định
+
+`site domain.com -ssl=off -revoke=on`
+
+
+Nếu hệ thống sẽ hỏi lại bạn có thực sự muốn xóa không.
+Nhập **y** để đồng ý và **N** để hủy bỏ.
+
+## Command Webinoly 
+Câu lệnh `webinoly` cho phép thực hiện một số thay đổi trong cấu hình, cũng như tham khảo một số khía cạnh của máy chủ web.
+
+Cú pháp:
+
+`webinoly <option>`
+
+Option:
+* -backup 
+* -blockip: Hạn chế quyền truy cập trong Nginx vào 1 IP hoặc khối địa chỉ cụ thể.
+  * -blockip=10.10.1.1
+  * -block-list: hiển thị danh sách
+* -clear-cache : xóa bộ nhớ cache
+  * fastcgi:
+  * redis
+  * memcached
+  * opcache
+  * all : xóa tất cả
+
+* -conf-value_
+* -config-cache
+  * -config-cache=[10d,1w,5m]: đầu tiên mã phản hồi, 2 là downtime, 3 là redirects(các chuyển hướng)
+* -datadog
+* -db-import : Nhập cơ sở dữ liệu MySQL từ dòng lệnh
+  * -file=/folder
+  * -file=/folder -external-db=[user,pass,host:port]
+* -dbpass : Khôi phục tên người dùng và mật khẩu MySQL 
+* -default-site=<option>:truy cập vào trình duyệt bằng IP của Server, sẽ thấy mặc định của Nginx.
+  * default : Mặc định
+  * blackhole : Bất kỳ yêu cầu nào không tương ứng với 1 tên miền hiện có trong máy chủ sẽ trả về mã 444 trong phản hồi hoặc máy chủ sẽ không đáp ứng nhu cầu.
+  * domain: Xác định tên miền hoặc trang web hiện tại làm phản hồi mặc định cho bất kỳ yêu cầu nào.
+* -external-sources-update
+* -header-csp
+* -header-hsts
+* -header-referrer
+* -info
+* -login-www-data: người dùng có quyền truy cập hạn cế và chỉ có thể được sử dụng để đăng nhập qua SFTP và chỉ có quyenf truy cập vào các thư mục tệp của trang web.
+  * on
+  * off
+* –mysql-password : Thay đổi mật khẩu mysql
+* -query-string-cache: Các URL chứa chuỗi truy vấn không bao giờ được lưu trong bộ nhớ cache theo mặc định. 
+* -query-string-never-cache: chỉ định chuỗi truy vấn(nếu có), không bao giờ được lưu vào bộ nhớ đệm.
+* -timezone: đặt múi giờ trong PHP và trong hệ điều hành Ubuntu
+* -tools-port: thay đổi cổng truy cập PHPMyAdmin
+* -tools-site: Định nghĩa một tên miền hiện có cho quyền truy cập vào các công cụ quản lý
+* -server-reset
+* -skip-cache : loại trừ URL được lưu trữ bởi FastCGI.
+  * =/page
+* –smtp
+* -uninstall
+* -update
+* -verify
+* -version: Nâng cấp phiên bản mới nhất của Webinoly
