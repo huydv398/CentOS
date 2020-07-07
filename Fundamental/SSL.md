@@ -1,5 +1,5 @@
 # Giới thiệu
-* SSL là chữ viết tắt của Secure Sockets Layer (Lớp Socket bảo mật). Một loại bảo mật giúp mã hóa liên lạc giữa web site và trình duyệt. Công nghệ này đang lỗi thời và hoàn toàn thay thế bởi TLS
+* SSL là chữ viết tắt của Secure Sockets Layer (Lớp Socket bảo mật). Một loại bảo mật giúp mã hóa liên lạc giữa website và trình duyệt. Công nghệ này đang lỗi thời và hoàn toàn thay thế bởi TLS
 * TLS - Transport Layer Security, Nó cũng giúp bảo mật thông tin truyền thông như SSL. Nhưng vì SSL không còn được phát triển nữa, nên TLS mới là thuật ngữ đúng tại thời điểm hiện tại.
 * Let's Enscrypt là một tổ chức xác thực SSL, là một tổ chức phi lợi nhuận được thành lập với sự bảo trợ của các tổ chức lớn trên thế giới như Cisco, Akamai, Mozilla, Facebook,... với mục đích là cung cấp chứng chỉ SSL miễn phí cho mọi người giúp mọi website đều được mã hóa, tạo nên môi trường Internet an toàn hơn.
 * HTTPS là phần mở rộng bảo mật của HTTP. Website được cài đặt chứng chỉ SSL/TLS có thể sử dụng giao thức HTTPS để thiết lập kết nối an toàn với server.
