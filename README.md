@@ -68,6 +68,8 @@
 16. [Load Balancing](Fundamental/Uptream-context.md)
 17. [WordOps](Fundamental/word-ops.md)
 19. [WordOps - DashBoard](Note/dashboard-WO.md)
+20. [Webinoly](Fundamental/webinoly.md)
+21. [Multisite](Note/multisite.md)
 ### Note
 1. [Basic Telegram_bot](Note/basic-tele.md)
 2. [md5sum check](Note/md5.md)
