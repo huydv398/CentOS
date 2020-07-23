@@ -19,6 +19,10 @@ yum-config-manager --enable remi-php74
 yum -y install php php-opcache php-mysql php-mysqlnd php-fpm
 ```
 
+Sao lưu file cấu hình trước khi chỉnh sửa
+
+ `cp /etc/php-fpm.d/www.conf /etc/php-fpm.d/www.conf.backup`
+
 Mở tệp `/etc/php-fpm.d/www.conf` cấu hình bằng trình soạn thảo:
 
 `vi /etc/php-fpm.d/www.conf`
@@ -40,7 +44,7 @@ Tìm đến dòng có chứa câu lệnh `listen = 127.0.0.1:9000`
 
 Và sửa thành
 
-`listen = var/run/php-fpm/php-fpm.sock;`
+`listen = /var/run/php-fpm/php-fpm.sock`
 
 Thay đổi cài đặt của chủ sở hữu và nhóm cho tệp. Xác định vị trí lệnh `listen.owner`, `listen.group`, `listen.mode`. Loại bỏ dấu `;` dấu trước ở đầu dòng. Sau đó thay đổi thành nginx.
 ```

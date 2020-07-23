@@ -18,6 +18,8 @@
 17. [Change Atrribute](Tutorial/chattr-change_attribute.md)
 18. [DNS](Fundamental/dns.md)
 
+### Webserver
+[List Webserver](Tutorial/Webserver.md)
 ## CentOS-7
 1. [Mount & fstab](CentOS-7/Mount-Fstab.md)
 2. [SSH keypair](CentOS-7/SSH-Keypairs.md)
@@ -48,19 +50,32 @@
 1. [NTP](Network-Time-Protocol.md)
 2. [Configure Network Time Protocol Server & Client](Fundamental/NTP-configure.md)
 
-### Web Server
+Web Server
+
+1. [HTTP ?](Fundamental/HTTP.md)
 1. [C7 LAMP](CentOS-7/LAMP.md)
 2. [C7 Wordpress All in One](CentOS-7/WP-1node.md)
-3. [C7 Wordpres 2 Server](CentOS-7/Wp-2node.md)
+3. [C7 Wordpres 2 Server (Web server - Database server)](CentOS-7/Wp-2node.md)
 3. [Install Nginx from Source in CentOS-7](CentOS-7/Nginx-from-source.md)
 4. [C7_LEMP + WP_All-in-One](CentOS-7/LEMP.md)
 4. [C7 Install PHP in Nginx](CentOS-7/php-nginx.md)
 4. [Cấu trúc và cấu hình Nginx](Fundamental/File-Structure&config.md)
-5. [VirtualHost](Tutorial/virtualhost.md)
 5. [C7 Nginx - 2Web-basic](CentOS-7/Nginx.md)
 6. [U20 Nginx](Ubuntu/Nginx-Ubuntu2004.md)
 7. [C7 Nginx reverse Proxy](CentOS-7/reverse-proxy.md)
+8. [Web-cache](Fundamental/web-cache.md)
+8. [C7 Nginx Reverse Proxy && Caching](CentOS-7/Caching.md)
+9. [What is SSL? & Install SSL in Nginx.](Fundamental/SSL.md)
+14. [Install SSL for WordPress ](CentOS-7/ssl&wp.md)
+15. [Giới hạn số lượng truy cập- request trong một khoảng thời gian](CentOS-7/limit_request.md)
+16. [Load Balancing](Fundamental/Uptream-context.md)
+17. [WordOps](Fundamental/word-ops.md)
+19. [WordOps - DashBoard](Note/dashboard-WO.md)
+20. [Webinoly](Fundamental/webinoly.md)
+21. [Multisite](Note/multisite.md)
+22. [web](Fundamental/webinoly.md)
 ### Note
 1. [Basic Telegram_bot](Note/basic-tele.md)
 2. [md5sum check](Note/md5.md)
 3. [Install WordPress](Note/wp1.md)
+4. [Tạo máy KVM](Note/Setup-vm-kvm.md)
