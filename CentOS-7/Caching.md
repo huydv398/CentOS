@@ -50,7 +50,7 @@ systemctl enable httpd
 
 Kiểm tra trạng thái hoạt động
 
-`systemctl status nginx`
+`systemctl status httpd`
 
 Tạo một trang web có nội dung hình ảnh hoặc file tĩnh
 
@@ -110,7 +110,7 @@ Cấu hình Nginx:
 
 Khi báo file cấu hình:
 
-`vi vi /etc/nginx/conf.d/huynet.com.conf`
+`vi /etc/nginx/conf.d/huynet.com.conf`
 
 Nội dung như sau:
 
@@ -123,7 +123,6 @@ server {
     
     location / {
         proxy_pass http://2.2.2.3:80/;
-        # Input any other settings you may need that are not already contained in the default snippets.
     }
 }
 ```
