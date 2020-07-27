@@ -382,3 +382,5 @@ lvremove /dev/<tên_group>/<tên_Logical>
 * Kiểm tra lại các VG: `# vgs`
 ## Xóa Physical Volume
 `# pvremove /dev/sdb`
+
+https://github.com/hoangdh/Su_dung_LVM
