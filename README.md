@@ -50,7 +50,8 @@
 1. [NTP](Network-Time-Protocol.md)
 2. [Configure Network Time Protocol Server & Client](Fundamental/NTP-configure.md)
 
-Web Server
+[Web Server](#wserver)
+<a name="wserver"></a>
 
 1. [HTTP ?](Fundamental/HTTP.md)
 1. [C7 LAMP](CentOS-7/LAMP.md)
