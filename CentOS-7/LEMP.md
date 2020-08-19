@@ -140,7 +140,7 @@ Tìm đến dòng có chứa câu lệnh `listen = 127.0.0.1:9000`
 
 Và sửa thành
 
-`listen = var/run/php-fpm/php-fpm.sock;`
+`listen = /var/run/php-fpm/php-fpm.sock;`
 
 Thay đổi cài đặt của chủ sở hữu và nhóm cho tệp. Xác định vị trí lệnh `listen.owner`, `listen.group`, `listen.mode`. Loại bỏ dấu `;` dấu trước ở đầu dòng. Sau đó thay đổi thành nginx.
 ```
