@@ -3,7 +3,8 @@
 **Stress** là một câu lệnh được sử dụng để áp dụng một mức tải cho hệ thống để kiểm tra khả năng chịu tải của nó trong thực tế. Nó sẽ tạo ra các process sử dụng rất nhiều tài nguyên của hệ thống như CPU,RAM hay Disk để ta có thể kiểm tra được khả năng và ngưỡng mà hệ thống của ta hoạt động tốt nhất. Nó cũng rất hữu ích để tái hiện lại trạng thái tải cao gay lỗi hệ thống để ta có thể tìm cách xử lý.
 ### Cài đặt stress test 
 Để sử dụng được stress test bạn cần có kho `Epel` tải cài đặt kho ta có :
-* `yum install -y epel`
+* `yum install -y epel-release`
+
 Nếu đã có kho `epel` ta cài đặt `Stress` bằng câu lệnh:
 * `yum install -y stress`
 ## Sử dụng

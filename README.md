@@ -44,7 +44,7 @@
 
 
 ## tool - setup
-1. [Stress test](tool/Stress-test.md)
+1. [Stress test](/tool/Stress-test.md)
 
 ## AAA
 1. [NTP](Network-Time-Protocol.md)
