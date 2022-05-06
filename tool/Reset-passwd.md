@@ -74,7 +74,7 @@ mount -o remount, rw /
 
 * Bây giờ có thể đặt lại mật khẩu cho root
     * `passwd root`
-    * `touch /.autorelable`
+    * `touch /.autorelabel`
 
 ![Imgur](https://i.imgur.com/9RK6yBn.png)
 
