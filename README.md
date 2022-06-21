@@ -76,7 +76,7 @@
 21. [Multisite](Note/multisite.md)
 22. [web](Fundamental/webinoly.md)
 
-1. [Install Initial Apache + SSL in CentOS-7 - ALL in ONE](CentOS-7/Apache-all-c7.md)
+1. [Install Initial Apache + SSL in CentOS-7 - ALL in ONE](CentOS-7/Apache-all.md)
 ### Note
 1. [Basic Telegram_bot](Note/basic-tele.md)
 2. [md5sum check](Note/md5.md)
