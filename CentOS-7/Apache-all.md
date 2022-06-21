@@ -177,13 +177,14 @@ Gói `certbot` không có sẵn thông qua trình quản lý gói theo mặc đ�
 
 Để thêm kho lưu trữ CentOS 7 EPEL, hãy chạy lệnh sau:
 ```
-sudo yum install epel-release
+sudo yum install epel-release -y
 ```
 
 Bây giờ bạn có quyền truy cập vào kho lưu trữ, hãy cài đặt tất cả các gói được yêu cầu
 
 ```
-sudo yum install certbot python2-certbot-apache mod_ssl
+sudo yum install certbot python2-certbot-apache mod_ssl -y
+
 ```
 ### Lấy chứng chỉ
 Bây giờ Certbot đã được cài đặt, bạn có thể sử dụng nó để yêu cầu chứng chỉ SSL cho miền của mình.
