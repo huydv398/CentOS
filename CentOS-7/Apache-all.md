@@ -58,7 +58,7 @@ sudo vi /var/www/your_domain/html/index.html
 THực hành:
 ```
 sudo mkdir -p /var/www/huydv.1lab.xyz/html
-sudo mkdir -p /var/www/huydv.1lab.xyz
+sudo mkdir -p /var/www/huydv.1lab.xyz/log
 sudo chown -R $USER:$USER /var/www/huydv.1lab.xyz/html
 sudo chmod -R 755 /var/www
 sudo vi /var/www/huydv.1lab.xyz/html/index.html
@@ -110,7 +110,9 @@ Thêm vào khối cấu hình sau và thay đổi `huydv.1lab.xyz` thành tên m
     CustomLog /var/www/your_domain/log/requests.log combined
 </VirtualHost>
 ```
-THực tế:
+THực tế: 
+
+Bấm `i` để vào chế độ Insert 
 ```
 
 <VirtualHost *:80>
@@ -121,7 +123,7 @@ THực tế:
     CustomLog /var/www/huydv.1lab.xyz/log/requests.log combined
 </VirtualHost>
 ```
-Lưu và thoát
+Lưu và thoát bấm `Esc` -> `:wq` 
 
 Bây giờ bạn đã tạo các tệp máy chủ ảo, bạn sẽ kích hoạt chúng để Apache biết để phục vụ chúng cho khách truy cập. Để thực hiện việc này, hãy tạo một liên kết tượng trưng cho từng máy chủ ảo trong thư mục `sites-enabled`:
 
@@ -141,3 +143,19 @@ SELinux được cấu hình để hoạt động với cấu hình Apache mặc
 
 Có nhiều cách khác nhau để đặt chính sách dựa trên nhu cầu của môi trường của bạn, vì SELinux cho phép bạn tùy chỉnh mức độ bảo mật của mình. Bước này sẽ bao gồm hai phương pháp điều chỉnh chính sách Apache: trên toàn cầu và trên một thư mục cụ thể. Điều chỉnh các chính sách trên thư mục là an toàn hơn, và do đó là cách tiếp cận được khuyến nghị.
 
+sudo setsebool -P httpd_unified 1
+
+sudo ls -dZ /var/www/your_domain/log/
+
+sudo semanage fcontext -a -t httpd_log_t "/var/www/your_domain/log(/.*)?"
+
+sudo restorecon -R -v /var/www/your_domain/log
+sudo ls -dZ /var/www/your_domain/log/
+
+
+
+sudo setsebool -P httpd_unified 1
+sudo ls -dZ /var/www/huydv.1lab.xyz/log/
+sudo semanage fcontext -a -t httpd_log_t "/var/www/huydv.1lab.xyz/log(/.*)?"
+sudo restorecon -R -v /var/www/huydv.1lab.xyz/log
+sudo ls -dZ /var/www/huydv.1lab.xyz/log/
